@@ -31,9 +31,34 @@ object DM: TDM
     Active = True
     Connection = conexao
     CursorType = ctStatic
+    AfterScroll = tbCidadesAfterScroll
     TableName = 'cidades'
     Left = 408
     Top = 200
+    object tbCidadescodigo_cidade: TIntegerField
+      DisplayWidth = 12
+      FieldName = 'codigo_cidade'
+    end
+    object tbCidadesnome: TWideStringField
+      DisplayWidth = 39
+      FieldName = 'nome'
+      Size = 100
+    end
+    object tbCidadesestado: TWideStringField
+      DisplayWidth = 16
+      FieldName = 'estado'
+      Size = 50
+    end
+    object tbCidadescep_Inicial: TWideStringField
+      DisplayWidth = 10
+      FieldName = 'cep_Inicial'
+      Size = 10
+    end
+    object tbCidadescep_Final: TWideStringField
+      DisplayWidth = 10
+      FieldName = 'cep_Final'
+      Size = 10
+    end
   end
   object dsCidades: TDataSource
     DataSet = tbCidades
@@ -47,6 +72,42 @@ object DM: TDM
     TableName = 'clientes'
     Left = 408
     Top = 400
+    object tbClientesodigo_cliente: TIntegerField
+      FieldName = 'odigo_cliente'
+    end
+    object tbClientesCGC_CPF_cliente: TWideStringField
+      FieldName = 'CGC_CPF_cliente'
+    end
+    object tbClientesnome: TWideStringField
+      FieldName = 'nome'
+      Size = 100
+    end
+    object tbClientestelefone: TWideStringField
+      FieldName = 'telefone'
+    end
+    object tbClientesendereco: TWideStringField
+      FieldName = 'endereco'
+      Size = 100
+    end
+    object tbClientesbairro: TWideStringField
+      FieldName = 'bairro'
+      Size = 50
+    end
+    object tbClientescomplemento: TWideStringField
+      FieldName = 'complemento'
+      Size = 50
+    end
+    object tbClientesemail: TWideStringField
+      FieldName = 'email'
+      Size = 100
+    end
+    object tbClientescodigo_Cidade: TIntegerField
+      FieldName = 'codigo_Cidade'
+    end
+    object tbClientescep: TWideStringField
+      FieldName = 'cep'
+      Size = 10
+    end
   end
   object dsClientes: TDataSource
     DataSet = tbClientes
