@@ -4,12 +4,18 @@
     <Transaction>2024/03/06 15:53:32.000.821,=D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2024/03/07 19:39:27.000.100,=D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2024/03/12 19:24:23.000.361,=D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/03/14 14:21:09.083,=D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/03/14 14:21:28.160,D:\Lucas\Área de Trabalho\case_delphi\case_delphi\unitPrincipal.dfm=D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2024/03/14 14:21:28.160,D:\Lucas\Área de Trabalho\case_delphi\case_delphi\unitPrincipal.pas=D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/03/14 14:21:43.128,=D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/03/14 14:21:49.219,D:\Lucas\Área de Trabalho\case_delphi\case_delphi\unitDM.pas=D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/03/14 14:21:49.219,D:\Lucas\Área de Trabalho\case_delphi\case_delphi\unitDM.dfm=D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2024/03/14 15:08:54.003,D:\Lucas\Área de Trabalho\case_delphi\case_delphi\case_delphi.dproj=D:\Lucas\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/03/14 14:21:09.000.083,=D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/03/14 14:21:28.000.160,D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.pas=D:\Lucas\Área de Trabalho\case_delphi\case_delphi\unitPrincipal.pas</Transaction>
+    <Transaction>2024/03/14 14:21:28.000.160,D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=D:\Lucas\Área de Trabalho\case_delphi\case_delphi\unitPrincipal.dfm</Transaction>
+    <Transaction>2024/03/14 14:21:43.000.128,=D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/03/14 14:21:49.000.219,D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=D:\Lucas\Área de Trabalho\case_delphi\case_delphi\unitDM.dfm</Transaction>
+    <Transaction>2024/03/14 14:21:49.000.219,D:\Lucas\Documentos\Embarcadero\Studio\Projects\Unit1.pas=D:\Lucas\Área de Trabalho\case_delphi\case_delphi\unitDM.pas</Transaction>
+    <Transaction>2024/03/14 15:08:54.000.003,D:\Lucas\Documentos\Embarcadero\Studio\Projects\Project1.dproj=D:\Lucas\Área de Trabalho\case_delphi\case_delphi\case_delphi.dproj</Transaction>
+    <Transaction>2024/03/14 15:30:35.291,=D:\Lucas\Área de Trabalho\case_delphi\case_delphi\Unit2.pas</Transaction>
+    <Transaction>2024/03/14 15:31:48.399,D:\Lucas\Área de Trabalho\case_delphi\case_delphi\cadCidades.pas=D:\Lucas\Área de Trabalho\case_delphi\case_delphi\Unit2.pas</Transaction>
+    <Transaction>2024/03/14 15:31:48.399,D:\Lucas\Área de Trabalho\case_delphi\case_delphi\cadCidades.dfm=D:\Lucas\Área de Trabalho\case_delphi\case_delphi\Unit2.dfm</Transaction>
+    <Transaction>2024/03/14 15:33:02.793,=D:\Lucas\Área de Trabalho\case_delphi\case_delphi\Unit2.pas</Transaction>
+    <Transaction>2024/03/14 15:33:16.906,D:\Lucas\Área de Trabalho\case_delphi\case_delphi\cadClientes.dfm=D:\Lucas\Área de Trabalho\case_delphi\case_delphi\Unit2.dfm</Transaction>
+    <Transaction>2024/03/14 15:33:16.906,D:\Lucas\Área de Trabalho\case_delphi\case_delphi\cadClientes.pas=D:\Lucas\Área de Trabalho\case_delphi\case_delphi\Unit2.pas</Transaction>
   </Transactions>
 </BorlandProject>
