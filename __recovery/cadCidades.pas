@@ -19,7 +19,6 @@ type
     DBEdit4: TDBEdit;
     Label3: TLabel;
     Label4: TLabel;
-    DBGrid1: TDBGrid;
     btPrimeiro: TButton;
     btProximo: TButton;
     btUltimo: TButton;
@@ -28,9 +27,21 @@ type
     btDeletar: TButton;
     btCancelar: TButton;
     btAnterior: TButton;
+    radioGroupOpcoes: TRadioGroup;
+    lblBusca: TLabel;
+    txtConsulta: TEdit;
+    btBuscar: TButton;
+    DBGrid1: TDBGrid;
     procedure btInserirClick(Sender: TObject);
     procedure btSalvarClick(Sender: TObject);
     procedure btCancelarClick(Sender: TObject);
+    procedure btDeletarClick(Sender: TObject);
+    procedure btPrimeiroClick(Sender: TObject);
+    procedure btAnteriorClick(Sender: TObject);
+    procedure btProximoClick(Sender: TObject);
+    procedure btUltimoClick(Sender: TObject);
+    procedure btBuscarClick(Sender: TObject);
+    procedure radioGroupOpcoesClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,13 +57,48 @@ implementation
 
 uses unitDM;
 
+procedure TformCadCidades.btAnteriorClick(Sender: TObject);
+begin
+  DM.tbCidades.Prior;
+end;
+
+procedure TformCadCidades.btBuscarClick(Sender: TObject);
+begin
+  DM.sqlCidades.Close;
+  DM.sqlCidades.SQL.Clear;
+
+  if radioGroupOpcoes.ItemIndex = 0 then
+     begin
+        DM.sqlCidades.SQL.Add('SELECT * FROM cidades WHERE nome LIKE :pConsulta');
+        DM.sqlCidades.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%'
+     end
+  else
+      begin
+        DM.sqlCidades.SQL.Add('SELECT * FROM cidades WHERE estado LIKE :pConsulta');
+        DM.sqlCidades.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%';
+      end;
+
+   DM.sqlCidades.Open;
+end;
+
 procedure TformCadCidades.btCancelarClick(Sender: TObject);
 begin
-       btInserir.Enabled := True;
+  btInserir.Enabled := True;
   btDeletar.Enabled := True;
 
   btSalvar.Enabled := False;
   btCancelar.Enabled := False;
+
+  DM.tbCidades.Cancel;
+end;
+
+procedure TformCadCidades.btDeletarClick(Sender: TObject);
+begin
+
+  if Application.MessageBox('Deseja Realmente deletar o registro?', 'Atenção', MB_ICONQUESTION+MB_YESNO) = mrYes then
+    begin
+      DM.tbCidades.Delete;
+    end;
 end;
 
 procedure TformCadCidades.btInserirClick(Sender: TObject);
@@ -62,6 +108,18 @@ begin
 
   btSalvar.Enabled := True;
   btCancelar.Enabled := True;
+
+  DM.tbCidades.Append;
+end;
+
+procedure TformCadCidades.btPrimeiroClick(Sender: TObject);
+begin
+  DM.tbCidades.First;
+end;
+
+procedure TformCadCidades.btProximoClick(Sender: TObject);
+begin
+  DM.tbCidades.Next;
 end;
 
 procedure TformCadCidades.btSalvarClick(Sender: TObject);
@@ -72,6 +130,25 @@ begin
   btSalvar.Enabled := False;
   btCancelar.Enabled := False;
 
+  DM.tbCidades.Post;
+
+end;
+
+procedure TformCadCidades.btUltimoClick(Sender: TObject);
+begin
+  DM.tbCidades.Last;
+end;
+
+procedure TformCadCidades.radioGroupOpcoesClick(Sender: TObject);
+begin
+   if radioGroupOpcoes.ItemIndex = 0 then
+    begin
+      lblBusca.Caption := 'Digite o Nome';
+    end
+  else
+    begin
+      lblBusca.Caption := 'Digite o Estado';
+    end;
 end;
 
 end.

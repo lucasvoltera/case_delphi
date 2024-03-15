@@ -65,6 +65,19 @@ object formCadCidades: TformCadCidades
     Font.Style = []
     ParentFont = False
   end
+  object lblBusca: TLabel
+    Left = 656
+    Top = 480
+    Width = 129
+    Height = 28
+    Caption = 'Digite o Nome'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
   object Panel1: TPanel
     Left = 0
     Top = 0
@@ -72,7 +85,7 @@ object formCadCidades: TformCadCidades
     Height = 129
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 929
+    ExplicitWidth = 996
     object Label1: TLabel
       Left = 48
       Top = 44
@@ -123,13 +136,116 @@ object formCadCidades: TformCadCidades
     DataSource = DM.dsCidades
     TabOrder = 4
   end
+  object btPrimeiro: TButton
+    Left = 456
+    Top = 168
+    Width = 57
+    Height = 41
+    Caption = '<<'
+    TabOrder = 5
+    OnClick = btPrimeiroClick
+  end
+  object btProximo: TButton
+    Left = 583
+    Top = 168
+    Width = 58
+    Height = 41
+    Caption = '>'
+    TabOrder = 6
+    OnClick = btProximoClick
+  end
+  object btUltimo: TButton
+    Left = 647
+    Top = 168
+    Width = 58
+    Height = 41
+    Caption = '>>'
+    TabOrder = 7
+    OnClick = btUltimoClick
+  end
+  object btInserir: TButton
+    Left = 711
+    Top = 168
+    Width = 58
+    Height = 41
+    Caption = 'Inserir'
+    TabOrder = 8
+    OnClick = btInserirClick
+  end
+  object btSalvar: TButton
+    Left = 775
+    Top = 168
+    Width = 58
+    Height = 41
+    Caption = 'Salvar'
+    TabOrder = 9
+    OnClick = btSalvarClick
+  end
+  object btDeletar: TButton
+    Left = 839
+    Top = 168
+    Width = 58
+    Height = 41
+    Caption = 'Deletar'
+    TabOrder = 10
+    OnClick = btDeletarClick
+  end
+  object btCancelar: TButton
+    Left = 903
+    Top = 168
+    Width = 58
+    Height = 41
+    Caption = 'Cancelar'
+    TabOrder = 11
+    OnClick = btCancelarClick
+  end
+  object btAnterior: TButton
+    Left = 519
+    Top = 168
+    Width = 58
+    Height = 41
+    Caption = '<'
+    TabOrder = 12
+    OnClick = btAnteriorClick
+  end
+  object radioGroupOpcoes: TRadioGroup
+    Left = 456
+    Top = 480
+    Width = 161
+    Height = 73
+    Caption = 'Op'#231#245'es de Busca'
+    Columns = 2
+    ItemIndex = 0
+    Items.Strings = (
+      'Nome'
+      'Estado')
+    TabOrder = 13
+    OnClick = radioGroupOpcoesClick
+  end
+  object txtConsulta: TEdit
+    Left = 656
+    Top = 514
+    Width = 305
+    Height = 23
+    CanUndoSelText = True
+    TabOrder = 14
+  end
+  object btBuscar: TButton
+    Left = 583
+    Top = 584
+    Width = 122
+    Height = 33
+    Caption = 'Buscar'
+    TabOrder = 15
+    OnClick = btBuscarClick
+  end
   object DBGrid1: TDBGrid
     Left = 456
-    Top = 280
+    Top = 246
     Width = 505
-    Height = 281
+    Height = 209
     DataSource = DM.dsCidades
-    TabOrder = 5
+    TabOrder = 16
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -139,93 +255,22 @@ object formCadCidades: TformCadCidades
       item
         Expanded = False
         FieldName = 'nome'
-        Width = 110
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'estado'
-        Width = 99
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'cep_Inicial'
-        Width = 116
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'cep_Final'
-        Width = 125
         Visible = True
       end>
-  end
-  object btPrimeiro: TButton
-    Left = 456
-    Top = 224
-    Width = 57
-    Height = 41
-    Caption = '<<'
-    TabOrder = 6
-  end
-  object btProximo: TButton
-    Left = 583
-    Top = 224
-    Width = 58
-    Height = 41
-    Caption = '>'
-    TabOrder = 7
-  end
-  object btUltimo: TButton
-    Left = 647
-    Top = 224
-    Width = 58
-    Height = 41
-    Caption = '>>'
-    TabOrder = 8
-  end
-  object btInserir: TButton
-    Left = 711
-    Top = 224
-    Width = 58
-    Height = 41
-    Caption = 'Inserir'
-    TabOrder = 9
-    OnClick = btInserirClick
-  end
-  object btSalvar: TButton
-    Left = 775
-    Top = 224
-    Width = 58
-    Height = 41
-    Caption = 'Salvar'
-    TabOrder = 10
-    OnClick = btSalvarClick
-  end
-  object btDeletar: TButton
-    Left = 839
-    Top = 224
-    Width = 58
-    Height = 41
-    Caption = 'Deletar'
-    TabOrder = 11
-  end
-  object btCancelar: TButton
-    Left = 903
-    Top = 224
-    Width = 58
-    Height = 41
-    Caption = 'Cancelar'
-    TabOrder = 12
-    OnClick = btCancelarClick
-  end
-  object btAnterior: TButton
-    Left = 519
-    Top = 224
-    Width = 58
-    Height = 41
-    Caption = '<'
-    TabOrder = 13
   end
 end

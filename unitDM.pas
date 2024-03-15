@@ -14,12 +14,14 @@ type
     tbClientes: TADOTable;
     dsClientes: TDataSource;
     sqlClientes: TADOQuery;
-    tbCidadescodigo_cidade: TIntegerField;
+    dsSqlCidades: TDataSource;
+    dsSqlClientes: TDataSource;
+    tbCidadescodigo_cidade: TAutoIncField;
     tbCidadesnome: TWideStringField;
     tbCidadesestado: TWideStringField;
     tbCidadescep_Inicial: TWideStringField;
     tbCidadescep_Final: TWideStringField;
-    tbClientesodigo_cliente: TIntegerField;
+    tbClientescodigo_cliente: TAutoIncField;
     tbClientesCGC_CPF_cliente: TWideStringField;
     tbClientesnome: TWideStringField;
     tbClientestelefone: TWideStringField;
@@ -29,7 +31,13 @@ type
     tbClientesemail: TWideStringField;
     tbClientescodigo_Cidade: TIntegerField;
     tbClientescep: TWideStringField;
+    sqlCidadescodigo_cidade: TAutoIncField;
+    sqlCidadesnome: TWideStringField;
+    sqlCidadesestado: TWideStringField;
+    sqlCidadescep_Inicial: TWideStringField;
+    sqlCidadescep_Final: TWideStringField;
     procedure tbCidadesAfterScroll(DataSet: TDataSet);
+    procedure DataModuleCreate(Sender: TObject);
 
   private
     { Private declarations }
@@ -46,32 +54,43 @@ implementation
 
 uses cadCidades;
 
+
+
 {$R *.dfm}
 
 
+procedure TDM.DataModuleCreate(Sender: TObject);
+begin
+  sqlCidades.Close;
+  sqlClientes.Close;
+end;
+
 procedure TDM.tbCidadesAfterScroll(DataSet: TDataSet);
 begin
-  if tbCidades.Eof then
-    begin
-      btProximo.Enabled := False;
-      btUltimo.Enabled := False;
-    end
-  else
-    begin
-      btProximo.Enabled := True;
-      btUltimo.Enabled := True;
-    end;
+  if tbCidades.State in [dsBrowse, dsEdit, dsInsert] then
+  begin
+    if tbCidades.Eof then
+      begin
+        formCadCidades.btProximo.Enabled := False;
+        formCadCidades.btUltimo.Enabled := False;
+      end
+    else
+      begin
+        formCadCidades.btProximo.Enabled := True;
+        formCadCidades.btUltimo.Enabled := True;
+      end;
+    if tbCidades.Bof then
+      begin
+        formCadCidades.btPrimeiro.Enabled := False;
+        formCadCidades.btAnterior.Enabled := False;
+      end
+    else
+      begin
+        formCadCidades.btPrimeiro.Enabled := True;
+        formCadCidades.btAnterior.Enabled := True;
+      end;
+  end;
 
-  if tbCidades.Bof then
-    begin
-      btPrimeiro.Enabled := False;
-      btAnterior.Enabled := False;
-    end
-  else
-    begin
-      Enabled := True;
-      btAnterior := True;
-    end;
 end;
 
 

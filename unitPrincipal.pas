@@ -31,7 +31,7 @@ implementation
 
 {$R *.dfm}
 
-uses cadCidades, cadClientes;
+uses cadCidades, cadClientes, unitDM;
 
 procedure TForm1.Clientes2Click(Sender: TObject);
 begin

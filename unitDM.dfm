@@ -1,4 +1,5 @@
 object DM: TDM
+  OnCreate = DataModuleCreate
   Height = 750
   Width = 1000
   PixelsPerInch = 120
@@ -17,63 +18,82 @@ object DM: TDM
       'n=True;Connect Retry Count=1;Connect Retry Interval=10'
     LoginPrompt = False
     Provider = 'MSOLEDBSQL.1'
-    Left = 272
+    Left = 248
     Top = 296
   end
   object sqlCidades: TADOQuery
+    Active = True
     Connection = conexao
+    CursorType = ctStatic
     DataSource = dsCidades
     Parameters = <>
-    Left = 800
-    Top = 224
+    SQL.Strings = (
+      'SELECT * FROM cidades;')
+    Left = 296
+    Top = 128
+    object sqlCidadescodigo_cidade: TAutoIncField
+      FieldName = 'codigo_cidade'
+      ReadOnly = True
+    end
+    object sqlCidadesnome: TWideStringField
+      FieldName = 'nome'
+      Size = 100
+    end
+    object sqlCidadesestado: TWideStringField
+      FieldName = 'estado'
+      Size = 50
+    end
+    object sqlCidadescep_Inicial: TWideStringField
+      FieldName = 'cep_Inicial'
+      Size = 10
+    end
+    object sqlCidadescep_Final: TWideStringField
+      FieldName = 'cep_Final'
+      Size = 10
+    end
   end
   object tbCidades: TADOTable
     Active = True
     Connection = conexao
     CursorType = ctStatic
-    AfterScroll = tbCidadesAfterScroll
     TableName = 'cidades'
-    Left = 408
-    Top = 200
-    object tbCidadescodigo_cidade: TIntegerField
-      DisplayWidth = 12
+    Left = 336
+    Top = 232
+    object tbCidadescodigo_cidade: TAutoIncField
       FieldName = 'codigo_cidade'
+      ReadOnly = True
     end
     object tbCidadesnome: TWideStringField
-      DisplayWidth = 39
       FieldName = 'nome'
       Size = 100
     end
     object tbCidadesestado: TWideStringField
-      DisplayWidth = 16
       FieldName = 'estado'
       Size = 50
     end
     object tbCidadescep_Inicial: TWideStringField
-      DisplayWidth = 10
       FieldName = 'cep_Inicial'
       Size = 10
     end
     object tbCidadescep_Final: TWideStringField
-      DisplayWidth = 10
       FieldName = 'cep_Final'
       Size = 10
     end
   end
   object dsCidades: TDataSource
     DataSet = tbCidades
-    Left = 632
-    Top = 224
+    Left = 448
+    Top = 232
   end
   object tbClientes: TADOTable
-    Active = True
     Connection = conexao
     CursorType = ctStatic
     TableName = 'clientes'
     Left = 408
     Top = 400
-    object tbClientesodigo_cliente: TIntegerField
-      FieldName = 'odigo_cliente'
+    object tbClientescodigo_cliente: TAutoIncField
+      FieldName = 'codigo_cliente'
+      ReadOnly = True
     end
     object tbClientesCGC_CPF_cliente: TWideStringField
       FieldName = 'CGC_CPF_cliente'
@@ -111,14 +131,24 @@ object DM: TDM
   end
   object dsClientes: TDataSource
     DataSet = tbClientes
-    Left = 640
-    Top = 368
+    Left = 520
+    Top = 400
   end
   object sqlClientes: TADOQuery
     Connection = conexao
     DataSource = dsClientes
     Parameters = <>
-    Left = 808
-    Top = 376
+    Left = 400
+    Top = 504
+  end
+  object dsSqlCidades: TDataSource
+    DataSet = sqlCidades
+    Left = 376
+    Top = 88
+  end
+  object dsSqlClientes: TDataSource
+    DataSet = sqlClientes
+    Left = 520
+    Top = 504
   end
 end
