@@ -16,11 +16,6 @@ type
     sqlClientes: TADOQuery;
     dsSqlCidades: TDataSource;
     dsSqlClientes: TDataSource;
-    tbCidadescodigo_cidade: TAutoIncField;
-    tbCidadesnome: TWideStringField;
-    tbCidadesestado: TWideStringField;
-    tbCidadescep_Inicial: TWideStringField;
-    tbCidadescep_Final: TWideStringField;
     tbClientescodigo_cliente: TAutoIncField;
     tbClientesCGC_CPF_cliente: TWideStringField;
     tbClientesnome: TWideStringField;
@@ -36,6 +31,11 @@ type
     sqlCidadesestado: TWideStringField;
     sqlCidadescep_Inicial: TWideStringField;
     sqlCidadescep_Final: TWideStringField;
+    tbCidadescodigo_cidade: TAutoIncField;
+    tbCidadesnome: TWideStringField;
+    tbCidadesestado: TWideStringField;
+    tbCidadescep_Inicial: TWideStringField;
+    tbCidadescep_Final: TWideStringField;
     procedure tbCidadesAfterScroll(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
 

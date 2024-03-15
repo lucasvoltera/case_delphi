@@ -12,7 +12,6 @@ type
     Panel1: TPanel;
     Label1: TLabel;
     DBEdit1: TDBEdit;
-    DBEdit2: TDBEdit;
     DBEdit3: TDBEdit;
     lblName: TLabel;
     label2: TLabel;
@@ -27,11 +26,8 @@ type
     btDeletar: TButton;
     btCancelar: TButton;
     btAnterior: TButton;
-    radioGroupOpcoes: TRadioGroup;
-    lblBusca: TLabel;
-    txtConsulta: TEdit;
-    btBuscar: TButton;
     DBGrid1: TDBGrid;
+    DBComboBox1: TDBComboBox;
     procedure btInserirClick(Sender: TObject);
     procedure btSalvarClick(Sender: TObject);
     procedure btCancelarClick(Sender: TObject);
@@ -40,8 +36,6 @@ type
     procedure btAnteriorClick(Sender: TObject);
     procedure btProximoClick(Sender: TObject);
     procedure btUltimoClick(Sender: TObject);
-    procedure btBuscarClick(Sender: TObject);
-    procedure radioGroupOpcoesClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -62,24 +56,6 @@ begin
   DM.tbCidades.Prior;
 end;
 
-procedure TformCadCidades.btBuscarClick(Sender: TObject);
-begin
-  DM.sqlCidades.Close;
-  DM.sqlCidades.SQL.Clear;
-
-  if radioGroupOpcoes.ItemIndex = 0 then
-     begin
-        DM.sqlCidades.SQL.Add('SELECT * FROM cidades WHERE nome LIKE :pConsulta');
-        DM.sqlCidades.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%'
-     end
-  else
-      begin
-        DM.sqlCidades.SQL.Add('SELECT * FROM cidades WHERE estado LIKE :pConsulta');
-        DM.sqlCidades.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%';
-      end;
-
-   DM.sqlCidades.Open;
-end;
 
 procedure TformCadCidades.btCancelarClick(Sender: TObject);
 begin
@@ -139,16 +115,5 @@ begin
   DM.tbCidades.Last;
 end;
 
-procedure TformCadCidades.radioGroupOpcoesClick(Sender: TObject);
-begin
-   if radioGroupOpcoes.ItemIndex = 0 then
-    begin
-      lblBusca.Caption := 'Digite o Nome';
-    end
-  else
-    begin
-      lblBusca.Caption := 'Digite o Estado';
-    end;
-end;
 
 end.

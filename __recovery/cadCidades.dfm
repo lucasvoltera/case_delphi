@@ -65,19 +65,6 @@ object formCadCidades: TformCadCidades
     Font.Style = []
     ParentFont = False
   end
-  object lblBusca: TLabel
-    Left = 656
-    Top = 480
-    Width = 129
-    Height = 28
-    Caption = 'Digite o Nome'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -20
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-  end
   object Panel1: TPanel
     Left = 0
     Top = 0
@@ -109,15 +96,6 @@ object formCadCidades: TformCadCidades
     DataSource = DM.dsCidades
     TabOrder = 1
   end
-  object DBEdit2: TDBEdit
-    Left = 72
-    Top = 352
-    Width = 337
-    Height = 23
-    DataField = 'estado'
-    DataSource = DM.dsCidades
-    TabOrder = 2
-  end
   object DBEdit3: TDBEdit
     Left = 72
     Top = 432
@@ -125,7 +103,7 @@ object formCadCidades: TformCadCidades
     Height = 23
     DataField = 'cep_Inicial'
     DataSource = DM.dsCidades
-    TabOrder = 3
+    TabOrder = 2
   end
   object DBEdit4: TDBEdit
     Left = 247
@@ -134,7 +112,7 @@ object formCadCidades: TformCadCidades
     Height = 23
     DataField = 'cep_Final'
     DataSource = DM.dsCidades
-    TabOrder = 4
+    TabOrder = 3
   end
   object btPrimeiro: TButton
     Left = 456
@@ -142,7 +120,7 @@ object formCadCidades: TformCadCidades
     Width = 57
     Height = 41
     Caption = '<<'
-    TabOrder = 5
+    TabOrder = 4
     OnClick = btPrimeiroClick
   end
   object btProximo: TButton
@@ -151,7 +129,7 @@ object formCadCidades: TformCadCidades
     Width = 58
     Height = 41
     Caption = '>'
-    TabOrder = 6
+    TabOrder = 5
     OnClick = btProximoClick
   end
   object btUltimo: TButton
@@ -160,7 +138,7 @@ object formCadCidades: TformCadCidades
     Width = 58
     Height = 41
     Caption = '>>'
-    TabOrder = 7
+    TabOrder = 6
     OnClick = btUltimoClick
   end
   object btInserir: TButton
@@ -169,7 +147,7 @@ object formCadCidades: TformCadCidades
     Width = 58
     Height = 41
     Caption = 'Inserir'
-    TabOrder = 8
+    TabOrder = 7
     OnClick = btInserirClick
   end
   object btSalvar: TButton
@@ -178,7 +156,7 @@ object formCadCidades: TformCadCidades
     Width = 58
     Height = 41
     Caption = 'Salvar'
-    TabOrder = 9
+    TabOrder = 8
     OnClick = btSalvarClick
   end
   object btDeletar: TButton
@@ -187,7 +165,7 @@ object formCadCidades: TformCadCidades
     Width = 58
     Height = 41
     Caption = 'Deletar'
-    TabOrder = 10
+    TabOrder = 9
     OnClick = btDeletarClick
   end
   object btCancelar: TButton
@@ -196,7 +174,7 @@ object formCadCidades: TformCadCidades
     Width = 58
     Height = 41
     Caption = 'Cancelar'
-    TabOrder = 11
+    TabOrder = 10
     OnClick = btCancelarClick
   end
   object btAnterior: TButton
@@ -205,47 +183,16 @@ object formCadCidades: TformCadCidades
     Width = 58
     Height = 41
     Caption = '<'
-    TabOrder = 12
+    TabOrder = 11
     OnClick = btAnteriorClick
-  end
-  object radioGroupOpcoes: TRadioGroup
-    Left = 456
-    Top = 480
-    Width = 161
-    Height = 73
-    Caption = 'Op'#231#245'es de Busca'
-    Columns = 2
-    ItemIndex = 0
-    Items.Strings = (
-      'Nome'
-      'Estado')
-    TabOrder = 13
-    OnClick = radioGroupOpcoesClick
-  end
-  object txtConsulta: TEdit
-    Left = 656
-    Top = 514
-    Width = 305
-    Height = 23
-    CanUndoSelText = True
-    TabOrder = 14
-  end
-  object btBuscar: TButton
-    Left = 583
-    Top = 584
-    Width = 122
-    Height = 33
-    Caption = 'Buscar'
-    TabOrder = 15
-    OnClick = btBuscarClick
   end
   object DBGrid1: TDBGrid
     Left = 456
-    Top = 246
+    Top = 232
     Width = 505
-    Height = 209
+    Height = 305
     DataSource = DM.dsCidades
-    TabOrder = 16
+    TabOrder = 12
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -255,22 +202,63 @@ object formCadCidades: TformCadCidades
       item
         Expanded = False
         FieldName = 'nome'
+        Width = 129
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'estado'
+        Width = 122
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'cep_Inicial'
+        Width = 86
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'cep_Final'
+        Width = 103
         Visible = True
       end>
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 72
+    Top = 360
+    Width = 337
+    Height = 23
+    DataField = 'estado'
+    DataSource = DM.dsCidades
+    Items.Strings = (
+      'Acre'
+      'Alagoas'
+      'Amap'#225
+      'Amazonas'
+      'Bahia'
+      'Cear'#225
+      'Distrito Federal'
+      'Esp'#237'rito Santo'
+      'Goi'#225's'
+      'Maranh'#227'o'
+      'Mato Grosso'
+      'Mato Grosso do Sul'
+      'Minas Gerais'
+      'Par'#225
+      'Para'#237'ba'
+      'Paran'#225
+      'Pernambuco'
+      'Piau'#237
+      'Rio de Janeiro'
+      'Rio Grande do Norte'
+      'Rio Grande do Sul'
+      'Rond'#244'nia'
+      'Roraima'
+      'Santa Catarina'
+      'S'#227'o Paulo'
+      'Sergipe'
+      'Tocantins')
+    TabOrder = 13
   end
 end

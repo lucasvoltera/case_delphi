@@ -7,7 +7,7 @@ object DM: TDM
     Connected = True
     ConnectionString = 
       'Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Persist Security ' +
-      'Info=False;User ID="";Initial Catalog=master;Data Source=DESKTOP' +
+      'Info=False;User ID="";Initial Catalog=sinqia;Data Source=DESKTOP' +
       '-CRROML5;Use Procedure for Prepare=1;Auto Translate=True;Packet ' +
       'Size=4096;Workstation ID=DESKTOP-CRROML5;Initial File Name="";Us' +
       'e Encryption for Data=False;Tag with column collation when possi' +
@@ -28,8 +28,8 @@ object DM: TDM
     DataSource = dsCidades
     Parameters = <>
     SQL.Strings = (
-      'SELECT * FROM cidades;')
-    Left = 296
+      'SELECT * FROM cidades')
+    Left = 352
     Top = 128
     object sqlCidadescodigo_cidade: TAutoIncField
       FieldName = 'codigo_cidade'
@@ -57,8 +57,8 @@ object DM: TDM
     Connection = conexao
     CursorType = ctStatic
     TableName = 'cidades'
-    Left = 336
-    Top = 232
+    Left = 352
+    Top = 216
     object tbCidadescodigo_cidade: TAutoIncField
       FieldName = 'codigo_cidade'
       ReadOnly = True
@@ -83,14 +83,14 @@ object DM: TDM
   object dsCidades: TDataSource
     DataSet = tbCidades
     Left = 448
-    Top = 232
+    Top = 216
   end
   object tbClientes: TADOTable
     Connection = conexao
     CursorType = ctStatic
     TableName = 'clientes'
-    Left = 408
-    Top = 400
+    Left = 384
+    Top = 520
     object tbClientescodigo_cliente: TAutoIncField
       FieldName = 'codigo_cliente'
       ReadOnly = True
@@ -131,24 +131,24 @@ object DM: TDM
   end
   object dsClientes: TDataSource
     DataSet = tbClientes
-    Left = 520
-    Top = 400
+    Left = 496
+    Top = 520
   end
   object sqlClientes: TADOQuery
     Connection = conexao
     DataSource = dsClientes
     Parameters = <>
-    Left = 400
-    Top = 504
+    Left = 376
+    Top = 624
   end
   object dsSqlCidades: TDataSource
     DataSet = sqlCidades
-    Left = 376
-    Top = 88
+    Left = 440
+    Top = 136
   end
   object dsSqlClientes: TDataSource
     DataSet = sqlClientes
-    Left = 520
-    Top = 504
+    Left = 496
+    Top = 624
   end
 end

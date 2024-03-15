@@ -13,8 +13,8 @@ object Form1: TForm1
   Menu = MainMenu1
   TextHeight = 15
   object MainMenu1: TMainMenu
-    Left = 304
-    Top = 136
+    Left = 280
+    Top = 144
     object Sistema1: TMenuItem
       Caption = 'Sistema'
       object Sistema2: TMenuItem
@@ -24,18 +24,27 @@ object Form1: TForm1
       end
     end
     object Clientes1: TMenuItem
-      Caption = 'Cadastros'
+      Caption = 'Cidades'
       object Clientes2: TMenuItem
-        Caption = 'Clientes'
+        Caption = 'Cadastro'
         OnClick = Clientes2Click
       end
       object Clientes3: TMenuItem
-        Caption = 'Cidades'
+        Caption = 'Consulta'
         OnClick = Clientes3Click
       end
     end
     object Relatorios1: TMenuItem
-      Caption = 'Relatorios'
+      Caption = 'Clientes'
+      object Cadastro1: TMenuItem
+        Caption = 'Cadastro'
+      end
+      object Cadastro2: TMenuItem
+        Caption = 'Consulta'
+      end
+    end
+    object Relatrio1: TMenuItem
+      Caption = 'Relat'#243'rio'
     end
   end
 end

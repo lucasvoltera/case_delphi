@@ -15,9 +15,12 @@ type
     Relatorios1: TMenuItem;
     Clientes2: TMenuItem;
     Clientes3: TMenuItem;
+    Cadastro1: TMenuItem;
+    Cadastro2: TMenuItem;
+    Relatrio1: TMenuItem;
     procedure Sistema2Click(Sender: TObject);
-    procedure Clientes3Click(Sender: TObject);
     procedure Clientes2Click(Sender: TObject);
+    procedure Clientes3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,16 +34,17 @@ implementation
 
 {$R *.dfm}
 
-uses cadCidades, cadClientes, unitDM;
+uses cadCidades, cadClientes, unitDM, conCidades;
 
 procedure TForm1.Clientes2Click(Sender: TObject);
 begin
-  formCadClientes.ShowModal;
+  formCadCidades.ShowModal;
 end;
+
 
 procedure TForm1.Clientes3Click(Sender: TObject);
 begin
-  formCadCidades.ShowModal;
+  formConCidades.ShowModal;
 end;
 
 procedure TForm1.Sistema2Click(Sender: TObject);
