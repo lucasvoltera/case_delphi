@@ -32,22 +32,27 @@ object DM: TDM
     Left = 352
     Top = 128
     object sqlCidadescodigo_cidade: TAutoIncField
+      DisplayWidth = 14
       FieldName = 'codigo_cidade'
       ReadOnly = True
     end
     object sqlCidadesnome: TWideStringField
+      DisplayWidth = 25
       FieldName = 'nome'
       Size = 100
     end
     object sqlCidadesestado: TWideStringField
+      DisplayWidth = 35
       FieldName = 'estado'
       Size = 50
     end
     object sqlCidadescep_Inicial: TWideStringField
+      DisplayWidth = 10
       FieldName = 'cep_Inicial'
       Size = 10
     end
     object sqlCidadescep_Final: TWideStringField
+      DisplayWidth = 10
       FieldName = 'cep_Final'
       Size = 10
     end
@@ -86,11 +91,12 @@ object DM: TDM
     Top = 216
   end
   object tbClientes: TADOTable
+    Active = True
     Connection = conexao
     CursorType = ctStatic
     TableName = 'clientes'
-    Left = 384
-    Top = 520
+    Left = 352
+    Top = 401
     object tbClientescodigo_cliente: TAutoIncField
       FieldName = 'codigo_cliente'
       ReadOnly = True
@@ -131,15 +137,25 @@ object DM: TDM
   end
   object dsClientes: TDataSource
     DataSet = tbClientes
-    Left = 496
-    Top = 520
+    Left = 472
+    Top = 400
   end
   object sqlClientes: TADOQuery
+    Active = True
     Connection = conexao
+    CursorType = ctStatic
     DataSource = dsClientes
-    Parameters = <>
-    Left = 376
-    Top = 624
+    Parameters = <
+      item
+        Name = 'pConsulta'
+        DataType = ftString
+        Size = -1
+        Value = ''
+      end>
+    SQL.Strings = (
+      'select * from clientes;')
+    Left = 352
+    Top = 512
   end
   object dsSqlCidades: TDataSource
     DataSet = sqlCidades
@@ -148,7 +164,7 @@ object DM: TDM
   end
   object dsSqlClientes: TDataSource
     DataSet = sqlClientes
-    Left = 496
-    Top = 624
+    Left = 480
+    Top = 520
   end
 end
