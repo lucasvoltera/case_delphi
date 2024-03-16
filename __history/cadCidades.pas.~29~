@@ -12,10 +12,10 @@ type
     Panel1: TPanel;
     Label1: TLabel;
     DBEdit1: TDBEdit;
-    DBEdit3: TDBEdit;
+    editCepInicial: TDBEdit;
     lblName: TLabel;
     label2: TLabel;
-    DBEdit4: TDBEdit;
+    editCepFinal: TDBEdit;
     Label3: TLabel;
     Label4: TLabel;
     btPrimeiro: TButton;
@@ -28,6 +28,8 @@ type
     btAnterior: TButton;
     DBGrid1: TDBGrid;
     DBComboBox1: TDBComboBox;
+    Label5: TLabel;
+    DBText1: TDBText;
     procedure btInserirClick(Sender: TObject);
     procedure btSalvarClick(Sender: TObject);
     procedure btCancelarClick(Sender: TObject);
@@ -37,6 +39,7 @@ type
     procedure btProximoClick(Sender: TObject);
     procedure btUltimoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -117,13 +120,17 @@ begin
 end;
 
 
+procedure TformCadCidades.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Self := nil;
+end;
+
 procedure TformCadCidades.FormCreate(Sender: TObject);
 begin
   DM.tbCidades.Close;
   DM.tbCidades.Open;
-
   btSalvar.Enabled := False;
-
+  btCancelar.Enabled := False;
 end;
 
 end.

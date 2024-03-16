@@ -9,23 +9,23 @@ uses
 type
   TformRelClientes = class(TForm)
     Panel1: TPanel;
-    Label1: TLabel;
+    lblTitulo: TLabel;
     editClienteInicial: TEdit;
     editClienteFinal: TEdit;
-    Label2: TLabel;
+    lblCodCliente: TLabel;
     editCidadeInicial: TEdit;
     editCidadeFinal: TEdit;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
-    Label7: TLabel;
-    Label8: TLabel;
-    Button1: TButton;
+    lblCodCidade: TLabel;
+    codClienteInicial: TLabel;
+    lblcodClienteFinal: TLabel;
+    lblcodCidadeInciial: TLabel;
+    lblcodCidadeFinal: TLabel;
+    lblEstado: TLabel;
+    btRelatorio: TButton;
     checkAgruparCidade: TCheckBox;
     comboEstado: TComboBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure Button1Click(Sender: TObject);
+    procedure btRelatorioClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,7 +41,7 @@ implementation
 
 uses unitDM;
 
-procedure TformRelClientes.Button1Click(Sender: TObject);
+procedure TformRelClientes.btRelatorioClick(Sender: TObject);
 begin
   if (checkAgruparCidade.Checked) then
   begin

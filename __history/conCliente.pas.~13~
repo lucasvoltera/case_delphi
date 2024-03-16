@@ -11,11 +11,11 @@ type
   TformConCliente = class(TForm)
     lblBusca: TLabel;
     radioGroupOpcoes: TRadioGroup;
-    editConsulta: TEdit;
+    txtConsulta: TEdit;
     btBuscar: TButton;
-    gridConClientes: TDBGrid;
+    DBGrid1: TDBGrid;
     Panel1: TPanel;
-    lblTitulo: TLabel;
+    Label1: TLabel;
     procedure radioGroupOpcoesClick(Sender: TObject);
     procedure btBuscarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -44,7 +44,7 @@ begin
     0: // Consulta por nome
        begin
          DM.sqlClientes.SQL.Add('SELECT * FROM clientes WHERE nome LIKE :pConsulta');
-         DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := editConsulta.Text + '%';
+         DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%';
        end;
     1: // Consulta por cidade
        begin
@@ -52,26 +52,26 @@ begin
                               'FROM clientes ' +
                               'INNER JOIN cidades ON clientes.codigo_Cidade = cidades.codigo_cidade ' +
                               'WHERE cidades.nome LIKE :pConsulta');
-        DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := '%' + editConsulta.Text + '%';
+        DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := '%' + txtConsulta.Text + '%';
        end;
     2: // Consulta por CEP
        begin
           DM.sqlClientes.SQL.Add('SELECT * FROM clientes WHERE cep LIKE :pConsulta');
-          DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := editConsulta.Text + '%';
+          DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%';
        end;
     3: // Consulta por CPF
        begin
          DM.sqlClientes.SQL.Add('SELECT * FROM clientes WHERE CGC_CPF_cliente LIKE :pConsulta');
-         DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := editConsulta.Text + '%';
+         DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%';
        end;
     4: // Consulta por email
        begin
          DM.sqlClientes.SQL.Add('SELECT * FROM clientes WHERE email LIKE :pConsulta');
-         DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := editConsulta.Text + '%';
+         DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%';
        end;
   else
-    ShowMessage('Op√ß√£o inv√°lida');
-    Exit; // Sai da rotina se a op√ß√£o for inv√°lida!!
+    ShowMessage('OpÁ„o inv·lida');
+    Exit; // Sai da rotina se a opÁ„o for inv·lida!!
   end;
 
   DM.sqlClientes.Open;
@@ -101,7 +101,7 @@ begin
     3: lblBusca.Caption := 'Digite o CPF';
     4: lblBusca.Caption := 'Digite o Email';
   else
-    lblBusca.Caption := 'Op√ß√£o inv√°lida';
+    lblBusca.Caption := 'OpÁ„o inv·lida';
   end;
 end;
 

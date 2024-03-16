@@ -10,24 +10,24 @@ uses
 type
   TformCadClientes = class(TForm)
     Panel1: TPanel;
-    lblTitulo: TLabel;
-    lblCPF: TLabel;
-    lblTelefone: TLabel;
-    lblEndereco: TLabel;
-    lblBairro: TLabel;
-    lblCompleto: TLabel;
-    lblEmail: TLabel;
-    lblCidade: TLabel;
-    lblCep: TLabel;
-    lblNome: TLabel;
-    editCPF: TDBEdit;
-    editTelefone: TDBEdit;
-    editEmail: TDBEdit;
-    editBairro: TDBEdit;
-    editEndere√ßo: TDBEdit;
-    editCompleto: TDBEdit;
-    editCEP: TDBEdit;
-    gridClientes: TDBGrid;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    DBGrid1: TDBGrid;
     btPrimeiro: TButton;
     btProximo: TButton;
     btUltimo: TButton;
@@ -36,9 +36,8 @@ type
     btDeletar: TButton;
     btCancelar: TButton;
     btAnterior: TButton;
-    editNome: TDBEdit;
-    comboCidade: TDBLookupComboBox;
-    Button1: TButton;
+    DBEditName: TDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
     procedure btPrimeiroClick(Sender: TObject);
     procedure btAnteriorClick(Sender: TObject);
     procedure btProximoClick(Sender: TObject);
@@ -82,7 +81,7 @@ end;
 
 procedure TformCadClientes.btDeletarClick(Sender: TObject);
 begin
-  if Application.MessageBox('Deseja Realmente deletar o registro?', 'Aten√ß√£o', MB_ICONQUESTION+MB_YESNO) = mrYes then
+  if Application.MessageBox('Deseja Realmente deletar o registro?', 'AtenÁ„o', MB_ICONQUESTION+MB_YESNO) = mrYes then
     begin
       DM.tbClientes.Delete;
     end;

@@ -10,24 +10,24 @@ uses
 type
   TformCadClientes = class(TForm)
     Panel1: TPanel;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
-    Label7: TLabel;
-    Label8: TLabel;
-    Label9: TLabel;
-    Label10: TLabel;
-    DBEdit2: TDBEdit;
-    DBEdit3: TDBEdit;
-    DBEdit4: TDBEdit;
-    DBEdit6: TDBEdit;
-    DBEdit7: TDBEdit;
-    DBEdit8: TDBEdit;
-    DBEdit9: TDBEdit;
-    DBGrid1: TDBGrid;
+    lblTitulo: TLabel;
+    lblCPF: TLabel;
+    lblTelefone: TLabel;
+    lblEndereco: TLabel;
+    lblBairro: TLabel;
+    lblCompleto: TLabel;
+    lblEmail: TLabel;
+    lblCidade: TLabel;
+    lblCep: TLabel;
+    lblNome: TLabel;
+    editCPF: TDBEdit;
+    editTelefone: TDBEdit;
+    editEmail: TDBEdit;
+    editBairro: TDBEdit;
+    editEndereço: TDBEdit;
+    editCompleto: TDBEdit;
+    editCEP: TDBEdit;
+    gridClientes: TDBGrid;
     btPrimeiro: TButton;
     btProximo: TButton;
     btUltimo: TButton;
@@ -36,8 +36,9 @@ type
     btDeletar: TButton;
     btCancelar: TButton;
     btAnterior: TButton;
-    DBEditName: TDBEdit;
-    DBLookupComboBox1: TDBLookupComboBox;
+    editNome: TDBEdit;
+    comboCidade: TDBLookupComboBox;
+    btEditar: TButton;
     procedure btPrimeiroClick(Sender: TObject);
     procedure btAnteriorClick(Sender: TObject);
     procedure btProximoClick(Sender: TObject);
@@ -48,6 +49,7 @@ type
     procedure btCancelarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btEditarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,6 +87,27 @@ begin
     begin
       DM.tbClientes.Delete;
     end;
+end;
+
+procedure TformCadClientes.btEditarClick(Sender: TObject);
+begin
+   // Verifica se há algum registro selecionado no DBGrid
+  if DM.tbClientes.IsEmpty then
+  begin
+    Application.MessageBox('Não há registros para editar.', 'Alerta', MB_ICONWARNING or MB_OK);
+    Exit;
+  end;
+
+  // Desabilita os botões de inserir e deletar
+  btInserir.Enabled := False;
+  btDeletar.Enabled := False;
+
+  // Habilita os botões de salvar e cancelar
+  btSalvar.Enabled := True;
+  btCancelar.Enabled := True;
+
+  // Ativa o modo de edição
+  DM.tbClientes.Edit;
 end;
 
 procedure TformCadClientes.btInserirClick(Sender: TObject);

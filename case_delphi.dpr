@@ -2,7 +2,7 @@ program case_delphi;
 
 uses
   Vcl.Forms,
-  unitPrincipal in 'unitPrincipal.pas' {Form1},
+  unitPrincipal in 'unitPrincipal.pas' {formTelaPrincipal},
   unitDM in 'unitDM.pas' {DM: TDataModule},
   cadCidades in 'cadCidades.pas' {formCadCidades},
   cadClientes in 'cadClientes.pas' {formCadClientes},
@@ -16,6 +16,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TDM, DM);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TformTelaPrincipal, formTelaPrincipal);
   Application.Run;
 end.

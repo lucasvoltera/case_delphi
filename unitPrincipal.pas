@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
 
 type
-  TForm1 = class(TForm)
+  TformTelaPrincipal = class(TForm)
     MainMenu1: TMainMenu;
     Sistema1: TMenuItem;
     Sistema2: TMenuItem;
@@ -31,7 +31,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  formTelaPrincipal: TformTelaPrincipal;
 
 implementation
 
@@ -39,38 +39,38 @@ implementation
 
 uses cadCidades, cadClientes, unitDM, conCidades, conCliente, relClientes;
 
-procedure TForm1.Cadastro1Click(Sender: TObject);
+procedure TformTelaPrincipal.Cadastro1Click(Sender: TObject);
 begin
   Application.CreateForm(TformCadClientes, formCadClientes);
   formCadClientes.ShowModal;
 end;
 
-procedure TForm1.Cadastro2Click(Sender: TObject);
+procedure TformTelaPrincipal.Cadastro2Click(Sender: TObject);
 begin
   Application.CreateForm(TformConCliente, formConCliente);
   formConCliente.ShowModal;
 end;
 
-procedure TForm1.Clientes2Click(Sender: TObject);
+procedure TformTelaPrincipal.Clientes2Click(Sender: TObject);
 begin
   Application.CreateForm(TformCadCidades, formCadCidades);
   formCadCidades.ShowModal;
 end;
 
 
-procedure TForm1.Clientes3Click(Sender: TObject);
+procedure TformTelaPrincipal.Clientes3Click(Sender: TObject);
 begin
   Application.CreateForm(TformConCidade, formConCidade);
   formConCidade.ShowModal;
 end;
 
-procedure TForm1.RelatorioClick(Sender: TObject);
+procedure TformTelaPrincipal.RelatorioClick(Sender: TObject);
 begin
   Application.CreateForm(TformRelClientes, formRelClientes);
   formRelClientes.ShowModal;
 end;
 
-procedure TForm1.Sistema2Click(Sender: TObject);
+procedure TformTelaPrincipal.Sistema2Click(Sender: TObject);
 begin
   Application.Terminate;
 end;

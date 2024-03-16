@@ -2,8 +2,8 @@ object formRelClientes: TformRelClientes
   Left = 0
   Top = 0
   Caption = 'Relat'#243'rio de Clientes'
-  ClientHeight = 305
-  ClientWidth = 636
+  ClientHeight = 329
+  ClientWidth = 648
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,49 +12,49 @@ object formRelClientes: TformRelClientes
   Font.Style = []
   OnClose = FormClose
   TextHeight = 15
-  object Label2: TLabel
+  object lblCodCliente: TLabel
     Left = 96
     Top = 160
     Width = 96
     Height = 15
     Caption = 'C'#243'digo do Cliente'
   end
-  object Label3: TLabel
+  object lblCodCidade: TLabel
     Left = 281
     Top = 160
     Width = 95
     Height = 15
     Caption = 'C'#243'digo da Cidade'
   end
-  object Label4: TLabel
+  object codClienteInicial: TLabel
     Left = 59
     Top = 184
     Width = 31
     Height = 15
     Caption = 'Inicial'
   end
-  object Label5: TLabel
+  object lblcodClienteFinal: TLabel
     Left = 65
     Top = 213
     Width = 25
     Height = 15
     Caption = 'Final'
   end
-  object Label6: TLabel
+  object lblcodCidadeInciial: TLabel
     Left = 244
     Top = 184
     Width = 31
     Height = 15
     Caption = 'Inicial'
   end
-  object Label7: TLabel
+  object lblcodCidadeFinal: TLabel
     Left = 250
     Top = 213
     Width = 25
     Height = 15
     Caption = 'Final'
   end
-  object Label8: TLabel
+  object lblEstado: TLabel
     Left = 433
     Top = 160
     Width = 98
@@ -64,12 +64,12 @@ object formRelClientes: TformRelClientes
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 636
+    Width = 648
     Height = 129
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 632
-    object Label1: TLabel
+    ExplicitWidth = 630
+    object lblTitulo: TLabel
       Left = 72
       Top = 48
       Width = 292
@@ -161,14 +161,14 @@ object formRelClientes: TformRelClientes
     TabOrder = 5
     Text = '999'
   end
-  object Button1: TButton
-    Left = 250
-    Top = 249
+  object btRelatorio: TButton
+    Left = 235
+    Top = 257
     Width = 167
     Height = 25
-    Caption = 'Relat'#243'rio...'
+    Caption = 'Gerar Relat'#243'rio'
     TabOrder = 6
-    OnClick = Button1Click
+    OnClick = btRelatorioClick
   end
   object checkAgruparCidade: TCheckBox
     Left = 434

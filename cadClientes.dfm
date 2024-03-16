@@ -1,4 +1,4 @@
-object formCadClientes: TformCadClientes
+﻿object formCadClientes: TformCadClientes
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]
@@ -15,8 +15,8 @@ object formCadClientes: TformCadClientes
   OnClose = FormClose
   OnCreate = FormCreate
   TextHeight = 15
-  object Label2: TLabel
-    Left = 248
+  object lblCPF: TLabel
+    Left = 232
     Top = 173
     Width = 33
     Height = 28
@@ -28,8 +28,8 @@ object formCadClientes: TformCadClientes
     Font.Style = []
     ParentFont = False
   end
-  object Label3: TLabel
-    Left = 37
+  object lblTelefone: TLabel
+    Left = 21
     Top = 261
     Width = 72
     Height = 28
@@ -41,8 +41,8 @@ object formCadClientes: TformCadClientes
     Font.Style = []
     ParentFont = False
   end
-  object Label4: TLabel
-    Left = 37
+  object lblEndereco: TLabel
+    Left = 21
     Top = 429
     Width = 81
     Height = 28
@@ -54,8 +54,8 @@ object formCadClientes: TformCadClientes
     Font.Style = []
     ParentFont = False
   end
-  object Label5: TLabel
-    Left = 248
+  object lblBairro: TLabel
+    Left = 232
     Top = 349
     Width = 52
     Height = 28
@@ -67,8 +67,8 @@ object formCadClientes: TformCadClientes
     Font.Style = []
     ParentFont = False
   end
-  object Label6: TLabel
-    Left = 248
+  object lblCompleto: TLabel
+    Left = 232
     Top = 429
     Width = 125
     Height = 28
@@ -80,8 +80,8 @@ object formCadClientes: TformCadClientes
     Font.Style = []
     ParentFont = False
   end
-  object Label7: TLabel
-    Left = 248
+  object lblEmail: TLabel
+    Left = 232
     Top = 261
     Width = 47
     Height = 28
@@ -93,8 +93,8 @@ object formCadClientes: TformCadClientes
     Font.Style = []
     ParentFont = False
   end
-  object Label8: TLabel
-    Left = 37
+  object lblCidade: TLabel
+    Left = 21
     Top = 349
     Width = 61
     Height = 28
@@ -106,8 +106,8 @@ object formCadClientes: TformCadClientes
     Font.Style = []
     ParentFont = False
   end
-  object Label9: TLabel
-    Left = 37
+  object lblCep: TLabel
+    Left = 21
     Top = 506
     Width = 33
     Height = 28
@@ -119,8 +119,8 @@ object formCadClientes: TformCadClientes
     Font.Style = []
     ParentFont = False
   end
-  object Label10: TLabel
-    Left = 37
+  object lblNome: TLabel
+    Left = 21
     Top = 173
     Width = 54
     Height = 28
@@ -139,8 +139,8 @@ object formCadClientes: TformCadClientes
     Height = 121
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 1044
-    object Label1: TLabel
+    ExplicitWidth = 1042
+    object lblTitulo: TLabel
       Left = 48
       Top = 45
       Width = 281
@@ -154,8 +154,8 @@ object formCadClientes: TformCadClientes
       ParentFont = False
     end
   end
-  object DBEditName: TDBEdit
-    Left = 37
+  object editNome: TDBEdit
+    Left = 21
     Top = 207
     Width = 172
     Height = 23
@@ -163,8 +163,8 @@ object formCadClientes: TformCadClientes
     DataSource = DM.dsClientes
     TabOrder = 1
   end
-  object DBEdit2: TDBEdit
-    Left = 248
+  object editCPF: TDBEdit
+    Left = 232
     Top = 207
     Width = 193
     Height = 23
@@ -172,8 +172,8 @@ object formCadClientes: TformCadClientes
     DataSource = DM.dsClientes
     TabOrder = 2
   end
-  object DBEdit3: TDBEdit
-    Left = 37
+  object editTelefone: TDBEdit
+    Left = 21
     Top = 295
     Width = 172
     Height = 23
@@ -181,8 +181,8 @@ object formCadClientes: TformCadClientes
     DataSource = DM.dsClientes
     TabOrder = 3
   end
-  object DBEdit4: TDBEdit
-    Left = 248
+  object editEmail: TDBEdit
+    Left = 232
     Top = 295
     Width = 193
     Height = 23
@@ -190,8 +190,8 @@ object formCadClientes: TformCadClientes
     DataSource = DM.dsClientes
     TabOrder = 4
   end
-  object DBEdit6: TDBEdit
-    Left = 248
+  object editBairro: TDBEdit
+    Left = 232
     Top = 383
     Width = 193
     Height = 23
@@ -199,8 +199,8 @@ object formCadClientes: TformCadClientes
     DataSource = DM.dsClientes
     TabOrder = 5
   end
-  object DBEdit7: TDBEdit
-    Left = 37
+  object editEndereço: TDBEdit
+    Left = 21
     Top = 463
     Width = 172
     Height = 23
@@ -208,8 +208,8 @@ object formCadClientes: TformCadClientes
     DataSource = DM.dsClientes
     TabOrder = 6
   end
-  object DBEdit8: TDBEdit
-    Left = 248
+  object editCompleto: TDBEdit
+    Left = 232
     Top = 463
     Width = 193
     Height = 23
@@ -217,8 +217,8 @@ object formCadClientes: TformCadClientes
     DataSource = DM.dsClientes
     TabOrder = 7
   end
-  object DBEdit9: TDBEdit
-    Left = 37
+  object editCEP: TDBEdit
+    Left = 21
     Top = 540
     Width = 172
     Height = 23
@@ -226,11 +226,11 @@ object formCadClientes: TformCadClientes
     DataSource = DM.dsClientes
     TabOrder = 8
   end
-  object DBGrid1: TDBGrid
-    Left = 504
+  object gridClientes: TDBGrid
+    Left = 448
     Top = 232
-    Width = 505
-    Height = 374
+    Width = 569
+    Height = 369
     DataSource = DM.dsClientes
     TabOrder = 9
     TitleFont.Charset = DEFAULT_CHARSET
@@ -271,8 +271,8 @@ object formCadClientes: TformCadClientes
       end>
   end
   object btPrimeiro: TButton
-    Left = 504
-    Top = 160
+    Left = 448
+    Top = 185
     Width = 57
     Height = 41
     Caption = '<<'
@@ -280,8 +280,8 @@ object formCadClientes: TformCadClientes
     OnClick = btPrimeiroClick
   end
   object btProximo: TButton
-    Left = 631
-    Top = 160
+    Left = 575
+    Top = 185
     Width = 58
     Height = 41
     Caption = '>'
@@ -289,8 +289,8 @@ object formCadClientes: TformCadClientes
     OnClick = btProximoClick
   end
   object btUltimo: TButton
-    Left = 695
-    Top = 160
+    Left = 639
+    Top = 185
     Width = 58
     Height = 41
     Caption = '>>'
@@ -298,8 +298,8 @@ object formCadClientes: TformCadClientes
     OnClick = btUltimoClick
   end
   object btInserir: TButton
-    Left = 759
-    Top = 160
+    Left = 703
+    Top = 185
     Width = 58
     Height = 41
     Caption = 'Inserir'
@@ -307,8 +307,8 @@ object formCadClientes: TformCadClientes
     OnClick = btInserirClick
   end
   object btSalvar: TButton
-    Left = 823
-    Top = 160
+    Left = 767
+    Top = 185
     Width = 58
     Height = 41
     Caption = 'Salvar'
@@ -316,8 +316,8 @@ object formCadClientes: TformCadClientes
     OnClick = btSalvarClick
   end
   object btDeletar: TButton
-    Left = 887
-    Top = 160
+    Left = 831
+    Top = 185
     Width = 58
     Height = 41
     Caption = 'Deletar'
@@ -325,8 +325,8 @@ object formCadClientes: TformCadClientes
     OnClick = btDeletarClick
   end
   object btCancelar: TButton
-    Left = 951
-    Top = 160
+    Left = 959
+    Top = 185
     Width = 58
     Height = 41
     Caption = 'Cancelar'
@@ -334,16 +334,16 @@ object formCadClientes: TformCadClientes
     OnClick = btCancelarClick
   end
   object btAnterior: TButton
-    Left = 567
-    Top = 160
+    Left = 511
+    Top = 185
     Width = 58
     Height = 41
     Caption = '<'
     TabOrder = 17
     OnClick = btAnteriorClick
   end
-  object DBLookupComboBox1: TDBLookupComboBox
-    Left = 37
+  object comboCidade: TDBLookupComboBox
+    Left = 21
     Top = 383
     Width = 172
     Height = 23
@@ -353,5 +353,14 @@ object formCadClientes: TformCadClientes
     ListField = 'nome'
     ListSource = DM.dsCidades
     TabOrder = 18
+  end
+  object btEditar: TButton
+    Left = 895
+    Top = 185
+    Width = 58
+    Height = 41
+    Caption = 'Editar'
+    TabOrder = 19
+    OnClick = btEditarClick
   end
 end

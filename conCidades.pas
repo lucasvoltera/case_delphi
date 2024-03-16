@@ -11,10 +11,10 @@ type
   TformConCidade = class(TForm)
     lblBusca: TLabel;
     radioGroupOpcoes: TRadioGroup;
-    txtConsulta: TEdit;
+    editConsulta: TEdit;
     btBuscar: TButton;
-    DBGrid1: TDBGrid;
-    Label1: TLabel;
+    gridConCidades: TDBGrid;
+    lblTitulo: TLabel;
     Panel1: TPanel;
     procedure btBuscarClick(Sender: TObject);
     procedure radioGroupOpcoesClick(Sender: TObject);
@@ -43,12 +43,12 @@ begin
   if radioGroupOpcoes.ItemIndex = 0 then
      begin
         DM.sqlCidades.SQL.Add('SELECT * FROM cidades WHERE nome LIKE :pConsulta');
-        DM.sqlCidades.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%'
+        DM.sqlCidades.Parameters.ParamByName('pConsulta').Value := editConsulta.Text + '%'
      end
   else
       begin
         DM.sqlCidades.SQL.Add('SELECT * FROM cidades WHERE estado LIKE :pConsulta');
-        DM.sqlCidades.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%';
+        DM.sqlCidades.Parameters.ParamByName('pConsulta').Value := editConsulta.Text + '%';
       end;
 
    DM.sqlCidades.Open;

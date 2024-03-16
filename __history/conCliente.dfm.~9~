@@ -43,7 +43,7 @@ object formConCliente: TformConCliente
     TabOrder = 0
     OnClick = radioGroupOpcoesClick
   end
-  object editConsulta: TEdit
+  object txtConsulta: TEdit
     Left = 404
     Top = 195
     Width = 310
@@ -60,7 +60,7 @@ object formConCliente: TformConCliente
     TabOrder = 2
     OnClick = btBuscarClick
   end
-  object gridConClientes: TDBGrid
+  object DBGrid1: TDBGrid
     Left = 56
     Top = 329
     Width = 729
@@ -164,8 +164,8 @@ object formConCliente: TformConCliente
     Height = 129
     Align = alTop
     TabOrder = 4
-    ExplicitWidth = 829
-    object lblTitulo: TLabel
+    ExplicitWidth = 831
+    object Label1: TLabel
       Left = 56
       Top = 49
       Width = 286

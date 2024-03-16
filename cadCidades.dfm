@@ -16,8 +16,8 @@ object formCadCidades: TformCadCidades
   OnCreate = FormCreate
   TextHeight = 15
   object lblName: TLabel
-    Left = 72
-    Top = 246
+    Left = 32
+    Top = 254
     Width = 54
     Height = 28
     Caption = 'Nome'
@@ -28,9 +28,9 @@ object formCadCidades: TformCadCidades
     Font.Style = []
     ParentFont = False
   end
-  object label2: TLabel
-    Left = 72
-    Top = 318
+  object lblEstado: TLabel
+    Left = 32
+    Top = 326
     Width = 59
     Height = 28
     Caption = 'Estado'
@@ -41,9 +41,9 @@ object formCadCidades: TformCadCidades
     Font.Style = []
     ParentFont = False
   end
-  object Label3: TLabel
-    Left = 72
-    Top = 398
+  object lblCepInicial: TLabel
+    Left = 32
+    Top = 406
     Width = 89
     Height = 28
     Caption = 'Cep Inicial'
@@ -54,9 +54,9 @@ object formCadCidades: TformCadCidades
     Font.Style = []
     ParentFont = False
   end
-  object Label4: TLabel
-    Left = 247
-    Top = 398
+  object lblCepFinal: TLabel
+    Left = 207
+    Top = 406
     Width = 80
     Height = 28
     Caption = 'Cep Final'
@@ -67,9 +67,9 @@ object formCadCidades: TformCadCidades
     Font.Style = []
     ParentFont = False
   end
-  object Label5: TLabel
-    Left = 72
-    Top = 169
+  object lblCod: TLabel
+    Left = 32
+    Top = 177
     Width = 65
     Height = 28
     Caption = 'C'#243'digo'
@@ -81,8 +81,8 @@ object formCadCidades: TformCadCidades
     ParentFont = False
   end
   object DBText1: TDBText
-    Left = 72
-    Top = 192
+    Left = 32
+    Top = 200
     Width = 65
     Height = 29
     DataField = 'codigo_cidade'
@@ -101,8 +101,8 @@ object formCadCidades: TformCadCidades
     Height = 129
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 998
-    object Label1: TLabel
+    ExplicitWidth = 996
+    object lblTitulo: TLabel
       Left = 48
       Top = 44
       Width = 279
@@ -116,9 +116,9 @@ object formCadCidades: TformCadCidades
       ParentFont = False
     end
   end
-  object DBEdit1: TDBEdit
-    Left = 72
-    Top = 280
+  object txtName: TDBEdit
+    Left = 32
+    Top = 288
     Width = 337
     Height = 23
     DataField = 'nome'
@@ -126,8 +126,8 @@ object formCadCidades: TformCadCidades
     TabOrder = 1
   end
   object editCepInicial: TDBEdit
-    Left = 72
-    Top = 432
+    Left = 32
+    Top = 440
     Width = 145
     Height = 23
     DataField = 'cep_Inicial'
@@ -135,8 +135,8 @@ object formCadCidades: TformCadCidades
     TabOrder = 3
   end
   object editCepFinal: TDBEdit
-    Left = 247
-    Top = 432
+    Left = 207
+    Top = 440
     Width = 162
     Height = 23
     DataField = 'cep_Final'
@@ -144,8 +144,8 @@ object formCadCidades: TformCadCidades
     TabOrder = 4
   end
   object btPrimeiro: TButton
-    Left = 456
-    Top = 168
+    Left = 408
+    Top = 185
     Width = 57
     Height = 41
     Caption = '<<'
@@ -153,8 +153,8 @@ object formCadCidades: TformCadCidades
     OnClick = btPrimeiroClick
   end
   object btProximo: TButton
-    Left = 583
-    Top = 168
+    Left = 535
+    Top = 185
     Width = 58
     Height = 41
     Caption = '>'
@@ -162,8 +162,8 @@ object formCadCidades: TformCadCidades
     OnClick = btProximoClick
   end
   object btUltimo: TButton
-    Left = 647
-    Top = 168
+    Left = 599
+    Top = 185
     Width = 58
     Height = 41
     Caption = '>>'
@@ -171,8 +171,8 @@ object formCadCidades: TformCadCidades
     OnClick = btUltimoClick
   end
   object btInserir: TButton
-    Left = 711
-    Top = 168
+    Left = 663
+    Top = 185
     Width = 58
     Height = 41
     Caption = 'Inserir'
@@ -180,8 +180,8 @@ object formCadCidades: TformCadCidades
     OnClick = btInserirClick
   end
   object btSalvar: TButton
-    Left = 775
-    Top = 168
+    Left = 727
+    Top = 185
     Width = 58
     Height = 41
     Caption = 'Salvar'
@@ -189,8 +189,8 @@ object formCadCidades: TformCadCidades
     OnClick = btSalvarClick
   end
   object btDeletar: TButton
-    Left = 839
-    Top = 168
+    Left = 791
+    Top = 185
     Width = 58
     Height = 41
     Caption = 'Deletar'
@@ -198,8 +198,8 @@ object formCadCidades: TformCadCidades
     OnClick = btDeletarClick
   end
   object btCancelar: TButton
-    Left = 903
-    Top = 168
+    Left = 919
+    Top = 185
     Width = 58
     Height = 41
     Caption = 'Cancelar'
@@ -207,18 +207,18 @@ object formCadCidades: TformCadCidades
     OnClick = btCancelarClick
   end
   object btAnterior: TButton
-    Left = 519
-    Top = 168
+    Left = 471
+    Top = 185
     Width = 58
     Height = 41
     Caption = '<'
     TabOrder = 12
     OnClick = btAnteriorClick
   end
-  object DBGrid1: TDBGrid
-    Left = 456
+  object gridCidades: TDBGrid
+    Left = 408
     Top = 232
-    Width = 505
+    Width = 569
     Height = 305
     DataSource = DM.dsCidades
     TabOrder = 13
@@ -259,9 +259,9 @@ object formCadCidades: TformCadCidades
         Visible = True
       end>
   end
-  object DBComboBox1: TDBComboBox
-    Left = 72
-    Top = 360
+  object txtEstado: TDBComboBox
+    Left = 32
+    Top = 368
     Width = 337
     Height = 22
     Style = csOwnerDrawFixed
@@ -296,5 +296,14 @@ object formCadCidades: TformCadCidades
       'Sergipe'
       'Tocantins')
     TabOrder = 2
+  end
+  object btEditar: TButton
+    Left = 855
+    Top = 185
+    Width = 58
+    Height = 41
+    Caption = 'Editar'
+    TabOrder = 14
+    OnClick = btEditarClick
   end
 end

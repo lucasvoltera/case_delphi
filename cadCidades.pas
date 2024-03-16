@@ -10,14 +10,14 @@ uses
 type
   TformCadCidades = class(TForm)
     Panel1: TPanel;
-    Label1: TLabel;
-    DBEdit1: TDBEdit;
+    lblTitulo: TLabel;
+    txtName: TDBEdit;
     editCepInicial: TDBEdit;
     lblName: TLabel;
-    label2: TLabel;
+    lblEstado: TLabel;
     editCepFinal: TDBEdit;
-    Label3: TLabel;
-    Label4: TLabel;
+    lblCepInicial: TLabel;
+    lblCepFinal: TLabel;
     btPrimeiro: TButton;
     btProximo: TButton;
     btUltimo: TButton;
@@ -26,10 +26,11 @@ type
     btDeletar: TButton;
     btCancelar: TButton;
     btAnterior: TButton;
-    DBGrid1: TDBGrid;
-    DBComboBox1: TDBComboBox;
-    Label5: TLabel;
+    gridCidades: TDBGrid;
+    txtEstado: TDBComboBox;
+    lblCod: TLabel;
     DBText1: TDBText;
+    btEditar: TButton;
     procedure btInserirClick(Sender: TObject);
     procedure btSalvarClick(Sender: TObject);
     procedure btCancelarClick(Sender: TObject);
@@ -40,6 +41,7 @@ type
     procedure btUltimoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btEditarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -79,6 +81,27 @@ begin
     begin
       DM.tbCidades.Delete;
     end;
+end;
+
+procedure TformCadCidades.btEditarClick(Sender: TObject);
+begin
+  // Verifica se há algum registro selecionado no DBGrid
+  if DM.tbCidades.IsEmpty then
+  begin
+    Application.MessageBox('Não há registros para editar.', 'Alerta', MB_ICONWARNING or MB_OK);
+    Exit;
+  end;
+
+  // Desabilita os botões de inserir e deletar
+  btInserir.Enabled := False;
+  btDeletar.Enabled := False;
+
+  // Habilita os botões de salvar e cancelar
+  btSalvar.Enabled := True;
+  btCancelar.Enabled := True;
+
+  // Ativa o modo de edição
+  DM.tbCidades.Edit;
 end;
 
 procedure TformCadCidades.btInserirClick(Sender: TObject);

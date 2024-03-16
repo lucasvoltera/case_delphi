@@ -1,7 +1,7 @@
-object formTelaPrincipal: TformTelaPrincipal
+object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Tela Principal'
+  Caption = 'Form1'
   ClientHeight = 442
   ClientWidth = 628
   Color = clBtnFace

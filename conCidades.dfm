@@ -40,7 +40,7 @@ object formConCidade: TformConCidade
     TabOrder = 0
     OnClick = radioGroupOpcoesClick
   end
-  object txtConsulta: TEdit
+  object editConsulta: TEdit
     Left = 387
     Top = 211
     Width = 310
@@ -49,7 +49,7 @@ object formConCidade: TformConCidade
     TabOrder = 1
   end
   object btBuscar: TButton
-    Left = 179
+    Left = 267
     Top = 265
     Width = 238
     Height = 40
@@ -57,7 +57,7 @@ object formConCidade: TformConCidade
     TabOrder = 2
     OnClick = btBuscarClick
   end
-  object DBGrid1: TDBGrid
+  object gridConCidades: TDBGrid
     Left = 48
     Top = 328
     Width = 729
@@ -112,8 +112,8 @@ object formConCidade: TformConCidade
     Height = 129
     Align = alTop
     TabOrder = 4
-    ExplicitWidth = 842
-    object Label1: TLabel
+    ExplicitWidth = 840
+    object lblTitulo: TLabel
       Left = 72
       Top = 48
       Width = 285
