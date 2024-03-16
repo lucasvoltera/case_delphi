@@ -23,7 +23,6 @@ type
     DBEdit2: TDBEdit;
     DBEdit3: TDBEdit;
     DBEdit4: TDBEdit;
-    DBEdit5: TDBEdit;
     DBEdit6: TDBEdit;
     DBEdit7: TDBEdit;
     DBEdit8: TDBEdit;
@@ -38,6 +37,7 @@ type
     btCancelar: TButton;
     btAnterior: TButton;
     DBEditName: TDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
     procedure btPrimeiroClick(Sender: TObject);
     procedure btAnteriorClick(Sender: TObject);
     procedure btProximoClick(Sender: TObject);

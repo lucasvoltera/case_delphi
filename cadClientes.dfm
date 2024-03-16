@@ -166,7 +166,7 @@ object formCadClientes: TformCadClientes
     Top = 207
     Width = 193
     Height = 23
-    DataField = 'cep'
+    DataField = 'CGC_CPF_cliente'
     DataSource = DM.dsClientes
     TabOrder = 2
   end
@@ -188,15 +188,6 @@ object formCadClientes: TformCadClientes
     DataSource = DM.dsClientes
     TabOrder = 4
   end
-  object DBEdit5: TDBEdit
-    Left = 37
-    Top = 383
-    Width = 172
-    Height = 23
-    DataField = 'codigo_Cidade'
-    DataSource = DM.dsClientes
-    TabOrder = 5
-  end
   object DBEdit6: TDBEdit
     Left = 248
     Top = 383
@@ -204,7 +195,7 @@ object formCadClientes: TformCadClientes
     Height = 23
     DataField = 'bairro'
     DataSource = DM.dsClientes
-    TabOrder = 6
+    TabOrder = 5
   end
   object DBEdit7: TDBEdit
     Left = 37
@@ -213,7 +204,7 @@ object formCadClientes: TformCadClientes
     Height = 23
     DataField = 'endereco'
     DataSource = DM.dsClientes
-    TabOrder = 7
+    TabOrder = 6
   end
   object DBEdit8: TDBEdit
     Left = 248
@@ -222,7 +213,7 @@ object formCadClientes: TformCadClientes
     Height = 23
     DataField = 'complemento'
     DataSource = DM.dsClientes
-    TabOrder = 8
+    TabOrder = 7
   end
   object DBEdit9: TDBEdit
     Left = 37
@@ -231,7 +222,7 @@ object formCadClientes: TformCadClientes
     Height = 23
     DataField = 'cep'
     DataSource = DM.dsClientes
-    TabOrder = 9
+    TabOrder = 8
   end
   object DBGrid1: TDBGrid
     Left = 504
@@ -239,7 +230,7 @@ object formCadClientes: TformCadClientes
     Width = 505
     Height = 374
     DataSource = DM.dsClientes
-    TabOrder = 10
+    TabOrder = 9
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -283,7 +274,7 @@ object formCadClientes: TformCadClientes
     Width = 57
     Height = 41
     Caption = '<<'
-    TabOrder = 11
+    TabOrder = 10
     OnClick = btPrimeiroClick
   end
   object btProximo: TButton
@@ -292,7 +283,7 @@ object formCadClientes: TformCadClientes
     Width = 58
     Height = 41
     Caption = '>'
-    TabOrder = 12
+    TabOrder = 11
     OnClick = btProximoClick
   end
   object btUltimo: TButton
@@ -301,7 +292,7 @@ object formCadClientes: TformCadClientes
     Width = 58
     Height = 41
     Caption = '>>'
-    TabOrder = 13
+    TabOrder = 12
     OnClick = btUltimoClick
   end
   object btInserir: TButton
@@ -310,7 +301,7 @@ object formCadClientes: TformCadClientes
     Width = 58
     Height = 41
     Caption = 'Inserir'
-    TabOrder = 14
+    TabOrder = 13
     OnClick = btInserirClick
   end
   object btSalvar: TButton
@@ -319,7 +310,7 @@ object formCadClientes: TformCadClientes
     Width = 58
     Height = 41
     Caption = 'Salvar'
-    TabOrder = 15
+    TabOrder = 14
     OnClick = btSalvarClick
   end
   object btDeletar: TButton
@@ -328,7 +319,7 @@ object formCadClientes: TformCadClientes
     Width = 58
     Height = 41
     Caption = 'Deletar'
-    TabOrder = 16
+    TabOrder = 15
     OnClick = btDeletarClick
   end
   object btCancelar: TButton
@@ -337,7 +328,7 @@ object formCadClientes: TformCadClientes
     Width = 58
     Height = 41
     Caption = 'Cancelar'
-    TabOrder = 17
+    TabOrder = 16
     OnClick = btCancelarClick
   end
   object btAnterior: TButton
@@ -346,7 +337,19 @@ object formCadClientes: TformCadClientes
     Width = 58
     Height = 41
     Caption = '<'
-    TabOrder = 18
+    TabOrder = 17
     OnClick = btAnteriorClick
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 37
+    Top = 383
+    Width = 172
+    Height = 23
+    DataField = 'codigo_Cidade'
+    DataSource = DM.dsClientes
+    KeyField = 'codigo_cidade'
+    ListField = 'nome'
+    ListSource = DM.dsCidades
+    TabOrder = 18
   end
 end

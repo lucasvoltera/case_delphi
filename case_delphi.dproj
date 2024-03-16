@@ -119,6 +119,10 @@
             <Form>formConCidade</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="conCliente.pas">
+            <Form>formConCliente</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

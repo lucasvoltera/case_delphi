@@ -6,7 +6,8 @@ uses
   unitDM in 'unitDM.pas' {DM: TDataModule},
   cadCidades in 'cadCidades.pas' {formCadCidades},
   cadClientes in 'cadClientes.pas' {formCadClientes},
-  conCidades in 'conCidades.pas' {formConCidade};
+  conCidades in 'conCidades.pas' {formConCidade},
+  conCliente in 'conCliente.pas' {formConCliente};
 
 {$R *.res}
 
@@ -18,5 +19,6 @@ begin
   Application.CreateForm(TformCadCidades, formCadCidades);
   Application.CreateForm(TformCadClientes, formCadClientes);
   Application.CreateForm(TformConCidade, formConCidade);
+  Application.CreateForm(TformConCliente, formConCliente);
   Application.Run;
 end.

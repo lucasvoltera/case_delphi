@@ -38,9 +38,11 @@ object Form1: TForm1
       Caption = 'Clientes'
       object Cadastro1: TMenuItem
         Caption = 'Cadastro'
+        OnClick = Cadastro1Click
       end
       object Cadastro2: TMenuItem
         Caption = 'Consulta'
+        OnClick = Cadastro2Click
       end
     end
     object Relatrio1: TMenuItem

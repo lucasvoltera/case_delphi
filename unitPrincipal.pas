@@ -21,6 +21,8 @@ type
     procedure Sistema2Click(Sender: TObject);
     procedure Clientes2Click(Sender: TObject);
     procedure Clientes3Click(Sender: TObject);
+    procedure Cadastro1Click(Sender: TObject);
+    procedure Cadastro2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,7 +36,17 @@ implementation
 
 {$R *.dfm}
 
-uses cadCidades, cadClientes, unitDM, conCidades;
+uses cadCidades, cadClientes, unitDM, conCidades, conCliente;
+
+procedure TForm1.Cadastro1Click(Sender: TObject);
+begin
+  formCadClientes.ShowModal;
+end;
+
+procedure TForm1.Cadastro2Click(Sender: TObject);
+begin
+  formConCliente.ShowModal;
+end;
 
 procedure TForm1.Clientes2Click(Sender: TObject);
 begin
@@ -44,7 +56,7 @@ end;
 
 procedure TForm1.Clientes3Click(Sender: TObject);
 begin
-  formConCidades.ShowModal;
+  formConCidade.ShowModal;
 end;
 
 procedure TForm1.Sistema2Click(Sender: TObject);

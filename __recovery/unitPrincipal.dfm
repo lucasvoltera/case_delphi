@@ -13,6 +13,7 @@ object Form1: TForm1
   Menu = MainMenu1
   TextHeight = 15
   object MainMenu1: TMainMenu
+    AutoHotkeys = maManual
     Left = 280
     Top = 144
     object Sistema1: TMenuItem
@@ -42,6 +43,7 @@ object Form1: TForm1
       end
       object Cadastro2: TMenuItem
         Caption = 'Consulta'
+        OnClick = Cadastro2Click
       end
     end
     object Relatrio1: TMenuItem
