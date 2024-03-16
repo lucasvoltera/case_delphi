@@ -18,6 +18,8 @@ type
     Label1: TLabel;
     procedure radioGroupOpcoesClick(Sender: TObject);
     procedure btBuscarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -72,6 +74,21 @@ begin
     Exit; // Sai da rotina se a opção for inválida!!
   end;
 
+  DM.sqlClientes.Open;
+end;
+
+procedure TformConCliente.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  DM.sqlClientes.Close;
+  DM.sqlClientes.SQL.Clear;
+  DM.sqlClientes.SQL.Add('SELECT * FROM clientes');
+  DM.sqlClientes.Open;
+  Self := nil;
+end;
+
+procedure TformConCliente.FormCreate(Sender: TObject);
+begin
+  DM.sqlClientes.Close;
   DM.sqlClientes.Open;
 end;
 

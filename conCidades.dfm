@@ -10,6 +10,8 @@ object formConCidade: TformConCidade
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnClose = FormClose
+  OnCreate = FormCreate
   TextHeight = 15
   object lblBusca: TLabel
     Left = 387
@@ -22,19 +24,6 @@ object formConCidade: TformConCidade
     Font.Height = -20
     Font.Name = 'Segoe UI'
     Font.Style = []
-    ParentFont = False
-  end
-  object Label1: TLabel
-    Left = 72
-    Top = 48
-    Width = 285
-    Height = 41
-    Caption = 'Consulta de Cidades'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -30
-    Font.Name = 'Segoe UI'
-    Font.Style = [fsBold]
     ParentFont = False
   end
   object radioGroupOpcoes: TRadioGroup
@@ -60,7 +49,7 @@ object formConCidade: TformConCidade
     TabOrder = 1
   end
   object btBuscar: TButton
-    Left = 267
+    Left = 179
     Top = 265
     Width = 238
     Height = 40
@@ -81,6 +70,12 @@ object formConCidade: TformConCidade
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     Columns = <
+      item
+        Expanded = False
+        FieldName = 'codigo_cidade'
+        Title.Caption = 'C'#243'digo'
+        Visible = True
+      end
       item
         Expanded = False
         FieldName = 'nome'
@@ -117,6 +112,19 @@ object formConCidade: TformConCidade
     Height = 129
     Align = alTop
     TabOrder = 4
-    ExplicitWidth = 982
+    ExplicitWidth = 842
+    object Label1: TLabel
+      Left = 72
+      Top = 48
+      Width = 285
+      Height = 41
+      Caption = 'Consulta de Cidades'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -30
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
   end
 end

@@ -123,6 +123,10 @@
             <Form>formConCliente</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="relClientes.pas">
+            <Form>formRelClientes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

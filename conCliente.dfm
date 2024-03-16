@@ -10,6 +10,8 @@ object formConCliente: TformConCliente
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnClose = FormClose
+  OnCreate = FormCreate
   TextHeight = 15
   object lblBusca: TLabel
     Left = 404
@@ -22,19 +24,6 @@ object formConCliente: TformConCliente
     Font.Height = -20
     Font.Name = 'Segoe UI'
     Font.Style = []
-    ParentFont = False
-  end
-  object Label1: TLabel
-    Left = 56
-    Top = 49
-    Width = 285
-    Height = 41
-    Caption = 'Consulta de Cidades'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -30
-    Font.Name = 'Segoe UI'
-    Font.Style = [fsBold]
     ParentFont = False
   end
   object radioGroupOpcoes: TRadioGroup
@@ -175,6 +164,19 @@ object formConCliente: TformConCliente
     Height = 129
     Align = alTop
     TabOrder = 4
-    ExplicitWidth = 829
+    ExplicitWidth = 831
+    object Label1: TLabel
+      Left = 56
+      Top = 49
+      Width = 286
+      Height = 41
+      Caption = 'Consulta de Clientes'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -30
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
   end
 end

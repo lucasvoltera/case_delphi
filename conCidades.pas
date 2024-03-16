@@ -18,6 +18,8 @@ type
     Panel1: TPanel;
     procedure btBuscarClick(Sender: TObject);
     procedure radioGroupOpcoesClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -50,6 +52,21 @@ begin
       end;
 
    DM.sqlCidades.Open;
+end;
+
+procedure TformConCidade.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  DM.sqlCidades.Close;
+  DM.sqlCidades.SQL.Clear;
+  DM.sqlCidades.SQL.Add('SELECT * FROM cidades');
+  DM.sqlCidades.Open;
+  Self := nil;
+end;
+
+procedure TformConCidade.FormCreate(Sender: TObject);
+begin
+  DM.sqlCidades.Close;
+  DM.sqlCidades.Open;
 end;
 
 procedure TformConCidade.radioGroupOpcoesClick(Sender: TObject);

@@ -3,7 +3,9 @@ unit unitDM;
 interface
 
 uses
-  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB;
+  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB, ppProd, ppClass,
+  ppReport, ppComm, ppRelatv, ppDB, ppDBPipe, ppDBBDE, ppPrnabl, ppCtrls,
+  ppBands, ppCache, ppDesignLayer, ppParameter;
 
 type
   TDM = class(TDataModule)
@@ -47,6 +49,65 @@ type
     sqlClientescodigo_Cidade: TIntegerField;
     sqlClientescep: TWideStringField;
     sqlClientesnomeCidade: TStringField;
+    pipelineClientes: TppBDEPipeline;
+    dsReport: TDataSource;
+    dsSqlReport: TADOQuery;
+    dsSqlReportcodCliente: TAutoIncField;
+    dsSqlReportcpfCnpjCliente: TWideStringField;
+    dsSqlReportnomeCliente: TWideStringField;
+    dsSqlReporttelefoneCliente: TWideStringField;
+    dsSqlReportenderecoCliente: TWideStringField;
+    dsSqlReportbairroCliente: TWideStringField;
+    dsSqlReportcomplementoCliente: TWideStringField;
+    dsSqlReportemailCliente: TWideStringField;
+    dsSqlReportcepCliente: TWideStringField;
+    dsSqlReportcodCidade: TAutoIncField;
+    dsSqlReportnomeCidade: TWideStringField;
+    dsSqlReportnomeEstadoCidade: TWideStringField;
+    dsSqlReportcepIncialCidade: TWideStringField;
+    dsSqlReportcepFinalCidade: TWideStringField;
+    reportClientes: TppReport;
+    ppParameterList1: TppParameterList;
+    ppDesignLayers1: TppDesignLayers;
+    ppDesignLayer1: TppDesignLayer;
+    ppHeaderBand1: TppHeaderBand;
+    ppDetailBand1: TppDetailBand;
+    ppFooterBand1: TppFooterBand;
+    ppLabel1: TppLabel;
+    ppDBText1: TppDBText;
+    ppLabel2: TppLabel;
+    ppDBText2: TppDBText;
+    pipelineClientesAgrupado: TppBDEPipeline;
+    dsReportAgrupado: TDataSource;
+    dsSqlReportAgrupado: TADOQuery;
+    reportClientesAgrupado: TppReport;
+    ppHeaderBand2: TppHeaderBand;
+    ppDetailBand2: TppDetailBand;
+    ppLabel3: TppLabel;
+    ppDBText3: TppDBText;
+    ppLabel4: TppLabel;
+    ppDBText4: TppDBText;
+    ppFooterBand2: TppFooterBand;
+    ppDesignLayers2: TppDesignLayers;
+    ppDesignLayer2: TppDesignLayer;
+    ppParameterList2: TppParameterList;
+    dsSqlReportAgrupadocodCliente: TIntegerField;
+    dsSqlReportAgrupadocpfCnpjCliente: TWideStringField;
+    dsSqlReportAgrupadonomeCliente: TWideStringField;
+    dsSqlReportAgrupadotelefoneCliente: TWideStringField;
+    dsSqlReportAgrupadoenderecoCliente: TWideStringField;
+    dsSqlReportAgrupadobairroCliente: TWideStringField;
+    dsSqlReportAgrupadocomplementoCliente: TWideStringField;
+    dsSqlReportAgrupadoemailCliente: TWideStringField;
+    dsSqlReportAgrupadocepCliente: TWideStringField;
+    dsSqlReportAgrupadocodigo_cidade: TAutoIncField;
+    dsSqlReportAgrupadonomeCidade: TWideStringField;
+    dsSqlReportAgrupadonomeEstadoCidade: TWideStringField;
+    dsSqlReportAgrupadocepInicialCidade: TWideStringField;
+    dsSqlReportAgrupadocepFinalCidade: TWideStringField;
+    ppLabel5: TppLabel;
+    ppDBText5: TppDBText;
+    ppLine1: TppLine;
     procedure tbCidadesAfterScroll(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
 

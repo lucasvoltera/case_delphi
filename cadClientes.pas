@@ -46,6 +46,8 @@ type
     procedure btSalvarClick(Sender: TObject);
     procedure btDeletarClick(Sender: TObject);
     procedure btCancelarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -120,6 +122,19 @@ end;
 procedure TformCadClientes.btUltimoClick(Sender: TObject);
 begin
    DM.tbClientes.Last;
+end;
+
+procedure TformCadClientes.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Self := nil;
+end;
+
+procedure TformCadClientes.FormCreate(Sender: TObject);
+begin
+  DM.tbClientes.Close;
+  DM.tbClientes.Open;
+  btSalvar.Enabled := False;
+  btCancelar.Enabled := False;
 end;
 
 end.
