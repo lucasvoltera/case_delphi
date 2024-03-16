@@ -36,6 +36,17 @@ type
     tbCidadesestado: TWideStringField;
     tbCidadescep_Inicial: TWideStringField;
     tbCidadescep_Final: TWideStringField;
+    sqlClientescodigo_cliente: TAutoIncField;
+    sqlClientesCGC_CPF_cliente: TWideStringField;
+    sqlClientesnome: TWideStringField;
+    sqlClientestelefone: TWideStringField;
+    sqlClientesendereco: TWideStringField;
+    sqlClientesbairro: TWideStringField;
+    sqlClientescomplemento: TWideStringField;
+    sqlClientesemail: TWideStringField;
+    sqlClientescodigo_Cidade: TIntegerField;
+    sqlClientescep: TWideStringField;
+    sqlClientesnomeCidade: TStringField;
     procedure tbCidadesAfterScroll(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
 

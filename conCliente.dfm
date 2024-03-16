@@ -55,8 +55,8 @@ object formConCliente: TformConCliente
     OnClick = radioGroupOpcoesClick
   end
   object txtConsulta: TEdit
-    Left = 392
-    Top = 203
+    Left = 404
+    Top = 195
     Width = 310
     Height = 23
     CanUndoSelText = True
@@ -69,13 +69,14 @@ object formConCliente: TformConCliente
     Height = 40
     Caption = 'Buscar'
     TabOrder = 2
+    OnClick = btBuscarClick
   end
   object DBGrid1: TDBGrid
     Left = 56
     Top = 329
     Width = 729
     Height = 233
-    DataSource = DM.dsSqlCidades
+    DataSource = DM.dsSqlClientes
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -85,30 +86,85 @@ object formConCliente: TformConCliente
     Columns = <
       item
         Expanded = False
+        FieldName = 'CGC_CPF_cliente'
+        Title.Caption = 'CPF'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Width = 94
+        Visible = True
+      end
+      item
+        Expanded = False
         FieldName = 'nome'
         Title.Caption = 'NOME'
-        Width = 116
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Width = 112
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'estado'
-        Title.Caption = 'ESTADO'
-        Width = 105
+        FieldName = 'telefone'
+        Title.Caption = 'TELEFONE'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Width = 92
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'cep_Inicial'
-        Title.Caption = 'CEP INICIAL'
-        Width = 91
+        FieldName = 'endereco'
+        Title.Caption = 'ENDERE'#199'O'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Width = 124
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'cep_Final'
-        Title.Caption = 'CEP FINAL'
-        Width = 100
+        FieldName = 'email'
+        Title.Caption = 'EMAIL'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Width = 108
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cep'
+        Title.Caption = 'CEP'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Width = 65
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nomeCidade'
+        Title.Caption = 'CIDADE'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
         Visible = True
       end>
   end
@@ -119,6 +175,6 @@ object formConCliente: TformConCliente
     Height = 129
     Align = alTop
     TabOrder = 4
-    ExplicitLeft = -8
+    ExplicitWidth = 829
   end
 end

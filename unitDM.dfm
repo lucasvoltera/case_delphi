@@ -94,6 +94,7 @@ object DM: TDM
     Active = True
     Connection = conexao
     CursorType = ctStatic
+    IndexFieldNames = 'codigo_Cidade'
     TableName = 'clientes'
     Left = 352
     Top = 401
@@ -156,11 +157,58 @@ object DM: TDM
       'select * from clientes;')
     Left = 352
     Top = 512
+    object sqlClientescodigo_cliente: TAutoIncField
+      FieldName = 'codigo_cliente'
+      ReadOnly = True
+    end
+    object sqlClientesCGC_CPF_cliente: TWideStringField
+      FieldName = 'CGC_CPF_cliente'
+    end
+    object sqlClientesnome: TWideStringField
+      FieldName = 'nome'
+      Size = 100
+    end
+    object sqlClientestelefone: TWideStringField
+      FieldName = 'telefone'
+    end
+    object sqlClientesendereco: TWideStringField
+      FieldName = 'endereco'
+      Size = 100
+    end
+    object sqlClientesbairro: TWideStringField
+      FieldName = 'bairro'
+      Size = 50
+    end
+    object sqlClientescomplemento: TWideStringField
+      FieldName = 'complemento'
+      Size = 50
+    end
+    object sqlClientesemail: TWideStringField
+      FieldName = 'email'
+      Size = 100
+    end
+    object sqlClientescodigo_Cidade: TIntegerField
+      FieldName = 'codigo_Cidade'
+    end
+    object sqlClientescep: TWideStringField
+      FieldName = 'cep'
+      Size = 10
+    end
+    object sqlClientesnomeCidade: TStringField
+      FieldKind = fkLookup
+      FieldName = 'nomeCidade'
+      LookupDataSet = tbCidades
+      LookupKeyFields = 'codigo_cidade'
+      LookupResultField = 'nome'
+      KeyFields = 'codigo_Cidade'
+      Size = 50
+      Lookup = True
+    end
   end
   object dsSqlCidades: TDataSource
     DataSet = sqlCidades
-    Left = 440
-    Top = 136
+    Left = 472
+    Top = 128
   end
   object dsSqlClientes: TDataSource
     DataSet = sqlClientes
