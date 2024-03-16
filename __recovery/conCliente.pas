@@ -44,7 +44,7 @@ begin
     0: // Consulta por nome
        begin
          DM.sqlClientes.SQL.Add('SELECT * FROM clientes WHERE nome LIKE :pConsulta');
-         DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%';
+         DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := editConsulta.Text + '%';
        end;
     1: // Consulta por cidade
        begin
@@ -52,22 +52,22 @@ begin
                               'FROM clientes ' +
                               'INNER JOIN cidades ON clientes.codigo_Cidade = cidades.codigo_cidade ' +
                               'WHERE cidades.nome LIKE :pConsulta');
-        DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := '%' + txtConsulta.Text + '%';
+        DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := '%' + editConsulta.Text + '%';
        end;
     2: // Consulta por CEP
        begin
           DM.sqlClientes.SQL.Add('SELECT * FROM clientes WHERE cep LIKE :pConsulta');
-          DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%';
+          DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := editConsulta.Text + '%';
        end;
     3: // Consulta por CPF
        begin
          DM.sqlClientes.SQL.Add('SELECT * FROM clientes WHERE CGC_CPF_cliente LIKE :pConsulta');
-         DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%';
+         DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := editConsulta.Text + '%';
        end;
     4: // Consulta por email
        begin
          DM.sqlClientes.SQL.Add('SELECT * FROM clientes WHERE email LIKE :pConsulta');
-         DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := txtConsulta.Text + '%';
+         DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := editConsulta.Text + '%';
        end;
   else
     ShowMessage('Opção inválida');

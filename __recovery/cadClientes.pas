@@ -38,6 +38,7 @@ type
     btAnterior: TButton;
     editNome: TDBEdit;
     comboCidade: TDBLookupComboBox;
+    Button1: TButton;
     procedure btPrimeiroClick(Sender: TObject);
     procedure btAnteriorClick(Sender: TObject);
     procedure btProximoClick(Sender: TObject);

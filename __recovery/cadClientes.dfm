@@ -16,7 +16,7 @@
   OnCreate = FormCreate
   TextHeight = 15
   object lblCPF: TLabel
-    Left = 248
+    Left = 232
     Top = 173
     Width = 33
     Height = 28
@@ -29,7 +29,7 @@
     ParentFont = False
   end
   object lblTelefone: TLabel
-    Left = 37
+    Left = 21
     Top = 261
     Width = 72
     Height = 28
@@ -42,7 +42,7 @@
     ParentFont = False
   end
   object lblEndereco: TLabel
-    Left = 37
+    Left = 21
     Top = 429
     Width = 81
     Height = 28
@@ -55,7 +55,7 @@
     ParentFont = False
   end
   object lblBairro: TLabel
-    Left = 248
+    Left = 232
     Top = 349
     Width = 52
     Height = 28
@@ -68,7 +68,7 @@
     ParentFont = False
   end
   object lblCompleto: TLabel
-    Left = 248
+    Left = 232
     Top = 429
     Width = 125
     Height = 28
@@ -81,7 +81,7 @@
     ParentFont = False
   end
   object lblEmail: TLabel
-    Left = 248
+    Left = 232
     Top = 261
     Width = 47
     Height = 28
@@ -94,7 +94,7 @@
     ParentFont = False
   end
   object lblCidade: TLabel
-    Left = 37
+    Left = 21
     Top = 349
     Width = 61
     Height = 28
@@ -107,7 +107,7 @@
     ParentFont = False
   end
   object lblCep: TLabel
-    Left = 37
+    Left = 21
     Top = 506
     Width = 33
     Height = 28
@@ -120,7 +120,7 @@
     ParentFont = False
   end
   object lblNome: TLabel
-    Left = 37
+    Left = 21
     Top = 173
     Width = 54
     Height = 28
@@ -155,7 +155,7 @@
     end
   end
   object editNome: TDBEdit
-    Left = 37
+    Left = 21
     Top = 207
     Width = 172
     Height = 23
@@ -164,7 +164,7 @@
     TabOrder = 1
   end
   object editCPF: TDBEdit
-    Left = 248
+    Left = 232
     Top = 207
     Width = 193
     Height = 23
@@ -173,7 +173,7 @@
     TabOrder = 2
   end
   object editTelefone: TDBEdit
-    Left = 37
+    Left = 21
     Top = 295
     Width = 172
     Height = 23
@@ -182,7 +182,7 @@
     TabOrder = 3
   end
   object editEmail: TDBEdit
-    Left = 248
+    Left = 232
     Top = 295
     Width = 193
     Height = 23
@@ -191,7 +191,7 @@
     TabOrder = 4
   end
   object editBairro: TDBEdit
-    Left = 248
+    Left = 232
     Top = 383
     Width = 193
     Height = 23
@@ -200,7 +200,7 @@
     TabOrder = 5
   end
   object editEndereço: TDBEdit
-    Left = 37
+    Left = 21
     Top = 463
     Width = 172
     Height = 23
@@ -209,7 +209,7 @@
     TabOrder = 6
   end
   object editCompleto: TDBEdit
-    Left = 248
+    Left = 232
     Top = 463
     Width = 193
     Height = 23
@@ -218,7 +218,7 @@
     TabOrder = 7
   end
   object editCEP: TDBEdit
-    Left = 37
+    Left = 21
     Top = 540
     Width = 172
     Height = 23
@@ -227,10 +227,10 @@
     TabOrder = 8
   end
   object gridClientes: TDBGrid
-    Left = 504
+    Left = 448
     Top = 232
-    Width = 505
-    Height = 374
+    Width = 569
+    Height = 369
     DataSource = DM.dsClientes
     TabOrder = 9
     TitleFont.Charset = DEFAULT_CHARSET
@@ -271,8 +271,8 @@
       end>
   end
   object btPrimeiro: TButton
-    Left = 504
-    Top = 160
+    Left = 448
+    Top = 185
     Width = 57
     Height = 41
     Caption = '<<'
@@ -280,8 +280,8 @@
     OnClick = btPrimeiroClick
   end
   object btProximo: TButton
-    Left = 631
-    Top = 160
+    Left = 575
+    Top = 185
     Width = 58
     Height = 41
     Caption = '>'
@@ -289,8 +289,8 @@
     OnClick = btProximoClick
   end
   object btUltimo: TButton
-    Left = 695
-    Top = 160
+    Left = 639
+    Top = 185
     Width = 58
     Height = 41
     Caption = '>>'
@@ -298,8 +298,8 @@
     OnClick = btUltimoClick
   end
   object btInserir: TButton
-    Left = 759
-    Top = 160
+    Left = 703
+    Top = 185
     Width = 58
     Height = 41
     Caption = 'Inserir'
@@ -307,8 +307,8 @@
     OnClick = btInserirClick
   end
   object btSalvar: TButton
-    Left = 823
-    Top = 160
+    Left = 767
+    Top = 185
     Width = 58
     Height = 41
     Caption = 'Salvar'
@@ -316,8 +316,8 @@
     OnClick = btSalvarClick
   end
   object btDeletar: TButton
-    Left = 887
-    Top = 160
+    Left = 831
+    Top = 185
     Width = 58
     Height = 41
     Caption = 'Deletar'
@@ -325,8 +325,8 @@
     OnClick = btDeletarClick
   end
   object btCancelar: TButton
-    Left = 951
-    Top = 160
+    Left = 959
+    Top = 185
     Width = 58
     Height = 41
     Caption = 'Cancelar'
@@ -334,8 +334,8 @@
     OnClick = btCancelarClick
   end
   object btAnterior: TButton
-    Left = 567
-    Top = 160
+    Left = 511
+    Top = 185
     Width = 58
     Height = 41
     Caption = '<'
@@ -343,7 +343,7 @@
     OnClick = btAnteriorClick
   end
   object comboCidade: TDBLookupComboBox
-    Left = 37
+    Left = 21
     Top = 383
     Width = 172
     Height = 23
@@ -353,5 +353,14 @@
     ListField = 'nome'
     ListSource = DM.dsCidades
     TabOrder = 18
+  end
+  object Button1: TButton
+    Left = 895
+    Top = 185
+    Width = 58
+    Height = 41
+    Caption = 'Cancelar'
+    TabOrder = 19
+    OnClick = btCancelarClick
   end
 end
