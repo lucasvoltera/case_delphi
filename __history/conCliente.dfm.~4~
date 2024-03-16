@@ -48,7 +48,7 @@ object formConCliente: TformConCliente
     Items.Strings = (
       'Nome'
       'Cidade'
-      'CEP'
+      'Cep'
       'CPF'
       'Email')
     TabOrder = 0
