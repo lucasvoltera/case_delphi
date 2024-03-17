@@ -2,21 +2,20 @@ program case_delphi;
 
 uses
   Vcl.Forms,
-  unitPrincipal in 'unitPrincipal.pas' {Form1},
-  unitDM in 'unitDM.pas' {DM: TDataModule},
-  cadCidades in 'cadCidades.pas' {formCadCidades},
-  cadClientes in 'cadClientes.pas' {formCadClientes},
-  conCidades in 'conCidades.pas' {formConCidade};
+  unitPrincipal in './src/unitPrincipal.pas' {formTelaPrincipal},
+  unitDM in './src/unitDM.pas' {DM: TDataModule},
+  cadCidades in './cidades/cadastroCidades/cadCidades.pas' {formCadCidades},
+  cadClientes in './Clientes/cadastroClientes/cadClientes.pas' {formCadClientes},
+  conCidades in './cidades/consultaCidades/conCidades.pas' {formConCidade},
+  conCliente in './clientes/consultaClientes/conCliente.pas' {formConCliente},
+  relClientes in 'relClientes.pas' {formRelClientes};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TDM, DM);
-  Application.CreateForm(TformCadCidades, formCadCidades);
-  Application.CreateForm(TformCadClientes, formCadClientes);
-  Application.CreateForm(TformConCidade, formConCidade);
+  Application.CreateForm(TformTelaPrincipal, formTelaPrincipal);
   Application.Run;
 end.

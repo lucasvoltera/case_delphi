@@ -98,34 +98,27 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="unitPrincipal.pas">
+        <DCCReference Include="main\unitPrincipal.pas">
             <Form>formTelaPrincipal</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="unitDM.pas">
+        <DCCReference Include="main\unitDM.pas">
             <Form>DM</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="cadCidades.pas">
+        <DCCReference Include="cidades\cadastroCidades\cadCidades.pas">
             <Form>formCadCidades</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="cadClientes.pas">
+        <DCCReference Include="Clientes\cadastroClientes\cadClientes.pas">
             <Form>formCadClientes</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="conCidades.pas">
+        <DCCReference Include="cidades\consultaCidades\conCidades.pas">
             <Form>formConCidade</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="conCliente.pas">
+        <DCCReference Include="clientes\consultaClientes\conCliente.pas">
             <Form>formConCliente</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="relClientes.pas">
+        <DCCReference Include="relatorio\relClientes.pas">
             <Form>formRelClientes</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
