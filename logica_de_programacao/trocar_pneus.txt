@@ -1,0 +1,18 @@
+
+
+00    Estacionar o carro em local seguro, longe do tráfego.
+01    Ligar o pisca-alerta.
+02    Pegar o macaco, a chave de roda e o triângulo de sinalização no porta-malas.
+03    Posicionar o triângulo de sinalização atrás do veículo.
+04    Posicionar o macaco corretamente.
+05    Afrouxar as porcas do pneu furado.
+06    Levantar o carro com o macaco.
+07    Remover o pneu furado.
+08    Colocar o pneu sobressalente.
+09    Apertar as porcas manualmente.
+10    Baixar o carro lentamente.
+11    Apertar as porcas com a chave de roda.
+12    Verificar se as porcas estão bem apertadas.
+13    Guardar os equipamentos no porta-malas.
+14    Desligar o pisca-alerta.
+15    Retomar a viagem.

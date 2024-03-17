@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls;
 
 type
   TformTelaPrincipal = class(TForm)
@@ -24,6 +24,7 @@ type
     procedure Cadastro1Click(Sender: TObject);
     procedure Cadastro2Click(Sender: TObject);
     procedure Relatrio1Click(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -38,6 +39,7 @@ implementation
 {$R *.dfm}
 
 uses cadCidades, cadClientes, unitDM, conCidades, conCliente, relClientes;
+
 
 procedure TformTelaPrincipal.Cadastro1Click(Sender: TObject);
 begin

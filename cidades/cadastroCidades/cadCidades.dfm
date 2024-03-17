@@ -101,7 +101,7 @@ object formCadCidades: TformCadCidades
     Height = 129
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 998
+    ExplicitWidth = 996
     object lblTitulo: TLabel
       Left = 354
       Top = 44

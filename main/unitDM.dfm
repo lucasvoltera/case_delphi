@@ -1,26 +1,28 @@
 object DM: TDM
   OnCreate = DataModuleCreate
-  Height = 600
-  Width = 800
+  Height = 750
+  Width = 1000
+  PixelsPerInch = 120
   object conexao: TADOConnection
     Connected = True
     ConnectionString = 
       'Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Persist Security ' +
-      'Info=False;User ID="";Initial Catalog=master;Data Source=DSKLUCA' +
-      'S\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Pac' +
-      'ket Size=4096;Workstation ID=DESKTOP-CRROML5;Initial File Name="' +
-      '";Use Encryption for Data=False;Tag with column collation when p' +
-      'ossible=False;MARS Connection=False;DataTypeCompatibility=0;Trus' +
-      't Server Certificate=False;Server SPN=DSKLUCAS\Lucas;Application' +
-      ' Intent=READWRITE;MultiSubnetFailover=False;Use FMTONLY=False;Au' +
-      'thentication="";Access Token="";TransparentNetworkIPResolution=T' +
-      'rue;Connect Retry Count=1;Connect Retry Interval=10'
+      'Info=False;User ID="";Initial Catalog=sinqia;Data Source=DESKTOP' +
+      '-CRROML5;Use Procedure for Prepare=1;Auto Translate=True;Packet ' +
+      'Size=4096;Workstation ID=DESKTOP-CRROML5;Initial File Name="";Us' +
+      'e Encryption for Data=False;Tag with column collation when possi' +
+      'ble=False;MARS Connection=False;DataTypeCompatibility=0;Trust Se' +
+      'rver Certificate=False;Server SPN=DESKTOP-CRROML5\Lucas;Applicat' +
+      'ion Intent=READWRITE;MultiSubnetFailover=False;Use FMTONLY=False' +
+      ';Authentication="";Access Token="";TransparentNetworkIPResolutio' +
+      'n=True;Connect Retry Count=1;Connect Retry Interval=10'
     LoginPrompt = False
     Provider = 'MSOLEDBSQL.1'
-    Left = 115
-    Top = 250
+    Left = 144
+    Top = 313
   end
   object sqlCidades: TADOQuery
+    Active = True
     Connection = conexao
     CursorType = ctStatic
     CommandTimeout = 0
@@ -28,8 +30,8 @@ object DM: TDM
     Parameters = <>
     SQL.Strings = (
       'SELECT * FROM cidades')
-    Left = 231
-    Top = 96
+    Left = 289
+    Top = 120
     object sqlCidadescodigo_cidade: TAutoIncField
       DisplayWidth = 14
       FieldName = 'codigo_cidade'
@@ -57,12 +59,13 @@ object DM: TDM
     end
   end
   object tbCidades: TADOTable
+    Active = True
     Connection = conexao
     CursorType = ctStatic
     CommandTimeout = 0
     TableName = 'cidades'
-    Left = 231
-    Top = 166
+    Left = 289
+    Top = 208
     object tbCidadescodigo_cidade: TAutoIncField
       FieldName = 'codigo_cidade'
       ReadOnly = True
@@ -93,18 +96,19 @@ object DM: TDM
   object dsCidades: TDataSource
     AutoEdit = False
     DataSet = tbCidades
-    Left = 314
-    Top = 166
+    Left = 393
+    Top = 208
   end
   object tbClientes: TADOTable
+    Active = True
     Connection = conexao
     CursorType = ctStatic
     CommandTimeout = 0
     IndexFieldNames = 'codigo_cliente'
     MasterFields = 'codigo_cidade'
     TableName = 'clientes'
-    Left = 225
-    Top = 359
+    Left = 281
+    Top = 449
     object tbClientescodigo_cliente: TAutoIncField
       FieldName = 'codigo_cliente'
       ReadOnly = True
@@ -160,10 +164,11 @@ object DM: TDM
   object dsClientes: TDataSource
     AutoEdit = False
     DataSet = tbClientes
-    Left = 314
-    Top = 358
+    Left = 393
+    Top = 448
   end
   object sqlClientes: TADOQuery
+    Active = True
     Connection = conexao
     CursorType = ctStatic
     CommandTimeout = 0
@@ -177,8 +182,8 @@ object DM: TDM
       end>
     SQL.Strings = (
       'select * from clientes;')
-    Left = 225
-    Top = 449
+    Left = 281
+    Top = 561
     object sqlClientescodigo_cliente: TAutoIncField
       FieldName = 'codigo_cliente'
       ReadOnly = True
@@ -230,130 +235,29 @@ object DM: TDM
   object dsSqlCidades: TDataSource
     AutoEdit = False
     DataSet = sqlCidades
-    Left = 308
-    Top = 96
+    Left = 385
+    Top = 120
   end
   object dsSqlClientes: TDataSource
     AutoEdit = False
     DataSet = sqlClientes
-    Left = 320
-    Top = 448
+    Left = 400
+    Top = 560
   end
   object pipelineClientes: TppBDEPipeline
     DataSource = dsReport
     UserName = 'pipelineClientes'
-    Left = 637
-    Top = 365
-    object pipelineClientesppField1: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'codCliente'
-      FieldName = 'codCliente'
-      FieldLength = 0
-      DataType = dtLongint
-      DisplayWidth = 0
-      Position = 0
-    end
-    object pipelineClientesppField2: TppField
-      FieldAlias = 'cpfCnpjCliente'
-      FieldName = 'cpfCnpjCliente'
-      FieldLength = 20
-      DisplayWidth = 20
-      Position = 1
-    end
-    object pipelineClientesppField3: TppField
-      FieldAlias = 'nomeCliente'
-      FieldName = 'nomeCliente'
-      FieldLength = 100
-      DisplayWidth = 100
-      Position = 2
-    end
-    object pipelineClientesppField4: TppField
-      FieldAlias = 'telefoneCliente'
-      FieldName = 'telefoneCliente'
-      FieldLength = 20
-      DisplayWidth = 20
-      Position = 3
-    end
-    object pipelineClientesppField5: TppField
-      FieldAlias = 'enderecoCliente'
-      FieldName = 'enderecoCliente'
-      FieldLength = 100
-      DisplayWidth = 100
-      Position = 4
-    end
-    object pipelineClientesppField6: TppField
-      FieldAlias = 'bairroCliente'
-      FieldName = 'bairroCliente'
-      FieldLength = 50
-      DisplayWidth = 50
-      Position = 5
-    end
-    object pipelineClientesppField7: TppField
-      FieldAlias = 'complementoCliente'
-      FieldName = 'complementoCliente'
-      FieldLength = 50
-      DisplayWidth = 50
-      Position = 6
-    end
-    object pipelineClientesppField8: TppField
-      FieldAlias = 'emailCliente'
-      FieldName = 'emailCliente'
-      FieldLength = 100
-      DisplayWidth = 100
-      Position = 7
-    end
-    object pipelineClientesppField9: TppField
-      FieldAlias = 'cepCliente'
-      FieldName = 'cepCliente'
-      FieldLength = 10
-      DisplayWidth = 10
-      Position = 8
-    end
-    object pipelineClientesppField10: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'codCidade'
-      FieldName = 'codCidade'
-      FieldLength = 0
-      DataType = dtLongint
-      DisplayWidth = 10
-      Position = 9
-    end
-    object pipelineClientesppField11: TppField
-      FieldAlias = 'nomeCidade'
-      FieldName = 'nomeCidade'
-      FieldLength = 100
-      DisplayWidth = 100
-      Position = 10
-    end
-    object pipelineClientesppField12: TppField
-      FieldAlias = 'nomeEstadoCidade'
-      FieldName = 'nomeEstadoCidade'
-      FieldLength = 50
-      DisplayWidth = 50
-      Position = 11
-    end
-    object pipelineClientesppField13: TppField
-      FieldAlias = 'cepIncialCidade'
-      FieldName = 'cepIncialCidade'
-      FieldLength = 10
-      DisplayWidth = 10
-      Position = 12
-    end
-    object pipelineClientesppField14: TppField
-      FieldAlias = 'cepFinalCidade'
-      FieldName = 'cepFinalCidade'
-      FieldLength = 10
-      DisplayWidth = 10
-      Position = 13
-    end
+    Left = 796
+    Top = 456
   end
   object dsReport: TDataSource
     AutoEdit = False
     DataSet = dsSqlReport
-    Left = 536
-    Top = 358
+    Left = 670
+    Top = 448
   end
   object dsSqlReport: TADOQuery
+    Active = True
     Connection = conexao
     CursorType = ctStatic
     CommandTimeout = 0
@@ -428,8 +332,8 @@ object DM: TDM
         'cidades.CODIGO_CIDADE BETWEEN :CIDADE_INICIAL AND :CIDADE_FINAL ' +
         'AND'
       'ESTADO = :ESTADO')
-    Left = 544
-    Top = 454
+    Left = 680
+    Top = 568
     object dsSqlReportcodCliente: TAutoIncField
       FieldName = 'codCliente'
       ReadOnly = True
@@ -548,7 +452,7 @@ object DM: TDM
     RTFSettings.DefaultFont.Style = []
     RTFSettings.Title = 'Report'
     TextFileName = '($MyDocuments)\Report.pdf'
-    TextSearchSettings.DefaultString = '<Texto a localizar>'
+    TextSearchSettings.DefaultString = '<FindText>'
     TextSearchSettings.Enabled = True
     XLSSettings.AppName = 'ReportBuilder'
     XLSSettings.Author = 'ReportBuilder'
@@ -567,8 +471,8 @@ object DM: TDM
     CloudDriveSettings.OneDriveSettings.OAuth2.RedirectURI = 'http://localhost'
     CloudDriveSettings.OneDriveSettings.OAuth2.RedirectPort = 0
     CloudDriveSettings.OneDriveSettings.DirectorySupport = True
-    Left = 643
-    Top = 454
+    Left = 804
+    Top = 568
     Version = '22.03'
     mmColumnWidth = 0
     DataPipelineName = 'pipelineClientes'
@@ -594,7 +498,7 @@ object DM: TDM
         mmHeight = 8043
         mmLeft = 59267
         mmTop = 3598
-        mmWidth = 68792
+        mmWidth = 74083
         BandType = 0
         LayerName = Foreground
       end
@@ -998,6 +902,7 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taRightJustified
         Transparent = True
         mmHeight = 4869
         mmLeft = 15028
@@ -1099,118 +1004,17 @@ object DM: TDM
   object pipelineClientesAgrupado: TppBDEPipeline
     DataSource = dsReportAgrupado
     UserName = 'pipelineClientesAgrupado'
-    Left = 621
-    Top = 70
-    object pipelineClientesAgrupadoppField1: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'codCliente'
-      FieldName = 'codCliente'
-      FieldLength = 0
-      DataType = dtInteger
-      DisplayWidth = 10
-      Position = 0
-    end
-    object pipelineClientesAgrupadoppField2: TppField
-      FieldAlias = 'cpfCnpjCliente'
-      FieldName = 'cpfCnpjCliente'
-      FieldLength = 20
-      DisplayWidth = 20
-      Position = 1
-    end
-    object pipelineClientesAgrupadoppField3: TppField
-      FieldAlias = 'nomeCliente'
-      FieldName = 'nomeCliente'
-      FieldLength = 100
-      DisplayWidth = 100
-      Position = 2
-    end
-    object pipelineClientesAgrupadoppField4: TppField
-      FieldAlias = 'telefoneCliente'
-      FieldName = 'telefoneCliente'
-      FieldLength = 20
-      DisplayWidth = 20
-      Position = 3
-    end
-    object pipelineClientesAgrupadoppField5: TppField
-      FieldAlias = 'enderecoCliente'
-      FieldName = 'enderecoCliente'
-      FieldLength = 100
-      DisplayWidth = 100
-      Position = 4
-    end
-    object pipelineClientesAgrupadoppField6: TppField
-      FieldAlias = 'bairroCliente'
-      FieldName = 'bairroCliente'
-      FieldLength = 50
-      DisplayWidth = 50
-      Position = 5
-    end
-    object pipelineClientesAgrupadoppField7: TppField
-      FieldAlias = 'complementoCliente'
-      FieldName = 'complementoCliente'
-      FieldLength = 50
-      DisplayWidth = 50
-      Position = 6
-    end
-    object pipelineClientesAgrupadoppField8: TppField
-      FieldAlias = 'emailCliente'
-      FieldName = 'emailCliente'
-      FieldLength = 100
-      DisplayWidth = 100
-      Position = 7
-    end
-    object pipelineClientesAgrupadoppField9: TppField
-      FieldAlias = 'cepCliente'
-      FieldName = 'cepCliente'
-      FieldLength = 10
-      DisplayWidth = 10
-      Position = 8
-    end
-    object pipelineClientesAgrupadoppField10: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'codigo_cidade'
-      FieldName = 'codigo_cidade'
-      FieldLength = 0
-      DataType = dtLongint
-      DisplayWidth = 10
-      Position = 9
-    end
-    object pipelineClientesAgrupadoppField11: TppField
-      FieldAlias = 'nomeCidade'
-      FieldName = 'nomeCidade'
-      FieldLength = 100
-      DisplayWidth = 100
-      Position = 10
-    end
-    object pipelineClientesAgrupadoppField12: TppField
-      FieldAlias = 'nomeEstadoCidade'
-      FieldName = 'nomeEstadoCidade'
-      FieldLength = 50
-      DisplayWidth = 50
-      Position = 11
-    end
-    object pipelineClientesAgrupadoppField13: TppField
-      FieldAlias = 'cepInicialCidade'
-      FieldName = 'cepInicialCidade'
-      FieldLength = 10
-      DisplayWidth = 10
-      Position = 12
-    end
-    object pipelineClientesAgrupadoppField14: TppField
-      FieldAlias = 'cepFinalCidade'
-      FieldName = 'cepFinalCidade'
-      FieldLength = 10
-      DisplayWidth = 10
-      Position = 13
-    end
+    Left = 776
+    Top = 88
   end
   object dsReportAgrupado: TDataSource
     AutoEdit = False
     DataSet = dsSqlReportAgrupado
-    Left = 526
-    Top = 96
+    Left = 658
+    Top = 120
   end
   object dsSqlReportAgrupado: TADOQuery
+    Active = True
     Connection = conexao
     CursorType = ctStatic
     CommandTimeout = 0
@@ -1257,21 +1061,21 @@ object DM: TDM
         Value = Null
       end>
     SQL.Strings = (
-      'SELECT '
-      '  MAX(clientes.Codigo_Cliente) AS codCliente,'
-      '  MAX(clientes.CGC_CPF_Cliente) AS cpfCnpjCliente,'
-      '  MAX(clientes.nome) AS nomeCliente,'
-      '  MAX(clientes.telefone) AS telefoneCliente,'
-      '  MAX(clientes.endereco) AS enderecoCliente,'
-      '  MAX(clientes.bairro) AS bairroCliente,'
-      '  MAX(clientes.complemento) AS complementoCliente,'
-      '  MAX(clientes.email) AS emailCliente,'
-      '  MAX(clientes.cep) AS cepCliente,'
+      'SELECT'
+      '  clientes.Codigo_Cliente AS codCliente,'
+      '  clientes.CGC_CPF_Cliente AS cpfCnpjCliente,'
+      '  clientes.nome AS nomeCliente,'
+      '  clientes.telefone AS telefoneCliente,'
+      '  clientes.endereco AS enderecoCliente,'
+      '  clientes.bairro AS bairroCliente,'
+      '  clientes.complemento AS complementoCliente,'
+      '  clientes.email AS emailCliente,'
+      '  clientes.cep AS cepCliente,'
       '  cidades.codigo_cidade,'
-      '  MAX(cidades.nome) AS nomeCidade,'
-      '  MAX(cidades.estado) AS nomeEstadoCidade,'
-      '  MAX(cidades.cep_Inicial) AS cepInicialCidade,'
-      '  MAX(cidades.cep_Final) AS cepFinalCidade'
+      '  cidades.nome AS nomeCidade,'
+      '  cidades.estado AS nomeEstadoCidade,'
+      '  cidades.cep_Inicial AS cepInicialCidade,'
+      '  cidades.cep_Final AS cepFinalCidade'
       'FROM CLIENTES'
       
         'INNER JOIN CIDADES ON CLIENTES.codigo_Cidade = cidades.codigo_ci' +
@@ -1284,9 +1088,9 @@ object DM: TDM
         'cidades.CODIGO_CIDADE BETWEEN :CIDADE_INICIAL AND :CIDADE_FINAL ' +
         'AND'
       'ESTADO = :ESTADO'
-      'GROUP BY cidades.codigo_cidade;')
-    Left = 522
-    Top = 179
+      'order by cidades.codigo_cidade;')
+    Left = 653
+    Top = 224
     object dsSqlReportAgrupadocodCliente: TIntegerField
       FieldName = 'codCliente'
       ReadOnly = True
@@ -1417,7 +1221,7 @@ object DM: TDM
     RTFSettings.DefaultFont.Style = []
     RTFSettings.Title = 'Report'
     TextFileName = '($MyDocuments)\Report.pdf'
-    TextSearchSettings.DefaultString = '<Texto a localizar>'
+    TextSearchSettings.DefaultString = '<FindText>'
     TextSearchSettings.Enabled = True
     XLSSettings.AppName = 'ReportBuilder'
     XLSSettings.Author = 'ReportBuilder'
@@ -1436,8 +1240,8 @@ object DM: TDM
     CloudDriveSettings.OneDriveSettings.OAuth2.RedirectURI = 'http://localhost'
     CloudDriveSettings.OneDriveSettings.OAuth2.RedirectPort = 0
     CloudDriveSettings.OneDriveSettings.DirectorySupport = True
-    Left = 621
-    Top = 147
+    Left = 776
+    Top = 184
     Version = '22.03'
     mmColumnWidth = 0
     DataPipelineName = 'pipelineClientesAgrupado'
@@ -1473,106 +1277,25 @@ object DM: TDM
         Border.mmPadding = 0
         Weight = 0.750000000000000000
         mmHeight = 4022
-        mmLeft = 2752
+        mmLeft = 0
         mmTop = 16722
-        mmWidth = 191559
+        mmWidth = 197380
         BandType = 0
         LayerName = Foreground1
       end
     end
     object ppDetailBand2: TppDetailBand
       Border.mmPadding = 0
+      PrintHeight = phDynamic
       mmBottomOffset = 0
-      mmHeight = 85725
+      mmHeight = 61383
       mmPrintPosition = 0
-      object ppLabel3: TppLabel
-        DesignLayer = ppDesignLayer2
-        UserName = 'Label1'
-        AutoSize = False
-        Border.mmPadding = 0
-        Caption = 'Nome:'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
-        FormFieldSettings.FormFieldType = fftNone
-        Transparent = True
-        mmHeight = 4868
-        mmLeft = 20955
-        mmTop = 10372
-        mmWidth = 13335
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppDBText3: TppDBText
-        DesignLayer = ppDesignLayer2
-        UserName = 'DBText1'
-        Border.mmPadding = 0
-        DataField = 'nomeCliente'
-        DataPipeline = pipelineClientesAgrupado
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        Transparent = True
-        DataPipelineName = 'pipelineClientesAgrupado'
-        mmHeight = 4868
-        mmLeft = 35137
-        mmTop = 10372
-        mmWidth = 122767
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppLabel4: TppLabel
-        DesignLayer = ppDesignLayer2
-        UserName = 'Label2'
-        AutoSize = False
-        Border.mmPadding = 0
-        Caption = 'Telefone:'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
-        FormFieldSettings.FormFieldType = fftNone
-        Transparent = True
-        mmHeight = 4868
-        mmLeft = 20955
-        mmTop = 25823
-        mmWidth = 19050
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppDBText4: TppDBText
-        DesignLayer = ppDesignLayer2
-        UserName = 'DBText2'
-        Border.mmPadding = 0
-        DataField = 'telefoneCliente'
-        DataPipeline = pipelineClientesAgrupado
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        Transparent = True
-        DataPipelineName = 'pipelineClientesAgrupado'
-        mmHeight = 4868
-        mmLeft = 41698
-        mmTop = 25823
-        mmWidth = 64558
-        BandType = 4
-        LayerName = Foreground1
-      end
       object ppLabel5: TppLabel
         DesignLayer = ppDesignLayer2
-        UserName = 'Label3'
+        UserName = 'Label5'
         AutoSize = False
         Border.mmPadding = 0
-        Caption = 'Cidade:'
+        Caption = 'C'#243'digo do Cliente'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Name = 'Arial'
@@ -1580,19 +1303,20 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taRightJustified
         Transparent = True
-        mmHeight = 4763
-        mmLeft = 8202
-        mmTop = 2910
-        mmWidth = 15452
+        mmHeight = 4869
+        mmLeft = 13758
+        mmTop = 6138
+        mmWidth = 38894
         BandType = 4
         LayerName = Foreground1
       end
       object ppDBText5: TppDBText
         DesignLayer = ppDesignLayer2
-        UserName = 'DBText3'
+        UserName = 'DBText5'
         Border.mmPadding = 0
-        DataField = 'nomeCidade'
+        DataField = 'codCliente'
         DataPipeline = pipelineClientesAgrupado
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -1601,31 +1325,19 @@ object DM: TDM
         Font.Style = []
         Transparent = True
         DataPipelineName = 'pipelineClientesAgrupado'
-        mmHeight = 4868
-        mmLeft = 25188
-        mmTop = 2963
-        mmWidth = 113030
+        mmHeight = 4763
+        mmLeft = 53711
+        mmTop = 6085
+        mmWidth = 127000
         BandType = 4
         LayerName = Foreground1
       end
-      object ppLine1: TppLine
+      object ppLabel16: TppLabel
         DesignLayer = ppDesignLayer2
-        UserName = 'Line1'
-        Border.mmPadding = 0
-        Weight = 0.750000000000000000
-        mmHeight = 4022
-        mmLeft = 2752
-        mmTop = 77258
-        mmWidth = 191559
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppLabel18: TppLabel
-        DesignLayer = ppDesignLayer2
-        UserName = 'Label4'
+        UserName = 'Label16'
         AutoSize = False
         Border.mmPadding = 0
-        Caption = 'Email:'
+        Caption = 'CPF ou CNPJ'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Name = 'Arial'
@@ -1633,263 +1345,18 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taRightJustified
         Transparent = True
-        mmHeight = 4868
-        mmLeft = 20955
-        mmTop = 33020
-        mmWidth = 15240
+        mmHeight = 4869
+        mmLeft = 13758
+        mmTop = 11853
+        mmWidth = 38894
         BandType = 4
         LayerName = Foreground1
       end
       object ppDBText15: TppDBText
         DesignLayer = ppDesignLayer2
-        UserName = 'DBText4'
-        Border.mmPadding = 0
-        DataField = 'emailCliente'
-        DataPipeline = pipelineClientesAgrupado
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        Transparent = True
-        DataPipelineName = 'pipelineClientesAgrupado'
-        mmHeight = 4868
-        mmLeft = 38312
-        mmTop = 33020
-        mmWidth = 125730
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppLabel19: TppLabel
-        DesignLayer = ppDesignLayer2
-        UserName = 'Label5'
-        AutoSize = False
-        Border.mmPadding = 0
-        Caption = 'Endere'#231'o:'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
-        FormFieldSettings.FormFieldType = fftNone
-        Transparent = True
-        mmHeight = 4868
-        mmLeft = 20955
-        mmTop = 40217
-        mmWidth = 20743
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppDBText16: TppDBText
-        DesignLayer = ppDesignLayer2
-        UserName = 'DBText5'
-        Border.mmPadding = 0
-        DataField = 'enderecoCliente'
-        DataPipeline = pipelineClientesAgrupado
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        Transparent = True
-        DataPipelineName = 'pipelineClientesAgrupado'
-        mmHeight = 4868
-        mmLeft = 44027
-        mmTop = 40217
-        mmWidth = 115359
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppLabel20: TppLabel
-        DesignLayer = ppDesignLayer2
-        UserName = 'Label20'
-        AutoSize = False
-        Border.mmPadding = 0
-        Caption = 'Bairro:'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
-        FormFieldSettings.FormFieldType = fftNone
-        Transparent = True
-        mmHeight = 4868
-        mmLeft = 20955
-        mmTop = 47413
-        mmWidth = 15240
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppDBText17: TppDBText
-        DesignLayer = ppDesignLayer2
-        UserName = 'DBText17'
-        Border.mmPadding = 0
-        DataField = 'bairroCliente'
-        DataPipeline = pipelineClientesAgrupado
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        Transparent = True
-        DataPipelineName = 'pipelineClientesAgrupado'
-        mmHeight = 4868
-        mmLeft = 39582
-        mmTop = 47413
-        mmWidth = 119804
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppLabel21: TppLabel
-        DesignLayer = ppDesignLayer2
-        UserName = 'Label21'
-        AutoSize = False
-        Border.mmPadding = 0
-        Caption = 'Complemento:'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
-        FormFieldSettings.FormFieldType = fftNone
-        Transparent = True
-        mmHeight = 4868
-        mmLeft = 20955
-        mmTop = 53763
-        mmWidth = 27517
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppDBText18: TppDBText
-        DesignLayer = ppDesignLayer2
-        UserName = 'DBText18'
-        Border.mmPadding = 0
-        DataField = 'complementoCliente'
-        DataPipeline = pipelineClientesAgrupado
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        Transparent = True
-        DataPipelineName = 'pipelineClientesAgrupado'
-        mmHeight = 4868
-        mmLeft = 50588
-        mmTop = 53763
-        mmWidth = 84879
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppLabel22: TppLabel
-        DesignLayer = ppDesignLayer2
-        UserName = 'Label22'
-        AutoSize = False
-        Border.mmPadding = 0
-        Caption = 'Cep:'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
-        FormFieldSettings.FormFieldType = fftNone
-        Transparent = True
-        mmHeight = 4868
-        mmLeft = 20955
-        mmTop = 60960
-        mmWidth = 10795
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppDBText19: TppDBText
-        DesignLayer = ppDesignLayer2
-        UserName = 'DBText19'
-        Border.mmPadding = 0
-        DataField = 'cepCliente'
-        DataPipeline = pipelineClientesAgrupado
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        Transparent = True
-        DataPipelineName = 'pipelineClientesAgrupado'
-        mmHeight = 4868
-        mmLeft = 33655
-        mmTop = 60960
-        mmWidth = 40852
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppLabel23: TppLabel
-        DesignLayer = ppDesignLayer2
-        UserName = 'Label23'
-        AutoSize = False
-        Border.mmPadding = 0
-        Caption = 'Estado:'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
-        FormFieldSettings.FormFieldType = fftNone
-        Transparent = True
-        mmHeight = 4868
-        mmLeft = 20955
-        mmTop = 68157
-        mmWidth = 16933
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppDBText20: TppDBText
-        DesignLayer = ppDesignLayer2
-        UserName = 'DBText20'
-        Border.mmPadding = 0
-        DataField = 'nomeEstadoCidade'
-        DataPipeline = pipelineClientesAgrupado
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        Transparent = True
-        DataPipelineName = 'pipelineClientesAgrupado'
-        mmHeight = 4868
-        mmLeft = 39582
-        mmTop = 68157
-        mmWidth = 85090
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppLabel25: TppLabel
-        DesignLayer = ppDesignLayer2
-        UserName = 'Label25'
-        AutoSize = False
-        Border.mmPadding = 0
-        Caption = 'CPF ou CNPJ:'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Name = 'Arial'
-        Font.Size = 12
-        Font.Style = []
-        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
-        FormFieldSettings.FormFieldType = fftNone
-        Transparent = True
-        mmHeight = 4868
-        mmLeft = 20955
-        mmTop = 18203
-        mmWidth = 27517
-        BandType = 4
-        LayerName = Foreground1
-      end
-      object ppDBText21: TppDBText
-        DesignLayer = ppDesignLayer2
-        UserName = 'DBText21'
+        UserName = 'DBText15'
         Border.mmPadding = 0
         DataField = 'cpfCnpjCliente'
         DataPipeline = pipelineClientesAgrupado
@@ -1900,10 +1367,304 @@ object DM: TDM
         Font.Style = []
         Transparent = True
         DataPipelineName = 'pipelineClientesAgrupado'
+        mmHeight = 4763
+        mmLeft = 53711
+        mmTop = 11906
+        mmWidth = 127000
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppLabel17: TppLabel
+        DesignLayer = ppDesignLayer2
+        UserName = 'Label17'
+        AutoSize = False
+        Border.mmPadding = 0
+        Caption = 'Nome'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+        FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taRightJustified
+        Transparent = True
         mmHeight = 4868
-        mmLeft = 50588
-        mmTop = 18203
-        mmWidth = 68580
+        mmLeft = 13758
+        mmTop = 17780
+        mmWidth = 38894
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppDBText16: TppDBText
+        DesignLayer = ppDesignLayer2
+        UserName = 'DBText16'
+        Border.mmPadding = 0
+        DataField = 'nomeCliente'
+        DataPipeline = pipelineClientesAgrupado
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        Transparent = True
+        DataPipelineName = 'pipelineClientesAgrupado'
+        mmHeight = 4763
+        mmLeft = 53711
+        mmTop = 17727
+        mmWidth = 127000
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppLabel18: TppLabel
+        DesignLayer = ppDesignLayer2
+        UserName = 'Label18'
+        AutoSize = False
+        Border.mmPadding = 0
+        Caption = 'Telefone'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+        FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 4868
+        mmLeft = 13758
+        mmTop = 23495
+        mmWidth = 38894
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppDBText17: TppDBText
+        DesignLayer = ppDesignLayer2
+        UserName = 'DBText17'
+        Border.mmPadding = 0
+        DataField = 'telefoneCliente'
+        DataPipeline = pipelineClientesAgrupado
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        Transparent = True
+        DataPipelineName = 'pipelineClientesAgrupado'
+        mmHeight = 4763
+        mmLeft = 53711
+        mmTop = 23548
+        mmWidth = 127000
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppLabel19: TppLabel
+        DesignLayer = ppDesignLayer2
+        UserName = 'Label19'
+        AutoSize = False
+        Border.mmPadding = 0
+        Caption = 'Endere'#231'o'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+        FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 4868
+        mmLeft = 13758
+        mmTop = 29422
+        mmWidth = 38894
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppDBText18: TppDBText
+        DesignLayer = ppDesignLayer2
+        UserName = 'DBText18'
+        Border.mmPadding = 0
+        DataField = 'enderecoCliente'
+        DataPipeline = pipelineClientesAgrupado
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        Transparent = True
+        DataPipelineName = 'pipelineClientesAgrupado'
+        mmHeight = 4763
+        mmLeft = 53711
+        mmTop = 29369
+        mmWidth = 127000
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppLabel20: TppLabel
+        DesignLayer = ppDesignLayer2
+        UserName = 'Label20'
+        AutoSize = False
+        Border.mmPadding = 0
+        Caption = 'Bairro'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+        FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 4868
+        mmLeft = 13758
+        mmTop = 35137
+        mmWidth = 38894
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppDBText19: TppDBText
+        DesignLayer = ppDesignLayer2
+        UserName = 'DBText19'
+        Border.mmPadding = 0
+        DataField = 'bairroCliente'
+        DataPipeline = pipelineClientesAgrupado
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        Transparent = True
+        DataPipelineName = 'pipelineClientesAgrupado'
+        mmHeight = 4763
+        mmLeft = 53711
+        mmTop = 35190
+        mmWidth = 127000
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppLabel21: TppLabel
+        DesignLayer = ppDesignLayer2
+        UserName = 'Label21'
+        AutoSize = False
+        Border.mmPadding = 0
+        Caption = 'Complemento'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+        FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 4869
+        mmLeft = 13758
+        mmTop = 41063
+        mmWidth = 38894
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppDBText20: TppDBText
+        DesignLayer = ppDesignLayer2
+        UserName = 'DBText20'
+        Border.mmPadding = 0
+        DataField = 'complementoCliente'
+        DataPipeline = pipelineClientesAgrupado
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        Transparent = True
+        DataPipelineName = 'pipelineClientesAgrupado'
+        mmHeight = 4763
+        mmLeft = 53711
+        mmTop = 41010
+        mmWidth = 127000
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppLabel22: TppLabel
+        DesignLayer = ppDesignLayer2
+        UserName = 'Label22'
+        AutoSize = False
+        Border.mmPadding = 0
+        Caption = 'Email'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+        FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 4869
+        mmLeft = 13758
+        mmTop = 46778
+        mmWidth = 38894
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppDBText21: TppDBText
+        DesignLayer = ppDesignLayer2
+        UserName = 'DBText21'
+        Border.mmPadding = 0
+        DataField = 'emailCliente'
+        DataPipeline = pipelineClientesAgrupado
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        Transparent = True
+        DataPipelineName = 'pipelineClientesAgrupado'
+        mmHeight = 4763
+        mmLeft = 53711
+        mmTop = 46831
+        mmWidth = 101600
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppLabel23: TppLabel
+        DesignLayer = ppDesignLayer2
+        UserName = 'Label23'
+        AutoSize = False
+        Border.mmPadding = 0
+        Caption = 'CEP'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+        FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 4868
+        mmLeft = 13758
+        mmTop = 52705
+        mmWidth = 38894
+        BandType = 4
+        LayerName = Foreground1
+      end
+      object ppDBText22: TppDBText
+        DesignLayer = ppDesignLayer2
+        UserName = 'DBText22'
+        Border.mmPadding = 0
+        DataField = 'cepCliente'
+        DataPipeline = pipelineClientesAgrupado
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        Transparent = True
+        DataPipelineName = 'pipelineClientesAgrupado'
+        mmHeight = 4763
+        mmLeft = 53711
+        mmTop = 52652
+        mmWidth = 32808
         BandType = 4
         LayerName = Foreground1
       end
@@ -1911,8 +1672,136 @@ object DM: TDM
     object ppFooterBand2: TppFooterBand
       Border.mmPadding = 0
       mmBottomOffset = 0
-      mmHeight = 13758
+      mmHeight = 7144
       mmPrintPosition = 0
+    end
+    object ppGroup1: TppGroup
+      BreakName = 'nomeCidade'
+      DataPipeline = pipelineClientesAgrupado
+      GroupFileSettings.NewFile = False
+      GroupFileSettings.EmailFile = False
+      KeepTogether = True
+      OutlineSettings.CreateNode = True
+      StartOnOddPage = False
+      UserName = 'Group1'
+      mmNewColumnThreshold = 0
+      mmNewPageThreshold = 0
+      DataPipelineName = 'pipelineClientesAgrupado'
+      NewFile = False
+      object ppGroupHeaderBand1: TppGroupHeaderBand
+        Border.mmPadding = 0
+        mmBottomOffset = 0
+        mmHeight = 8731
+        mmPrintPosition = 0
+        object ppLabel3: TppLabel
+          DesignLayer = ppDesignLayer2
+          UserName = 'Label3'
+          AutoSize = False
+          Border.mmPadding = 0
+          Caption = 'Cidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Name = 'Arial'
+          Font.Size = 12
+          Font.Style = []
+          FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+          FormFieldSettings.FormFieldType = fftNone
+          TextAlignment = taRightJustified
+          Transparent = True
+          mmHeight = 4869
+          mmLeft = 5292
+          mmTop = 1693
+          mmWidth = 25135
+          BandType = 3
+          GroupNo = 0
+          LayerName = Foreground1
+        end
+        object ppDBText3: TppDBText
+          DesignLayer = ppDesignLayer2
+          UserName = 'DBText3'
+          Border.mmPadding = 0
+          DataField = 'nomeCidade'
+          DataPipeline = pipelineClientesAgrupado
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Name = 'Arial'
+          Font.Size = 12
+          Font.Style = []
+          Transparent = True
+          DataPipelineName = 'pipelineClientesAgrupado'
+          mmHeight = 4763
+          mmLeft = 32279
+          mmTop = 1588
+          mmWidth = 38894
+          BandType = 3
+          GroupNo = 0
+          LayerName = Foreground1
+        end
+        object ppLabel4: TppLabel
+          DesignLayer = ppDesignLayer2
+          UserName = 'Label4'
+          AutoSize = False
+          Border.mmPadding = 0
+          Caption = 'Estado'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Name = 'Arial'
+          Font.Size = 12
+          Font.Style = []
+          FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+          FormFieldSettings.FormFieldType = fftNone
+          TextAlignment = taRightJustified
+          Transparent = True
+          mmHeight = 4869
+          mmLeft = 101600
+          mmTop = 1693
+          mmWidth = 38365
+          BandType = 3
+          GroupNo = 0
+          LayerName = Foreground1
+        end
+        object ppDBText4: TppDBText
+          DesignLayer = ppDesignLayer2
+          UserName = 'DBText4'
+          Border.mmPadding = 0
+          DataField = 'nomeEstadoCidade'
+          DataPipeline = pipelineClientesAgrupado
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Name = 'Arial'
+          Font.Size = 12
+          Font.Style = []
+          Transparent = True
+          DataPipelineName = 'pipelineClientesAgrupado'
+          mmHeight = 4763
+          mmLeft = 141552
+          mmTop = 1588
+          mmWidth = 52652
+          BandType = 3
+          GroupNo = 0
+          LayerName = Foreground1
+        end
+      end
+      object ppGroupFooterBand1: TppGroupFooterBand
+        Border.mmPadding = 0
+        HideWhenOneDetail = False
+        mmBottomOffset = 0
+        mmHeight = 7408
+        mmPrintPosition = 0
+        object ppLine1: TppLine
+          DesignLayer = ppDesignLayer2
+          UserName = 'Line1'
+          Border.mmPadding = 0
+          Weight = 0.750000000000000000
+          mmHeight = 3969
+          mmLeft = 0
+          mmTop = 2381
+          mmWidth = 197380
+          BandType = 5
+          GroupNo = 0
+          LayerName = Foreground1
+        end
+      end
     end
     object ppDesignLayers2: TppDesignLayers
       object ppDesignLayer2: TppDesignLayer
@@ -1942,8 +1831,8 @@ object DM: TDM
       'select codigo_cidade, nome'
       'from cidades'
       'where :cep between cep_Inicial and cep_final')
-    Left = 432
-    Top = 296
+    Left = 540
+    Top = 370
     object sqlValidarCEPcodigo_cidade: TAutoIncField
       FieldName = 'codigo_cidade'
       ReadOnly = True

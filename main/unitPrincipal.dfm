@@ -3,8 +3,8 @@ object formTelaPrincipal: TformTelaPrincipal
   Top = 0
   BorderIcons = [biSystemMenu]
   Caption = 'Tela Principal'
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 433
+  ClientWidth = 622
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

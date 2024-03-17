@@ -112,7 +112,7 @@ object formRelClientes: TformRelClientes
     Height = 129
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 630
+    ExplicitWidth = 663
     object lblTitulo: TLabel
       Left = 176
       Top = 36

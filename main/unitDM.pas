@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB, ppProd, ppClass,
   ppReport, ppComm, ppRelatv, ppDB, ppDBPipe, ppDBBDE, ppPrnabl, ppCtrls,
-  ppBands, ppCache, ppDesignLayer, ppParameter;
+  ppBands, ppCache, ppDesignLayer, ppParameter, ppStrtch, ppSubRpt;
 
 type
   TDM = class(TDataModule)
@@ -83,10 +83,6 @@ type
     reportClientesAgrupado: TppReport;
     ppHeaderBand2: TppHeaderBand;
     ppDetailBand2: TppDetailBand;
-    ppLabel3: TppLabel;
-    ppDBText3: TppDBText;
-    ppLabel4: TppLabel;
-    ppDBText4: TppDBText;
     ppFooterBand2: TppFooterBand;
     ppDesignLayers2: TppDesignLayers;
     ppDesignLayer2: TppDesignLayer;
@@ -105,9 +101,6 @@ type
     dsSqlReportAgrupadonomeEstadoCidade: TWideStringField;
     dsSqlReportAgrupadocepInicialCidade: TWideStringField;
     dsSqlReportAgrupadocepFinalCidade: TWideStringField;
-    ppLabel5: TppLabel;
-    ppDBText5: TppDBText;
-    ppLine1: TppLine;
     ppLabel6: TppLabel;
     ppDBText6: TppDBText;
     ppLabel7: TppLabel;
@@ -127,28 +120,40 @@ type
     ppLabel14: TppLabel;
     ppDBText14: TppDBText;
     ppLabel15: TppLabel;
-    ppLabel18: TppLabel;
-    ppDBText15: TppDBText;
-    ppLabel19: TppLabel;
-    ppDBText16: TppDBText;
-    ppLabel20: TppLabel;
-    ppDBText17: TppDBText;
-    ppLabel21: TppLabel;
-    ppDBText18: TppDBText;
-    ppLabel22: TppLabel;
-    ppDBText19: TppDBText;
-    ppLabel23: TppLabel;
-    ppDBText20: TppDBText;
     ppLabel24: TppLabel;
     ppLine2: TppLine;
-    ppLabel25: TppLabel;
-    ppDBText21: TppDBText;
     ppLine3: TppLine;
     ppLine4: TppLine;
     sqlValidarCEP: TADOQuery;
     sqlValidarCEPnome: TWideStringField;
     sqlValidarCEPcodigo_cidade: TAutoIncField;
     tbClientesnome_cidade: TWideStringField;
+    ppGroup1: TppGroup;
+    ppGroupHeaderBand1: TppGroupHeaderBand;
+    ppGroupFooterBand1: TppGroupFooterBand;
+    ppLabel3: TppLabel;
+    ppDBText3: TppDBText;
+    ppLabel4: TppLabel;
+    ppDBText4: TppDBText;
+    ppLabel5: TppLabel;
+    ppDBText5: TppDBText;
+    ppLabel16: TppLabel;
+    ppDBText15: TppDBText;
+    ppLabel17: TppLabel;
+    ppDBText16: TppDBText;
+    ppLabel18: TppLabel;
+    ppDBText17: TppDBText;
+    ppLabel19: TppLabel;
+    ppDBText18: TppDBText;
+    ppLabel20: TppLabel;
+    ppDBText19: TppDBText;
+    ppLabel21: TppLabel;
+    ppDBText20: TppDBText;
+    ppLabel22: TppLabel;
+    ppDBText21: TppDBText;
+    ppLabel23: TppLabel;
+    ppDBText22: TppDBText;
+    ppLine1: TppLine;
     procedure tbCidadesAfterScroll(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
 

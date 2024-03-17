@@ -166,7 +166,7 @@
     Height = 121
     Align = alTop
     TabOrder = 10
-    ExplicitWidth = 1031
+    ExplicitWidth = 1029
     object lblTitulo: TLabel
       Left = 360
       Top = 37
@@ -377,7 +377,7 @@
     OnClick = btSalvarClick
   end
   object btDeletar: TButton
-    Left = 767
+    Left = 831
     Top = 185
     Width = 58
     Height = 41
@@ -416,7 +416,7 @@
     TabOrder = 9
   end
   object btEditar: TButton
-    Left = 831
+    Left = 767
     Top = 185
     Width = 58
     Height = 41
