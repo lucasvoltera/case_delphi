@@ -108,6 +108,43 @@ type
     ppLabel5: TppLabel;
     ppDBText5: TppDBText;
     ppLine1: TppLine;
+    ppLabel6: TppLabel;
+    ppDBText6: TppDBText;
+    ppLabel7: TppLabel;
+    ppDBText7: TppDBText;
+    ppLabel8: TppLabel;
+    ppDBText8: TppDBText;
+    ppLabel9: TppLabel;
+    ppDBText9: TppDBText;
+    ppLabel10: TppLabel;
+    ppDBText10: TppDBText;
+    ppLabel11: TppLabel;
+    ppDBText11: TppDBText;
+    ppLabel12: TppLabel;
+    ppDBText12: TppDBText;
+    ppLabel13: TppLabel;
+    ppDBText13: TppDBText;
+    ppLabel14: TppLabel;
+    ppDBText14: TppDBText;
+    ppLabel15: TppLabel;
+    ppLabel18: TppLabel;
+    ppDBText15: TppDBText;
+    ppLabel19: TppLabel;
+    ppDBText16: TppDBText;
+    ppLabel20: TppLabel;
+    ppDBText17: TppDBText;
+    ppLabel21: TppLabel;
+    ppDBText18: TppDBText;
+    ppLabel22: TppLabel;
+    ppDBText19: TppDBText;
+    ppLabel23: TppLabel;
+    ppDBText20: TppDBText;
+    ppLabel24: TppLabel;
+    ppLine2: TppLine;
+    ppLabel25: TppLabel;
+    ppDBText21: TppDBText;
+    ppLine3: TppLine;
+    ppLine4: TppLine;
     procedure tbCidadesAfterScroll(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
 
@@ -136,6 +173,7 @@ begin
   sqlCidades.Close;
   sqlClientes.Close;
 end;
+
 
 procedure TDM.tbCidadesAfterScroll(DataSet: TDataSet);
 begin

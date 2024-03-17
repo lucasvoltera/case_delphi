@@ -18,8 +18,8 @@ object DM: TDM
       'n=True;Connect Retry Count=1;Connect Retry Interval=10'
     LoginPrompt = False
     Provider = 'MSOLEDBSQL.1'
-    Left = 248
-    Top = 296
+    Left = 144
+    Top = 312
   end
   object sqlCidades: TADOQuery
     Active = True
@@ -30,8 +30,8 @@ object DM: TDM
     Parameters = <>
     SQL.Strings = (
       'SELECT * FROM cidades')
-    Left = 353
-    Top = 128
+    Left = 289
+    Top = 120
     object sqlCidadescodigo_cidade: TAutoIncField
       DisplayWidth = 14
       FieldName = 'codigo_cidade'
@@ -64,34 +64,40 @@ object DM: TDM
     CursorType = ctStatic
     CommandTimeout = 0
     TableName = 'cidades'
-    Left = 353
-    Top = 216
+    Left = 289
+    Top = 208
     object tbCidadescodigo_cidade: TAutoIncField
       FieldName = 'codigo_cidade'
       ReadOnly = True
     end
     object tbCidadesnome: TWideStringField
       FieldName = 'nome'
+      Required = True
       Size = 100
     end
     object tbCidadesestado: TWideStringField
       FieldName = 'estado'
+      Required = True
       Size = 50
     end
     object tbCidadescep_Inicial: TWideStringField
       FieldName = 'cep_Inicial'
+      Required = True
+      EditMask = '#####-###;1;_'
       Size = 10
     end
     object tbCidadescep_Final: TWideStringField
       FieldName = 'cep_Final'
+      Required = True
+      EditMask = '#####-###;1;_'
       Size = 10
     end
   end
   object dsCidades: TDataSource
     AutoEdit = False
     DataSet = tbCidades
-    Left = 448
-    Top = 216
+    Left = 392
+    Top = 208
   end
   object tbClientes: TADOTable
     Active = True
@@ -100,21 +106,24 @@ object DM: TDM
     CommandTimeout = 0
     IndexFieldNames = 'codigo_Cidade'
     TableName = 'clientes'
-    Left = 353
-    Top = 401
+    Left = 281
+    Top = 449
     object tbClientescodigo_cliente: TAutoIncField
       FieldName = 'codigo_cliente'
       ReadOnly = True
     end
     object tbClientesCGC_CPF_cliente: TWideStringField
       FieldName = 'CGC_CPF_cliente'
+      Required = True
     end
     object tbClientesnome: TWideStringField
       FieldName = 'nome'
+      Required = True
       Size = 100
     end
     object tbClientestelefone: TWideStringField
       FieldName = 'telefone'
+      EditMask = '(##) #####-####;1;_'
     end
     object tbClientesendereco: TWideStringField
       FieldName = 'endereco'
@@ -134,17 +143,19 @@ object DM: TDM
     end
     object tbClientescodigo_Cidade: TIntegerField
       FieldName = 'codigo_Cidade'
+      Required = True
     end
     object tbClientescep: TWideStringField
       FieldName = 'cep'
+      EditMask = '#####-###;1;_'
       Size = 10
     end
   end
   object dsClientes: TDataSource
     AutoEdit = False
     DataSet = tbClientes
-    Left = 473
-    Top = 400
+    Left = 393
+    Top = 448
   end
   object sqlClientes: TADOQuery
     Active = True
@@ -161,8 +172,8 @@ object DM: TDM
       end>
     SQL.Strings = (
       'select * from clientes;')
-    Left = 353
-    Top = 513
+    Left = 281
+    Top = 561
     object sqlClientescodigo_cliente: TAutoIncField
       FieldName = 'codigo_cliente'
       ReadOnly = True
@@ -214,20 +225,20 @@ object DM: TDM
   object dsSqlCidades: TDataSource
     AutoEdit = False
     DataSet = sqlCidades
-    Left = 473
-    Top = 128
+    Left = 385
+    Top = 120
   end
   object dsSqlClientes: TDataSource
     AutoEdit = False
     DataSet = sqlClientes
-    Left = 480
-    Top = 520
+    Left = 400
+    Top = 560
   end
   object pipelineClientes: TppBDEPipeline
     DataSource = dsReport
     UserName = 'pipelineClientes'
-    Left = 860
-    Top = 440
+    Left = 796
+    Top = 456
     object pipelineClientesppField1: TppField
       Alignment = taRightJustify
       FieldAlias = 'codCliente'
@@ -334,8 +345,8 @@ object DM: TDM
   object dsReport: TDataSource
     AutoEdit = False
     DataSet = dsSqlReport
-    Left = 686
-    Top = 440
+    Left = 670
+    Top = 448
   end
   object dsSqlReport: TADOQuery
     Active = True
@@ -552,8 +563,8 @@ object DM: TDM
     CloudDriveSettings.OneDriveSettings.OAuth2.RedirectURI = 'http://localhost'
     CloudDriveSettings.OneDriveSettings.OAuth2.RedirectPort = 0
     CloudDriveSettings.OneDriveSettings.DirectorySupport = True
-    Left = 868
-    Top = 560
+    Left = 804
+    Top = 568
     Version = '22.03'
     mmColumnWidth = 0
     DataPipelineName = 'pipelineClientes'
@@ -577,31 +588,21 @@ object DM: TDM
         TextAlignment = taCentered
         Transparent = True
         mmHeight = 8043
-        mmLeft = 57150
-        mmTop = 3175
+        mmLeft = 59267
+        mmTop = 3598
         mmWidth = 68792
         BandType = 0
         LayerName = Foreground
       end
-      object ppLabel17: TppLabel
+      object ppLine3: TppLine
         DesignLayer = ppDesignLayer1
-        UserName = 'Label17'
+        UserName = 'Line3'
         Border.mmPadding = 0
-        Caption = 
-          '----------------------------------------------------------------' +
-          '---------------------------'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Name = 'Arial'
-        Font.Size = 15
-        Font.Style = []
-        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
-        FormFieldSettings.FormFieldType = fftNone
-        Transparent = True
-        mmHeight = 5927
-        mmLeft = 16510
-        mmTop = 11642
-        mmWidth = 154094
+        Weight = 0.750000000000000000
+        mmHeight = 4022
+        mmLeft = 3598
+        mmTop = 15028
+        mmWidth = 191559
         BandType = 0
         LayerName = Foreground
       end
@@ -609,7 +610,7 @@ object DM: TDM
     object ppDetailBand1: TppDetailBand
       Border.mmPadding = 0
       mmBottomOffset = 0
-      mmHeight = 104352
+      mmHeight = 96520
       mmPrintPosition = 0
       object ppLabel1: TppLabel
         DesignLayer = ppDesignLayer1
@@ -624,12 +625,11 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
-        TextAlignment = taCentered
         Transparent = True
         mmHeight = 4868
         mmLeft = 15028
         mmTop = 4657
-        mmWidth = 24342
+        mmWidth = 14817
         BandType = 4
         LayerName = Foreground
       end
@@ -647,7 +647,7 @@ object DM: TDM
         Transparent = True
         DataPipelineName = 'pipelineClientes'
         mmHeight = 4868
-        mmLeft = 41487
+        mmLeft = 32597
         mmTop = 4657
         mmWidth = 122767
         BandType = 4
@@ -666,12 +666,11 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
-        TextAlignment = taCentered
         Transparent = True
         mmHeight = 4869
         mmLeft = 15028
         mmTop = 11853
-        mmWidth = 28575
+        mmWidth = 17992
         BandType = 4
         LayerName = Foreground
       end
@@ -688,8 +687,8 @@ object DM: TDM
         Font.Style = []
         Transparent = True
         DataPipelineName = 'pipelineClientes'
-        mmHeight = 4869
-        mmLeft = 44662
+        mmHeight = 4868
+        mmLeft = 34925
         mmTop = 11853
         mmWidth = 64558
         BandType = 4
@@ -708,12 +707,11 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
-        TextAlignment = taCentered
         Transparent = True
         mmHeight = 4868
         mmLeft = 15028
         mmTop = 19262
-        mmWidth = 27517
+        mmWidth = 26458
         BandType = 4
         LayerName = Foreground
       end
@@ -750,12 +748,11 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
-        TextAlignment = taCentered
         Transparent = True
         mmHeight = 4868
         mmLeft = 15028
         mmTop = 34925
-        mmWidth = 28363
+        mmWidth = 17992
         BandType = 4
         LayerName = Foreground
       end
@@ -773,7 +770,7 @@ object DM: TDM
         Transparent = True
         DataPipelineName = 'pipelineClientes'
         mmHeight = 4868
-        mmLeft = 44238
+        mmLeft = 34078
         mmTop = 34925
         mmWidth = 68580
         BandType = 4
@@ -792,12 +789,11 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
-        TextAlignment = taCentered
         Transparent = True
         mmHeight = 4868
         mmLeft = 15028
         mmTop = 42757
-        mmWidth = 30903
+        mmWidth = 20320
         BandType = 4
         LayerName = Foreground
       end
@@ -815,7 +811,7 @@ object DM: TDM
         Transparent = True
         DataPipelineName = 'pipelineClientes'
         mmHeight = 4868
-        mmLeft = 46778
+        mmLeft = 37253
         mmTop = 42757
         mmWidth = 119592
         BandType = 4
@@ -834,12 +830,11 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
-        TextAlignment = taCentered
         Transparent = True
         mmHeight = 4868
         mmLeft = 15028
         mmTop = 51012
-        mmWidth = 24342
+        mmWidth = 14817
         BandType = 4
         LayerName = Foreground
       end
@@ -857,7 +852,7 @@ object DM: TDM
         Transparent = True
         DataPipelineName = 'pipelineClientes'
         mmHeight = 4868
-        mmLeft = 43392
+        mmLeft = 31750
         mmTop = 51012
         mmWidth = 82550
         BandType = 4
@@ -876,12 +871,11 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
-        TextAlignment = taCentered
         Transparent = True
         mmHeight = 4868
         mmLeft = 15028
         mmTop = 59690
-        mmWidth = 38312
+        mmWidth = 27940
         BandType = 4
         LayerName = Foreground
       end
@@ -899,7 +893,7 @@ object DM: TDM
         Transparent = True
         DataPipelineName = 'pipelineClientes'
         mmHeight = 4868
-        mmLeft = 55880
+        mmLeft = 45085
         mmTop = 59690
         mmWidth = 85514
         BandType = 4
@@ -918,12 +912,11 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
-        TextAlignment = taCentered
         Transparent = True
         mmHeight = 4868
         mmLeft = 15028
         mmTop = 68157
-        mmWidth = 20320
+        mmWidth = 9948
         BandType = 4
         LayerName = Foreground
       end
@@ -941,7 +934,7 @@ object DM: TDM
         Transparent = True
         DataPipelineName = 'pipelineClientes'
         mmHeight = 4868
-        mmLeft = 36195
+        mmLeft = 27517
         mmTop = 68157
         mmWidth = 34713
         BandType = 4
@@ -960,12 +953,11 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
-        TextAlignment = taCentered
         Transparent = True
         mmHeight = 4869
         mmLeft = 15028
         mmTop = 75988
-        mmWidth = 24130
+        mmWidth = 14817
         BandType = 4
         LayerName = Foreground
       end
@@ -982,8 +974,8 @@ object DM: TDM
         Font.Style = []
         Transparent = True
         DataPipelineName = 'pipelineClientes'
-        mmHeight = 4869
-        mmLeft = 41487
+        mmHeight = 4868
+        mmLeft = 31750
         mmTop = 75988
         mmWidth = 115359
         BandType = 4
@@ -1002,12 +994,11 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
-        TextAlignment = taCentered
         Transparent = True
         mmHeight = 4869
         mmLeft = 15028
         mmTop = 83608
-        mmWidth = 37253
+        mmWidth = 16510
         BandType = 4
         LayerName = Foreground
       end
@@ -1024,8 +1015,8 @@ object DM: TDM
         Font.Style = []
         Transparent = True
         DataPipelineName = 'pipelineClientes'
-        mmHeight = 4869
-        mmLeft = 55880
+        mmHeight = 4868
+        mmLeft = 34078
         mmTop = 83608
         mmWidth = 84667
         BandType = 4
@@ -1044,12 +1035,11 @@ object DM: TDM
         Font.Style = []
         FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
         FormFieldSettings.FormFieldType = fftNone
-        TextAlignment = taCentered
         Transparent = True
         mmHeight = 4868
         mmLeft = 15028
         mmTop = 27517
-        mmWidth = 23283
+        mmWidth = 12065
         BandType = 4
         LayerName = Foreground
       end
@@ -1067,32 +1057,21 @@ object DM: TDM
         Transparent = True
         DataPipelineName = 'pipelineClientes'
         mmHeight = 4868
-        mmLeft = 40640
+        mmLeft = 28787
         mmTop = 27517
         mmWidth = 110702
         BandType = 4
         LayerName = Foreground
       end
-      object ppLabel16: TppLabel
+      object ppLine4: TppLine
         DesignLayer = ppDesignLayer1
-        UserName = 'Label16'
+        UserName = 'Line4'
         Border.mmPadding = 0
-        Caption = 
-          '----------------------------------------------------------------' +
-          '---------------------------'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Name = 'Arial'
-        Font.Size = 15
-        Font.Style = []
-        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
-        FormFieldSettings.FormFieldType = fftNone
-        TextAlignment = taCentered
-        Transparent = True
-        mmHeight = 5927
-        mmLeft = 8255
-        mmTop = 91017
-        mmWidth = 167217
+        Weight = 0.750000000000000000
+        mmHeight = 4022
+        mmLeft = 1058
+        mmTop = 90805
+        mmWidth = 191559
         BandType = 4
         LayerName = Foreground
       end
@@ -1116,8 +1095,8 @@ object DM: TDM
   object pipelineClientesAgrupado: TppBDEPipeline
     DataSource = dsReportAgrupado
     UserName = 'pipelineClientesAgrupado'
-    Left = 840
-    Top = 120
+    Left = 776
+    Top = 88
     object pipelineClientesAgrupadoppField1: TppField
       Alignment = taRightJustify
       FieldAlias = 'codCliente'
@@ -1224,7 +1203,7 @@ object DM: TDM
   object dsReportAgrupado: TDataSource
     AutoEdit = False
     DataSet = dsSqlReportAgrupado
-    Left = 690
+    Left = 658
     Top = 120
   end
   object dsSqlReportAgrupado: TADOQuery
@@ -1303,8 +1282,8 @@ object DM: TDM
         'AND'
       'ESTADO = :ESTADO'
       'GROUP BY cidades.codigo_cidade;')
-    Left = 692
-    Top = 240
+    Left = 652
+    Top = 224
     object dsSqlReportAgrupadocodCliente: TIntegerField
       FieldName = 'codCliente'
       ReadOnly = True
@@ -1454,8 +1433,8 @@ object DM: TDM
     CloudDriveSettings.OneDriveSettings.OAuth2.RedirectURI = 'http://localhost'
     CloudDriveSettings.OneDriveSettings.OAuth2.RedirectPort = 0
     CloudDriveSettings.OneDriveSettings.DirectorySupport = True
-    Left = 872
-    Top = 240
+    Left = 776
+    Top = 184
     Version = '22.03'
     mmColumnWidth = 0
     DataPipelineName = 'pipelineClientesAgrupado'

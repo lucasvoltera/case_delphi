@@ -3,8 +3,8 @@ object formConCliente: TformConCliente
   Top = 0
   BorderIcons = [biSystemMenu]
   Caption = 'formConCliente'
-  ClientHeight = 570
-  ClientWidth = 835
+  ClientHeight = 633
+  ClientWidth = 895
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -26,6 +26,32 @@ object formConCliente: TformConCliente
     Font.Height = -20
     Font.Name = 'Segoe UI'
     Font.Style = []
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 56
+    Top = 584
+    Width = 216
+    Height = 23
+    Caption = 'Quantidade de resultados: '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lblQuantidade: TLabel
+    Left = 279
+    Top = 584
+    Width = 20
+    Height = 23
+    Caption = '00'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
     ParentFont = False
   end
   object radioGroupOpcoes: TRadioGroup
@@ -163,7 +189,7 @@ object formConCliente: TformConCliente
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 835
+    Width = 895
     Height = 129
     Align = alTop
     TabOrder = 4

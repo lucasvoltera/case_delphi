@@ -47,10 +47,10 @@ object formTelaPrincipal: TformTelaPrincipal
         Caption = 'Consulta'
         OnClick = Cadastro2Click
       end
-      object Relatorio: TMenuItem
-        Caption = 'Relat'#243'rio'
-        OnClick = RelatorioClick
-      end
+    end
+    object Relatrio1: TMenuItem
+      Caption = 'Relat'#243'rio'
+      OnClick = Relatrio1Click
     end
   end
 end

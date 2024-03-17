@@ -17,13 +17,13 @@ type
     Clientes3: TMenuItem;
     Cadastro1: TMenuItem;
     Cadastro2: TMenuItem;
-    Relatorio: TMenuItem;
+    Relatrio1: TMenuItem;
     procedure Sistema2Click(Sender: TObject);
     procedure Clientes2Click(Sender: TObject);
     procedure Clientes3Click(Sender: TObject);
     procedure Cadastro1Click(Sender: TObject);
     procedure Cadastro2Click(Sender: TObject);
-    procedure RelatorioClick(Sender: TObject);
+    procedure Relatrio1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -64,7 +64,7 @@ begin
   formConCidade.ShowModal;
 end;
 
-procedure TformTelaPrincipal.RelatorioClick(Sender: TObject);
+procedure TformTelaPrincipal.Relatrio1Click(Sender: TObject);
 begin
   Application.CreateForm(TformRelClientes, formRelClientes);
   formRelClientes.ShowModal;

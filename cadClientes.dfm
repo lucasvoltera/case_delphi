@@ -166,7 +166,7 @@
     Height = 121
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 1042
+    ExplicitWidth = 1029
     object lblTitulo: TLabel
       Left = 360
       Top = 37
@@ -193,7 +193,7 @@
   object editCPF: TDBEdit
     Left = 21
     Top = 295
-    Width = 172
+    Width = 158
     Height = 23
     DataField = 'CGC_CPF_cliente'
     DataSource = DM.dsClientes
@@ -206,6 +206,7 @@
     Height = 23
     DataField = 'telefone'
     DataSource = DM.dsClientes
+    MaxLength = 14
     TabOrder = 3
   end
   object editEmail: TDBEdit
@@ -251,12 +252,13 @@
     Height = 23
     DataField = 'cep'
     DataSource = DM.dsClientes
+    MaxLength = 9
     TabOrder = 8
   end
   object gridClientes: TDBGrid
     Left = 448
     Top = 232
-    Width = 569
+    Width = 567
     Height = 369
     DataSource = DM.dsClientes
     TabOrder = 9

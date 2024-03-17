@@ -16,6 +16,9 @@ type
     gridConClientes: TDBGrid;
     Panel1: TPanel;
     lblTitulo: TLabel;
+    Label1: TLabel;
+    lblQuantidade: TLabel;
+    procedure calcularQuantidadeClientes;
     procedure radioGroupOpcoesClick(Sender: TObject);
     procedure btBuscarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -34,6 +37,31 @@ implementation
 {$R *.dfm}
 
 uses unitDM;
+
+
+procedure TformConCliente.calcularQuantidadeClientes;
+var
+  totais : Integer;
+begin
+
+  if DM.tbClientes.State in [dsBrowse] then
+    begin
+      DM.tbClientes.First;
+
+      while not DM.tbClientes.Eof do
+      begin
+        totais := totais + 1;
+        DM.tbClientes.Next;
+      end;
+
+      lblQuantidade.Caption := IntToStr(totais);
+  end;
+end;
+
+procedure DM.tbClientesAfterPost(DataSet: TDataSet);
+begin
+  calcularQuantidadeClientes;
+end;
 
 procedure TformConCliente.btBuscarClick(Sender: TObject);
 begin

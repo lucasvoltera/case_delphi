@@ -127,8 +127,6 @@ type
     ppLabel14: TppLabel;
     ppDBText14: TppDBText;
     ppLabel15: TppLabel;
-    ppLabel16: TppLabel;
-    ppLabel17: TppLabel;
     ppLabel18: TppLabel;
     ppDBText15: TppDBText;
     ppLabel19: TppLabel;
@@ -145,8 +143,11 @@ type
     ppLine2: TppLine;
     ppLabel25: TppLabel;
     ppDBText21: TppDBText;
+    ppLine3: TppLine;
+    ppLine4: TppLine;
     procedure tbCidadesAfterScroll(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
+    procedure calcularTotal;
 
   private
     { Private declarations }
@@ -167,12 +168,33 @@ uses cadCidades;
 
 {$R *.dfm}
 
+procedure calcularTotal(Dataset: TDataSet; LabelQuantidade: TLabel);
+var
+  totais: Integer;
+begin
+  totais := 0;
+
+  // Verifica se o dataset está em modo de navegação
+  if Dataset.State = dsBrowse then
+  begin
+    Dataset.First;
+    while not Dataset.Eof do
+    begin
+      Inc(totais);
+      Dataset.Next;
+    end;
+    // Atualiza o caption do Label com o total calculado
+    LabelQuantidade.Caption := IntToStr(totais);
+  end;
+end;
+
 
 procedure TDM.DataModuleCreate(Sender: TObject);
 begin
   sqlCidades.Close;
   sqlClientes.Close;
 end;
+
 
 procedure TDM.tbCidadesAfterScroll(DataSet: TDataSet);
 begin
