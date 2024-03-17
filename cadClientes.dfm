@@ -3,7 +3,7 @@
   Top = 0
   BorderIcons = [biSystemMenu]
   Caption = 'formCadClientes'
-  ClientHeight = 648
+  ClientHeight = 567
   ClientWidth = 1035
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -30,7 +30,7 @@
   end
   object lblTelefone: TLabel
     Left = 21
-    Top = 349
+    Top = 333
     Width = 72
     Height = 28
     Caption = 'Telefone'
@@ -43,7 +43,7 @@
   end
   object lblEndereco: TLabel
     Left = 21
-    Top = 517
+    Top = 413
     Width = 81
     Height = 28
     Caption = 'Endere'#231'o'
@@ -55,8 +55,8 @@
     ParentFont = False
   end
   object lblBairro: TLabel
-    Left = 240
-    Top = 349
+    Left = 21
+    Top = 485
     Width = 52
     Height = 28
     Caption = 'Bairro'
@@ -68,8 +68,8 @@
     ParentFont = False
   end
   object lblCompleto: TLabel
-    Left = 240
-    Top = 437
+    Left = 232
+    Top = 413
     Width = 125
     Height = 28
     Caption = 'Complemento'
@@ -94,8 +94,8 @@
     ParentFont = False
   end
   object lblCidade: TLabel
-    Left = 21
-    Top = 437
+    Left = 232
+    Top = 485
     Width = 61
     Height = 28
     Caption = 'Cidade'
@@ -107,8 +107,8 @@
     ParentFont = False
   end
   object lblCep: TLabel
-    Left = 240
-    Top = 517
+    Left = 232
+    Top = 333
     Width = 33
     Height = 28
     Caption = 'CEP'
@@ -165,8 +165,8 @@
     Width = 1035
     Height = 121
     Align = alTop
-    TabOrder = 0
-    ExplicitWidth = 1029
+    TabOrder = 10
+    ExplicitWidth = 1031
     object lblTitulo: TLabel
       Left = 360
       Top = 37
@@ -197,18 +197,18 @@
     Height = 23
     DataField = 'CGC_CPF_cliente'
     DataSource = DM.dsClientes
-    TabOrder = 2
-    OnKeyPress = editCPFKeyPress
+    TabOrder = 0
+    Visible = False
   end
   object editTelefone: TDBEdit
     Left = 21
-    Top = 383
+    Top = 367
     Width = 172
     Height = 23
     DataField = 'telefone'
     DataSource = DM.dsClientes
     MaxLength = 15
-    TabOrder = 3
+    TabOrder = 4
   end
   object editEmail: TDBEdit
     Left = 232
@@ -217,20 +217,20 @@
     Height = 23
     DataField = 'email'
     DataSource = DM.dsClientes
-    TabOrder = 4
+    TabOrder = 3
   end
   object editBairro: TDBEdit
-    Left = 240
-    Top = 383
+    Left = 21
+    Top = 519
     Width = 172
     Height = 23
     DataField = 'bairro'
     DataSource = DM.dsClientes
-    TabOrder = 5
+    TabOrder = 8
   end
   object editEndereço: TDBEdit
     Left = 21
-    Top = 551
+    Top = 447
     Width = 172
     Height = 23
     DataField = 'endereco'
@@ -238,31 +238,31 @@
     TabOrder = 6
   end
   object editCompleto: TDBEdit
-    Left = 240
-    Top = 471
-    Width = 172
+    Left = 232
+    Top = 447
+    Width = 180
     Height = 23
     DataField = 'complemento'
     DataSource = DM.dsClientes
     TabOrder = 7
   end
   object editCEP: TDBEdit
-    Left = 240
-    Top = 551
-    Width = 172
+    Left = 232
+    Top = 367
+    Width = 180
     Height = 23
     DataField = 'cep'
     DataSource = DM.dsClientes
     MaxLength = 9
-    TabOrder = 8
+    TabOrder = 5
   end
   object gridClientes: TDBGrid
     Left = 448
     Top = 232
     Width = 567
-    Height = 369
+    Height = 310
     DataSource = DM.dsClientes
-    TabOrder = 9
+    TabOrder = 11
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -320,7 +320,7 @@
       end
       item
         Expanded = False
-        FieldName = 'codigo_Cidade'
+        FieldName = 'nome_cidade'
         Title.Caption = 'CIDADE'
         Title.Font.Charset = DEFAULT_CHARSET
         Title.Font.Color = clWindowText
@@ -337,7 +337,7 @@
     Width = 57
     Height = 41
     Caption = '<<'
-    TabOrder = 10
+    TabOrder = 12
     OnClick = btPrimeiroClick
   end
   object btProximo: TButton
@@ -346,7 +346,7 @@
     Width = 58
     Height = 41
     Caption = '>'
-    TabOrder = 11
+    TabOrder = 13
     OnClick = btProximoClick
   end
   object btUltimo: TButton
@@ -355,7 +355,7 @@
     Width = 58
     Height = 41
     Caption = '>>'
-    TabOrder = 12
+    TabOrder = 14
     OnClick = btUltimoClick
   end
   object btInserir: TButton
@@ -364,7 +364,7 @@
     Width = 58
     Height = 41
     Caption = 'Inserir'
-    TabOrder = 13
+    TabOrder = 15
     OnClick = btInserirClick
   end
   object btSalvar: TButton
@@ -373,7 +373,7 @@
     Width = 58
     Height = 41
     Caption = 'Salvar'
-    TabOrder = 14
+    TabOrder = 16
     OnClick = btSalvarClick
   end
   object btDeletar: TButton
@@ -382,7 +382,7 @@
     Width = 58
     Height = 41
     Caption = 'Deletar'
-    TabOrder = 15
+    TabOrder = 17
     OnClick = btDeletarClick
   end
   object btCancelar: TButton
@@ -391,7 +391,7 @@
     Width = 58
     Height = 41
     Caption = 'Cancelar'
-    TabOrder = 16
+    TabOrder = 18
     OnClick = btCancelarClick
   end
   object btAnterior: TButton
@@ -400,20 +400,20 @@
     Width = 58
     Height = 41
     Caption = '<'
-    TabOrder = 17
+    TabOrder = 19
     OnClick = btAnteriorClick
   end
   object comboCidade: TDBLookupComboBox
-    Left = 21
-    Top = 471
-    Width = 172
+    Left = 232
+    Top = 519
+    Width = 180
     Height = 23
     DataField = 'codigo_Cidade'
     DataSource = DM.dsClientes
     KeyField = 'codigo_cidade'
     ListField = 'nome'
     ListSource = DM.dsCidades
-    TabOrder = 18
+    TabOrder = 9
   end
   object btEditar: TButton
     Left = 831
@@ -421,7 +421,18 @@
     Width = 58
     Height = 41
     Caption = 'Editar'
-    TabOrder = 19
+    TabOrder = 20
     OnClick = btEditarClick
+  end
+  object editCPFMask: TMaskEdit
+    Left = 21
+    Top = 295
+    Width = 172
+    Height = 23
+    MaxLength = 18
+    TabOrder = 2
+    Text = ''
+    OnEnter = editCPFMaskEnter
+    OnExit = editCPFMaskExit
   end
 end

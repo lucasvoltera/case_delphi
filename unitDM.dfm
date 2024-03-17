@@ -1,28 +1,26 @@
 object DM: TDM
   OnCreate = DataModuleCreate
-  Height = 750
-  Width = 1000
-  PixelsPerInch = 120
+  Height = 600
+  Width = 800
   object conexao: TADOConnection
     Connected = True
     ConnectionString = 
       'Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Persist Security ' +
-      'Info=False;User ID="";Initial Catalog=sinqia;Data Source=DESKTOP' +
-      '-CRROML5;Use Procedure for Prepare=1;Auto Translate=True;Packet ' +
-      'Size=4096;Workstation ID=DESKTOP-CRROML5;Initial File Name="";Us' +
-      'e Encryption for Data=False;Tag with column collation when possi' +
-      'ble=False;MARS Connection=False;DataTypeCompatibility=0;Trust Se' +
-      'rver Certificate=False;Server SPN=DESKTOP-CRROML5\Lucas;Applicat' +
-      'ion Intent=READWRITE;MultiSubnetFailover=False;Use FMTONLY=False' +
-      ';Authentication="";Access Token="";TransparentNetworkIPResolutio' +
-      'n=True;Connect Retry Count=1;Connect Retry Interval=10'
+      'Info=False;User ID="";Initial Catalog=master;Data Source=DSKLUCA' +
+      'S\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Pac' +
+      'ket Size=4096;Workstation ID=DESKTOP-CRROML5;Initial File Name="' +
+      '";Use Encryption for Data=False;Tag with column collation when p' +
+      'ossible=False;MARS Connection=False;DataTypeCompatibility=0;Trus' +
+      't Server Certificate=False;Server SPN=DSKLUCAS\Lucas;Application' +
+      ' Intent=READWRITE;MultiSubnetFailover=False;Use FMTONLY=False;Au' +
+      'thentication="";Access Token="";TransparentNetworkIPResolution=T' +
+      'rue;Connect Retry Count=1;Connect Retry Interval=10'
     LoginPrompt = False
     Provider = 'MSOLEDBSQL.1'
-    Left = 144
-    Top = 312
+    Left = 115
+    Top = 250
   end
   object sqlCidades: TADOQuery
-    Active = True
     Connection = conexao
     CursorType = ctStatic
     CommandTimeout = 0
@@ -30,8 +28,8 @@ object DM: TDM
     Parameters = <>
     SQL.Strings = (
       'SELECT * FROM cidades')
-    Left = 289
-    Top = 120
+    Left = 231
+    Top = 96
     object sqlCidadescodigo_cidade: TAutoIncField
       DisplayWidth = 14
       FieldName = 'codigo_cidade'
@@ -59,13 +57,12 @@ object DM: TDM
     end
   end
   object tbCidades: TADOTable
-    Active = True
     Connection = conexao
     CursorType = ctStatic
     CommandTimeout = 0
     TableName = 'cidades'
-    Left = 289
-    Top = 208
+    Left = 231
+    Top = 166
     object tbCidadescodigo_cidade: TAutoIncField
       FieldName = 'codigo_cidade'
       ReadOnly = True
@@ -96,18 +93,18 @@ object DM: TDM
   object dsCidades: TDataSource
     AutoEdit = False
     DataSet = tbCidades
-    Left = 392
-    Top = 208
+    Left = 314
+    Top = 166
   end
   object tbClientes: TADOTable
-    Active = True
     Connection = conexao
     CursorType = ctStatic
     CommandTimeout = 0
-    IndexFieldNames = 'codigo_Cidade'
+    IndexFieldNames = 'codigo_cliente'
+    MasterFields = 'codigo_cidade'
     TableName = 'clientes'
-    Left = 281
-    Top = 449
+    Left = 225
+    Top = 359
     object tbClientescodigo_cliente: TAutoIncField
       FieldName = 'codigo_cliente'
       ReadOnly = True
@@ -150,15 +147,23 @@ object DM: TDM
       EditMask = '#####-###;1;_'
       Size = 10
     end
+    object tbClientesnome_cidade: TWideStringField
+      FieldKind = fkLookup
+      FieldName = 'nome_cidade'
+      LookupDataSet = sqlCidades
+      LookupKeyFields = 'codigo_cidade'
+      LookupResultField = 'nome'
+      KeyFields = 'codigo_Cidade'
+      Lookup = True
+    end
   end
   object dsClientes: TDataSource
     AutoEdit = False
     DataSet = tbClientes
-    Left = 393
-    Top = 448
+    Left = 314
+    Top = 358
   end
   object sqlClientes: TADOQuery
-    Active = True
     Connection = conexao
     CursorType = ctStatic
     CommandTimeout = 0
@@ -172,8 +177,8 @@ object DM: TDM
       end>
     SQL.Strings = (
       'select * from clientes;')
-    Left = 281
-    Top = 561
+    Left = 225
+    Top = 449
     object sqlClientescodigo_cliente: TAutoIncField
       FieldName = 'codigo_cliente'
       ReadOnly = True
@@ -225,20 +230,20 @@ object DM: TDM
   object dsSqlCidades: TDataSource
     AutoEdit = False
     DataSet = sqlCidades
-    Left = 385
-    Top = 120
+    Left = 308
+    Top = 96
   end
   object dsSqlClientes: TDataSource
     AutoEdit = False
     DataSet = sqlClientes
-    Left = 400
-    Top = 560
+    Left = 320
+    Top = 448
   end
   object pipelineClientes: TppBDEPipeline
     DataSource = dsReport
     UserName = 'pipelineClientes'
-    Left = 796
-    Top = 456
+    Left = 637
+    Top = 365
     object pipelineClientesppField1: TppField
       Alignment = taRightJustify
       FieldAlias = 'codCliente'
@@ -345,11 +350,10 @@ object DM: TDM
   object dsReport: TDataSource
     AutoEdit = False
     DataSet = dsSqlReport
-    Left = 670
-    Top = 448
+    Left = 536
+    Top = 358
   end
   object dsSqlReport: TADOQuery
-    Active = True
     Connection = conexao
     CursorType = ctStatic
     CommandTimeout = 0
@@ -424,8 +428,8 @@ object DM: TDM
         'cidades.CODIGO_CIDADE BETWEEN :CIDADE_INICIAL AND :CIDADE_FINAL ' +
         'AND'
       'ESTADO = :ESTADO')
-    Left = 680
-    Top = 568
+    Left = 544
+    Top = 454
     object dsSqlReportcodCliente: TAutoIncField
       FieldName = 'codCliente'
       ReadOnly = True
@@ -544,7 +548,7 @@ object DM: TDM
     RTFSettings.DefaultFont.Style = []
     RTFSettings.Title = 'Report'
     TextFileName = '($MyDocuments)\Report.pdf'
-    TextSearchSettings.DefaultString = '<FindText>'
+    TextSearchSettings.DefaultString = '<Texto a localizar>'
     TextSearchSettings.Enabled = True
     XLSSettings.AppName = 'ReportBuilder'
     XLSSettings.Author = 'ReportBuilder'
@@ -563,8 +567,8 @@ object DM: TDM
     CloudDriveSettings.OneDriveSettings.OAuth2.RedirectURI = 'http://localhost'
     CloudDriveSettings.OneDriveSettings.OAuth2.RedirectPort = 0
     CloudDriveSettings.OneDriveSettings.DirectorySupport = True
-    Left = 804
-    Top = 568
+    Left = 643
+    Top = 454
     Version = '22.03'
     mmColumnWidth = 0
     DataPipelineName = 'pipelineClientes'
@@ -1095,8 +1099,8 @@ object DM: TDM
   object pipelineClientesAgrupado: TppBDEPipeline
     DataSource = dsReportAgrupado
     UserName = 'pipelineClientesAgrupado'
-    Left = 776
-    Top = 88
+    Left = 621
+    Top = 70
     object pipelineClientesAgrupadoppField1: TppField
       Alignment = taRightJustify
       FieldAlias = 'codCliente'
@@ -1203,11 +1207,10 @@ object DM: TDM
   object dsReportAgrupado: TDataSource
     AutoEdit = False
     DataSet = dsSqlReportAgrupado
-    Left = 658
-    Top = 120
+    Left = 526
+    Top = 96
   end
   object dsSqlReportAgrupado: TADOQuery
-    Active = True
     Connection = conexao
     CursorType = ctStatic
     CommandTimeout = 0
@@ -1282,8 +1285,8 @@ object DM: TDM
         'AND'
       'ESTADO = :ESTADO'
       'GROUP BY cidades.codigo_cidade;')
-    Left = 652
-    Top = 224
+    Left = 522
+    Top = 179
     object dsSqlReportAgrupadocodCliente: TIntegerField
       FieldName = 'codCliente'
       ReadOnly = True
@@ -1414,7 +1417,7 @@ object DM: TDM
     RTFSettings.DefaultFont.Style = []
     RTFSettings.Title = 'Report'
     TextFileName = '($MyDocuments)\Report.pdf'
-    TextSearchSettings.DefaultString = '<FindText>'
+    TextSearchSettings.DefaultString = '<Texto a localizar>'
     TextSearchSettings.Enabled = True
     XLSSettings.AppName = 'ReportBuilder'
     XLSSettings.Author = 'ReportBuilder'
@@ -1433,8 +1436,8 @@ object DM: TDM
     CloudDriveSettings.OneDriveSettings.OAuth2.RedirectURI = 'http://localhost'
     CloudDriveSettings.OneDriveSettings.OAuth2.RedirectPort = 0
     CloudDriveSettings.OneDriveSettings.DirectorySupport = True
-    Left = 776
-    Top = 184
+    Left = 621
+    Top = 147
     Version = '22.03'
     mmColumnWidth = 0
     DataPipelineName = 'pipelineClientesAgrupado'
@@ -1919,6 +1922,35 @@ object DM: TDM
       end
     end
     object ppParameterList2: TppParameterList
+    end
+  end
+  object sqlValidarCEP: TADOQuery
+    Connection = conexao
+    CursorType = ctStatic
+    CommandTimeout = 0
+    Parameters = <
+      item
+        Name = 'cep'
+        Attributes = [paNullable]
+        DataType = ftWideString
+        NumericScale = 255
+        Precision = 255
+        Size = 4000
+        Value = Null
+      end>
+    SQL.Strings = (
+      'select codigo_cidade, nome'
+      'from cidades'
+      'where :cep between cep_Inicial and cep_final')
+    Left = 432
+    Top = 296
+    object sqlValidarCEPcodigo_cidade: TAutoIncField
+      FieldName = 'codigo_cidade'
+      ReadOnly = True
+    end
+    object sqlValidarCEPnome: TWideStringField
+      FieldName = 'nome'
+      Size = 100
     end
   end
 end

@@ -41,6 +41,7 @@ type
     btEditar: TButton;
     lblCod: TLabel;
     DBText1: TDBText;
+    editCPFMask: TMaskEdit;
     procedure btPrimeiroClick(Sender: TObject);
     procedure btAnteriorClick(Sender: TObject);
     procedure btProximoClick(Sender: TObject);
@@ -52,9 +53,11 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btEditarClick(Sender: TObject);
-    procedure editCPFKeyPress(Sender: TObject; var Key: Char);
+    procedure editCPFMaskExit(Sender: TObject);
+    procedure editCPFMaskEnter(Sender: TObject);
   private
     { Private declarations }
+
   public
     { Public declarations }
   end;
@@ -67,6 +70,19 @@ implementation
 {$R *.dfm}
 
 uses unitDM;
+
+function GetNumbers(const Text: string): String;
+var
+  i: Integer;
+begin
+  Result := '';
+  for i := 1 to Length(Text) do
+  begin
+    if Text[i] in ['0'..'9'] then
+      Result := Result + Text[i];
+  end;
+end;
+
 
 procedure TformCadClientes.btAnteriorClick(Sender: TObject);
 begin
@@ -136,6 +152,19 @@ end;
 
 procedure TformCadClientes.btSalvarClick(Sender: TObject);
 begin
+  editCPF.Text := EditCPFMask.Text;
+
+  DM.sqlValidarCEP.Close;
+  DM.sqlValidarCEP.Parameters.ParamByName('cep').Value := editCEP.Text;
+  DM.sqlValidarCEP.Open;
+
+  if (DM.sqlValidarCEPcodigo_cidade.AsString <> comboCidade.KeyValue) then
+  begin
+    showmessage('Cep invlálido para a cidade cadastrada');
+    editCEP.SetFocus;
+    Abort;
+  end;
+
   btInserir.Enabled := True;
   btDeletar.Enabled := True;
 
@@ -151,23 +180,6 @@ begin
 end;
 
 
-
-
-procedure TformCadClientes.editCPFKeyPress(Sender: TObject; var Key: Char);
-begin
-    // Verifica o comprimento do texto inserido no campo editCPF
-  if Length(editCPF.Text) <= 11 then
-  begin
-    // Aplica a máscara de CPF (###.###.###-##)
-    DM.tbClientes.FieldByName('CGC_CPF_cliente').EditMask := '###.###.###-##;1;_';
-  end
-  else
-  begin
-    // Aplica a máscara de CNPJ (##.###.###/####-##)
-    DM.tbClientes.FieldByName('CGC_CPF_cliente').EditMask := '##.###.###/####-##;1;_';
-  end;
-end;
-
 procedure TformCadClientes.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Self := nil;
@@ -177,8 +189,36 @@ procedure TformCadClientes.FormCreate(Sender: TObject);
 begin
   DM.tbClientes.Close;
   DM.tbClientes.Open;
+  DM.tbCidades.Close;
+  DM.tbCidades.Open;
   btSalvar.Enabled := False;
   btCancelar.Enabled := False;
+end;
+
+procedure TformCadClientes.editCPFMaskEnter(Sender: TObject);
+begin
+  editCPFMask.EditMask := '';
+end;
+
+procedure TformCadClientes.editCPFMaskExit(Sender: TObject);
+var
+  numeros : string;
+begin
+  numeros := GetNumbers(editCPFMask.Text);
+  editCPFMask.Clear;
+  editCPFMask.Text := numeros;
+
+    // Verifica o comprimento do texto inserido no campo editCPF
+  if Length(editCPFMask.Text) <= 11 then
+  begin
+    // Aplica a máscara de CPF (###.###.###-##)
+    editCPFMask.EditMask := '###.###.###-##;1;_';
+  end
+  else if (Length(editCPFMask.Text) > 11) then
+  begin
+    // Aplica a máscara de CNPJ (##.###.###/####-##)
+    editCPFMask.EditMask := '##.###.###/####-##;1;_';
+  end;
 end;
 
 end.

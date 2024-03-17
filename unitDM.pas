@@ -145,6 +145,10 @@ type
     ppDBText21: TppDBText;
     ppLine3: TppLine;
     ppLine4: TppLine;
+    sqlValidarCEP: TADOQuery;
+    sqlValidarCEPnome: TWideStringField;
+    sqlValidarCEPcodigo_cidade: TAutoIncField;
+    tbClientesnome_cidade: TWideStringField;
     procedure tbCidadesAfterScroll(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
 
