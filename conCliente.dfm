@@ -1,6 +1,7 @@
 object formConCliente: TformConCliente
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'formConCliente'
   ClientHeight = 570
   ClientWidth = 835
@@ -10,6 +11,7 @@ object formConCliente: TformConCliente
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
   TextHeight = 15
@@ -167,7 +169,7 @@ object formConCliente: TformConCliente
     TabOrder = 4
     ExplicitWidth = 829
     object lblTitulo: TLabel
-      Left = 56
+      Left = 247
       Top = 49
       Width = 286
       Height = 41

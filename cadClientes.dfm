@@ -3,8 +3,8 @@
   Top = 0
   BorderIcons = [biSystemMenu]
   Caption = 'formCadClientes'
-  ClientHeight = 672
-  ClientWidth = 1048
+  ClientHeight = 648
+  ClientWidth = 1035
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,8 +16,8 @@
   OnCreate = FormCreate
   TextHeight = 15
   object lblCPF: TLabel
-    Left = 232
-    Top = 173
+    Left = 21
+    Top = 261
     Width = 33
     Height = 28
     Caption = 'CPF'
@@ -30,7 +30,7 @@
   end
   object lblTelefone: TLabel
     Left = 21
-    Top = 261
+    Top = 349
     Width = 72
     Height = 28
     Caption = 'Telefone'
@@ -43,7 +43,7 @@
   end
   object lblEndereco: TLabel
     Left = 21
-    Top = 429
+    Top = 517
     Width = 81
     Height = 28
     Caption = 'Endere'#231'o'
@@ -55,7 +55,7 @@
     ParentFont = False
   end
   object lblBairro: TLabel
-    Left = 232
+    Left = 240
     Top = 349
     Width = 52
     Height = 28
@@ -68,8 +68,8 @@
     ParentFont = False
   end
   object lblCompleto: TLabel
-    Left = 232
-    Top = 429
+    Left = 240
+    Top = 437
     Width = 125
     Height = 28
     Caption = 'Complemento'
@@ -95,7 +95,7 @@
   end
   object lblCidade: TLabel
     Left = 21
-    Top = 349
+    Top = 437
     Width = 61
     Height = 28
     Caption = 'Cidade'
@@ -107,8 +107,8 @@
     ParentFont = False
   end
   object lblCep: TLabel
-    Left = 21
-    Top = 506
+    Left = 240
+    Top = 517
     Width = 33
     Height = 28
     Caption = 'CEP'
@@ -120,8 +120,8 @@
     ParentFont = False
   end
   object lblNome: TLabel
-    Left = 21
-    Top = 173
+    Left = 232
+    Top = 186
     Width = 54
     Height = 28
     Caption = 'Nome'
@@ -132,17 +132,44 @@
     Font.Style = []
     ParentFont = False
   end
+  object lblCod: TLabel
+    Left = 28
+    Top = 186
+    Width = 65
+    Height = 28
+    Caption = 'C'#243'digo'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object DBText1: TDBText
+    Left = 28
+    Top = 209
+    Width = 65
+    Height = 29
+    DataField = 'codigo_cliente'
+    DataSource = DM.dsClientes
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1048
+    Width = 1035
     Height = 121
     Align = alTop
     TabOrder = 0
     ExplicitWidth = 1042
     object lblTitulo: TLabel
-      Left = 48
-      Top = 45
+      Left = 360
+      Top = 37
       Width = 281
       Height = 45
       Caption = 'Cadastrar Clientes'
@@ -155,18 +182,18 @@
     end
   end
   object editNome: TDBEdit
-    Left = 21
-    Top = 207
-    Width = 172
+    Left = 232
+    Top = 220
+    Width = 180
     Height = 23
     DataField = 'nome'
     DataSource = DM.dsClientes
     TabOrder = 1
   end
   object editCPF: TDBEdit
-    Left = 232
-    Top = 207
-    Width = 193
+    Left = 21
+    Top = 295
+    Width = 172
     Height = 23
     DataField = 'CGC_CPF_cliente'
     DataSource = DM.dsClientes
@@ -174,7 +201,7 @@
   end
   object editTelefone: TDBEdit
     Left = 21
-    Top = 295
+    Top = 383
     Width = 172
     Height = 23
     DataField = 'telefone'
@@ -184,16 +211,16 @@
   object editEmail: TDBEdit
     Left = 232
     Top = 295
-    Width = 193
+    Width = 180
     Height = 23
     DataField = 'email'
     DataSource = DM.dsClientes
     TabOrder = 4
   end
   object editBairro: TDBEdit
-    Left = 232
+    Left = 240
     Top = 383
-    Width = 193
+    Width = 172
     Height = 23
     DataField = 'bairro'
     DataSource = DM.dsClientes
@@ -201,7 +228,7 @@
   end
   object editEndereço: TDBEdit
     Left = 21
-    Top = 463
+    Top = 551
     Width = 172
     Height = 23
     DataField = 'endereco'
@@ -209,17 +236,17 @@
     TabOrder = 6
   end
   object editCompleto: TDBEdit
-    Left = 232
-    Top = 463
-    Width = 193
+    Left = 240
+    Top = 471
+    Width = 172
     Height = 23
     DataField = 'complemento'
     DataSource = DM.dsClientes
     TabOrder = 7
   end
   object editCEP: TDBEdit
-    Left = 21
-    Top = 540
+    Left = 240
+    Top = 551
     Width = 172
     Height = 23
     DataField = 'cep'
@@ -307,7 +334,7 @@
     OnClick = btInserirClick
   end
   object btSalvar: TButton
-    Left = 767
+    Left = 895
     Top = 185
     Width = 58
     Height = 41
@@ -316,7 +343,7 @@
     OnClick = btSalvarClick
   end
   object btDeletar: TButton
-    Left = 831
+    Left = 767
     Top = 185
     Width = 58
     Height = 41
@@ -344,7 +371,7 @@
   end
   object comboCidade: TDBLookupComboBox
     Left = 21
-    Top = 383
+    Top = 471
     Width = 172
     Height = 23
     DataField = 'codigo_Cidade'
@@ -355,7 +382,7 @@
     TabOrder = 18
   end
   object btEditar: TButton
-    Left = 895
+    Left = 831
     Top = 185
     Width = 58
     Height = 41

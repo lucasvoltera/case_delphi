@@ -72,10 +72,10 @@ begin
     5: // Consulta por estado
      begin
        DM.sqlClientes.SQL.Add('SELECT clientes.*, cidades.nome AS nome_cidade ' +
-                              'FROM clientes ' +
-                              'INNER JOIN cidades ON clientes.codigo_cidade = cidades.codigo_cidade ' +
-                              'WHERE cidades.estado LIKE :pConsulta');
-       DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := '%' + editConsulta.Text + '%';
+                       'FROM clientes ' +
+                       'INNER JOIN cidades ON clientes.codigo_Cidade = cidades.codigo_cidade ' +
+                       'WHERE cidades.estado LIKE :pConsulta');
+DM.sqlClientes.Parameters.ParamByName('pConsulta').Value := editConsulta.Text + '%';
      end;
   else
     ShowMessage('Opção inválida');

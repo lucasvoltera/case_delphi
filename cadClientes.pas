@@ -39,6 +39,8 @@ type
     editNome: TDBEdit;
     comboCidade: TDBLookupComboBox;
     btEditar: TButton;
+    lblCod: TLabel;
+    DBText1: TDBText;
     procedure btPrimeiroClick(Sender: TObject);
     procedure btAnteriorClick(Sender: TObject);
     procedure btProximoClick(Sender: TObject);

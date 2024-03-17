@@ -1,6 +1,7 @@
 object formConCidade: TformConCidade
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'formConCidades'
   ClientHeight = 592
   ClientWidth = 846
@@ -10,6 +11,7 @@ object formConCidade: TformConCidade
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
   TextHeight = 15
@@ -58,7 +60,7 @@ object formConCidade: TformConCidade
     OnClick = btBuscarClick
   end
   object gridConCidades: TDBGrid
-    Left = 48
+    Left = 56
     Top = 328
     Width = 729
     Height = 233
@@ -114,8 +116,8 @@ object formConCidade: TformConCidade
     TabOrder = 4
     ExplicitWidth = 840
     object lblTitulo: TLabel
-      Left = 72
-      Top = 48
+      Left = 256
+      Top = 44
       Width = 285
       Height = 41
       Caption = 'Consulta de Cidades'

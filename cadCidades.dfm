@@ -103,7 +103,7 @@ object formCadCidades: TformCadCidades
     TabOrder = 0
     ExplicitWidth = 996
     object lblTitulo: TLabel
-      Left = 48
+      Left = 330
       Top = 44
       Width = 279
       Height = 45
@@ -180,7 +180,7 @@ object formCadCidades: TformCadCidades
     OnClick = btInserirClick
   end
   object btSalvar: TButton
-    Left = 727
+    Left = 855
     Top = 185
     Width = 58
     Height = 41
@@ -298,7 +298,7 @@ object formCadCidades: TformCadCidades
     TabOrder = 2
   end
   object btEditar: TButton
-    Left = 855
+    Left = 727
     Top = 185
     Width = 58
     Height = 41

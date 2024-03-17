@@ -1,6 +1,7 @@
 object formTelaPrincipal: TformTelaPrincipal
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'Tela Principal'
   ClientHeight = 442
   ClientWidth = 628
@@ -11,6 +12,7 @@ object formTelaPrincipal: TformTelaPrincipal
   Font.Name = 'Segoe UI'
   Font.Style = []
   Menu = MainMenu1
+  Position = poScreenCenter
   TextHeight = 15
   object MainMenu1: TMainMenu
     AutoHotkeys = maManual
