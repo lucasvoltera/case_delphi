@@ -52,6 +52,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btEditarClick(Sender: TObject);
+    procedure editCPFKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -151,6 +152,21 @@ end;
 
 
 
+
+procedure TformCadClientes.editCPFKeyPress(Sender: TObject; var Key: Char);
+begin
+    // Verifica o comprimento do texto inserido no campo editCPF
+  if Length(editCPF.Text) <= 11 then
+  begin
+    // Aplica a máscara de CPF (###.###.###-##)
+    DM.tbClientes.FieldByName('CGC_CPF_cliente').EditMask := '###.###.###-##;1;_';
+  end
+  else
+  begin
+    // Aplica a máscara de CNPJ (##.###.###/####-##)
+    DM.tbClientes.FieldByName('CGC_CPF_cliente').EditMask := '##.###.###/####-##;1;_';
+  end;
+end;
 
 procedure TformCadClientes.FormClose(Sender: TObject; var Action: TCloseAction);
 begin

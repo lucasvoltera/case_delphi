@@ -3,8 +3,8 @@ object formConCidade: TformConCidade
   Top = 0
   BorderIcons = [biSystemMenu]
   Caption = 'formConCidades'
-  ClientHeight = 592
-  ClientWidth = 846
+  ClientHeight = 609
+  ClientWidth = 865
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object formConCidade: TformConCidade
   OnCreate = FormCreate
   TextHeight = 15
   object lblBusca: TLabel
-    Left = 387
+    Left = 411
     Top = 161
     Width = 129
     Height = 28
@@ -29,7 +29,7 @@ object formConCidade: TformConCidade
     ParentFont = False
   end
   object radioGroupOpcoes: TRadioGroup
-    Left = 115
+    Left = 139
     Top = 163
     Width = 206
     Height = 71
@@ -43,7 +43,7 @@ object formConCidade: TformConCidade
     OnClick = radioGroupOpcoesClick
   end
   object editConsulta: TEdit
-    Left = 387
+    Left = 411
     Top = 211
     Width = 310
     Height = 23
@@ -51,8 +51,8 @@ object formConCidade: TformConCidade
     TabOrder = 1
   end
   object btBuscar: TButton
-    Left = 267
-    Top = 265
+    Left = 291
+    Top = 257
     Width = 238
     Height = 40
     Caption = 'Buscar'
@@ -60,8 +60,8 @@ object formConCidade: TformConCidade
     OnClick = btBuscarClick
   end
   object gridConCidades: TDBGrid
-    Left = 56
-    Top = 328
+    Left = 72
+    Top = 320
     Width = 729
     Height = 233
     DataSource = DM.dsSqlCidades
@@ -74,50 +74,69 @@ object formConCidade: TformConCidade
     Columns = <
       item
         Expanded = False
-        FieldName = 'codigo_cidade'
-        Title.Caption = 'C'#243'digo'
-        Visible = True
-      end
-      item
-        Expanded = False
         FieldName = 'nome'
         Title.Caption = 'NOME'
-        Width = 116
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Width = 173
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'estado'
         Title.Caption = 'ESTADO'
-        Width = 105
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Width = 148
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'cep_Inicial'
         Title.Caption = 'CEP INICIAL'
-        Width = 91
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Width = 125
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'cep_Final'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
         Title.Caption = 'CEP FINAL'
-        Width = 100
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Width = 140
         Visible = True
       end>
   end
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 846
+    Width = 865
     Height = 129
     Align = alTop
     TabOrder = 4
     ExplicitWidth = 840
     object lblTitulo: TLabel
-      Left = 256
-      Top = 44
+      Left = 267
+      Top = 36
       Width = 285
       Height = 41
       Caption = 'Consulta de Cidades'

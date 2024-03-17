@@ -18,9 +18,9 @@
   object lblCPF: TLabel
     Left = 21
     Top = 261
-    Width = 33
+    Width = 103
     Height = 28
-    Caption = 'CPF'
+    Caption = 'CPF ou CGC'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -20
@@ -198,6 +198,7 @@
     DataField = 'CGC_CPF_cliente'
     DataSource = DM.dsClientes
     TabOrder = 2
+    OnKeyPress = editCPFKeyPress
   end
   object editTelefone: TDBEdit
     Left = 21
@@ -206,7 +207,7 @@
     Height = 23
     DataField = 'telefone'
     DataSource = DM.dsClientes
-    MaxLength = 14
+    MaxLength = 15
     TabOrder = 3
   end
   object editEmail: TDBEdit
@@ -269,32 +270,63 @@
     TitleFont.Style = []
     Columns = <
       item
+        Alignment = taCenter
         Expanded = False
         FieldName = 'CGC_CPF_cliente'
+        Title.Caption = 'CGC_CPF'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
         Width = 96
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'nome'
+        Title.Caption = 'NOME'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
         Width = 103
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'telefone'
-        Width = 79
+        Title.Caption = 'TELEFONE'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Width = 98
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'email'
+        Title.Caption = 'EMAIL'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
         Width = 109
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'codigo_Cidade'
+        Title.Caption = 'CIDADE'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
         Width = 91
         Visible = True
       end>

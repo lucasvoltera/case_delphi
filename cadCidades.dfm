@@ -103,7 +103,7 @@ object formCadCidades: TformCadCidades
     TabOrder = 0
     ExplicitWidth = 996
     object lblTitulo: TLabel
-      Left = 330
+      Left = 354
       Top = 44
       Width = 279
       Height = 45
@@ -132,15 +132,17 @@ object formCadCidades: TformCadCidades
     Height = 23
     DataField = 'cep_Inicial'
     DataSource = DM.dsCidades
+    MaxLength = 9
     TabOrder = 3
   end
   object editCepFinal: TDBEdit
     Left = 207
     Top = 440
-    Width = 162
+    Width = 155
     Height = 23
     DataField = 'cep_Final'
     DataSource = DM.dsCidades
+    MaxLength = 9
     TabOrder = 4
   end
   object btPrimeiro: TButton
@@ -218,7 +220,7 @@ object formCadCidades: TformCadCidades
   object gridCidades: TDBGrid
     Left = 408
     Top = 232
-    Width = 569
+    Width = 566
     Height = 305
     DataSource = DM.dsCidades
     TabOrder = 13
@@ -230,31 +232,49 @@ object formCadCidades: TformCadCidades
     Columns = <
       item
         Expanded = False
-        FieldName = 'codigo_cidade'
-        Title.Caption = 'C'#243'digo'
-        Visible = True
-      end
-      item
-        Expanded = False
         FieldName = 'nome'
+        Title.Caption = 'NOME'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
         Width = 129
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'estado'
+        Title.Caption = 'ESTADO'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
         Width = 122
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'cep_Inicial'
-        Width = 86
+        Title.Caption = 'CEP INICIAL'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
+        Width = 76
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'cep_Final'
+        Title.Caption = 'CEP FINAL'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Style = [fsBold]
         Width = 103
         Visible = True
       end>

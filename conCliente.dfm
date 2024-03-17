@@ -3,8 +3,8 @@ object formConCliente: TformConCliente
   Top = 0
   BorderIcons = [biSystemMenu]
   Caption = 'formConCliente'
-  ClientHeight = 633
-  ClientWidth = 895
+  ClientHeight = 601
+  ClientWidth = 869
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object formConCliente: TformConCliente
   OnCreate = FormCreate
   TextHeight = 15
   object lblBusca: TLabel
-    Left = 404
+    Left = 452
     Top = 145
     Width = 129
     Height = 28
@@ -28,35 +28,9 @@ object formConCliente: TformConCliente
     Font.Style = []
     ParentFont = False
   end
-  object Label1: TLabel
-    Left = 56
-    Top = 584
-    Width = 216
-    Height = 23
-    Caption = 'Quantidade de resultados: '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -17
-    Font.Name = 'Segoe UI'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object lblQuantidade: TLabel
-    Left = 279
-    Top = 584
-    Width = 20
-    Height = 23
-    Caption = '00'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -17
-    Font.Name = 'Segoe UI'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object radioGroupOpcoes: TRadioGroup
-    Left = 56
-    Top = 145
+    Left = 80
+    Top = 135
     Width = 265
     Height = 106
     Caption = 'Op'#231#245'es de Busca'
@@ -73,7 +47,7 @@ object formConCliente: TformConCliente
     OnClick = radioGroupOpcoesClick
   end
   object editConsulta: TEdit
-    Left = 404
+    Left = 452
     Top = 195
     Width = 310
     Height = 23
@@ -189,14 +163,14 @@ object formConCliente: TformConCliente
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 895
+    Width = 869
     Height = 129
     Align = alTop
     TabOrder = 4
     ExplicitWidth = 829
     object lblTitulo: TLabel
-      Left = 247
-      Top = 49
+      Left = 279
+      Top = 36
       Width = 286
       Height = 41
       Caption = 'Consulta de Clientes'
