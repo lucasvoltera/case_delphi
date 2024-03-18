@@ -8,6 +8,13 @@ Este projeto foi desenvolvido para o processo seletivo da SINQIA utilizando `Del
 
 Infelizmente, não foi possível utilizar o `Delphi XE7`, pois não havia a opção de baixá-lo no site oficial da Embarcadero [1]. Portanto, o projeto foi desenvolvido no `Delphi 11`, mas também foi testado no `Delphi 12`.
 
+## Download de Dependências
+
+Os arquivos de dependência podem ser baixados nessa pasta do google drive criada:
+
+https://drive.google.com/drive/folders/1_x-2rn-K8AzrFcxBTAL2ICIjZOz61_c5?usp=sharing
+
+
 ## Estrutura de arquivos
 
 Os arquivos foram estruturados de forma simples, basicamente foram divididos em funções de `relatório`, `cliente` e `cidades`. Dentro de cada uma dessas pastas, há as telas relacionadas a esses agentes do sistema (`cadastro` e/ou `consulta`). A `Tela Principal` e o `Data Model` encontram-se na pasta `main`.
